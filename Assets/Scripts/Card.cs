@@ -6,17 +6,30 @@ using UnityEngine.UI;
 public class Card : MonoBehaviour {
 
     public CardData cardData;
-    public Image artwork;
+    public Image artwork, icon;
     public Text cardName;
 
-	// Use this for initialization
-	void Start () {
+    public void InitializeCard(CardData _cardData)
+    {
+        cardData = _cardData;
         artwork.sprite = cardData.artwork;
-        //cardName.text = cardData.name;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    public void ChangeAspectToIcon()
+    {
+        transform.GetChild(0).gameObject.SetActive(false);
+        icon.gameObject.SetActive(true);
+    }
+
+    public void ChangeAspectToCard()
+    {
+        icon.gameObject.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(true);
+    }
+
+    public void DropCardOnNodePannel(NodePannel np)
+    {
+        Instantiate(CardManager.instance.boardCardPrefab, np.transform).GetComponent<BoardCard>().Init(cardData);
+        Destroy(gameObject);
+    }
 }

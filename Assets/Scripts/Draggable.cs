@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
-    [HideInInspector]
-    public Transform parentToReturnTo = null, placeholderParent = null;
+    [HideInInspector] public Transform parentToReturnTo = null, placeholderParent = null;
 
     private GameObject placeholder = null;
 
@@ -16,6 +15,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         placeholder = new GameObject();
         placeholder.transform.SetParent(transform.parent);
 
+        
         LayoutElement le = placeholder.AddComponent<LayoutElement>();
         le.preferredWidth = GetComponent<LayoutElement>().preferredWidth;
         le.preferredHeight = GetComponent<LayoutElement>().preferredHeight;
@@ -29,6 +29,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         transform.SetParent(transform.parent.parent);
 
         GetComponent<CanvasGroup>().blocksRaycasts = false;
+
+        GetComponent<Card>().ChangeAspectToIcon();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -53,7 +55,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             }
         }
         placeholder.transform.SetSiblingIndex(newSiblingIndex);
-
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -61,6 +62,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         transform.SetParent(parentToReturnTo);
         transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
         GetComponent<CanvasGroup>().blocksRaycasts = true;
+
+        if (!eventData.pointerEnter.CompareTag("NodePannel"))
+            GetComponent<Card>().ChangeAspectToCard();
 
         Destroy(placeholder);
     }

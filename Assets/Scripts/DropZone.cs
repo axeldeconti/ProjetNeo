@@ -33,6 +33,17 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
 
         if (d != null)
+        {
             d.parentToReturnTo = this.transform;
+
+            NodePannel np = GetComponent<NodePannel>();
+
+            if (np != null)
+            {
+                Card c = eventData.pointerDrag.GetComponent<Card>();
+
+                np.DropCard(c);
+            }
+        }
     }
 }

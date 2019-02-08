@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d537841b16587064587fd0ebe2329f4c, type: 3}
   m_Name: Exemple
   m_EditorClassIdentifier: 
+  cardType: 0
   name: Exemple Card
-  artwork: {fileID: 21300000, guid: 7c8c281bc4c9971498a7e1a9503f5aa3, type: 3}
+  artwork: {fileID: 21300000, guid: c7eb0384ed827c147af672a2a68b195c, type: 3}

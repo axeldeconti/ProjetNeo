@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class DeckManager : MonoBehaviour {
 
     #region Singleton
 
-    public static GameManager instance;
+    public static DeckManager instance;
 
     void Awake()
     {
@@ -22,8 +22,13 @@ public class GameManager : MonoBehaviour {
 
     #endregion
 
+    public int nbCard;
+
     private void Start()
     {
-        
+        for (int i = 0; i < nbCard; i++)
+        {
+            CardManager.instance.CreateCard();
+        }
     }
 }
