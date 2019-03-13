@@ -5,15 +5,19 @@ using UnityEngine.UI;
 
 public class BoardCard : MonoBehaviour {
 
-    [HideInInspector] public CardData cardData;
+    public CardData cardData;
     public Image icon;
 
+    //Call to initialize a boardCard
     public void Init(CardData _cardData)
     {
         cardData = _cardData;
 
         icon = GetComponent<Image>();
-
         icon.sprite = cardData.artwork;
+
+        cardData.ApplyCardEffect();
+
+        CardManager.instance.AddCard(this);
     }
 }

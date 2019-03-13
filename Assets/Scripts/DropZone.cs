@@ -2,28 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    [HideInInspector] public Image myImage;
+    public bool isEmpty = true;
+
+    private void Start()
+    {
+        myImage = GetComponent<Image>();
+    }
+
+    //Mouse over this dropzone
     public void OnPointerEnter(PointerEventData eventData)
     {
+        //Return if nothing is being dragged
         if (eventData.pointerDrag == null)
             return;
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
 
+        //Set the placeholder parent to this
         if (d != null)
             d.placeholderParent = transform;
     }
 
+    //Exit mouse over this dropzone
     public void OnPointerExit(PointerEventData eventData)
     {
+        //Return if nothing is being dragged
         if (eventData.pointerDrag == null)
             return;
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
 
-        if (d != null && d.placeholderParent == this.transform)
+        //Set the placeholder parent to the card one
+        if (d != null && d.placeholderParent == transform)
             d.placeholderParent = d.parentToReturnTo;
 
     }
@@ -34,15 +49,16 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
         if (d != null)
         {
-            d.parentToReturnTo = this.transform;
-
-            NodePannel np = GetComponent<NodePannel>();
-
-            if (np != null)
+            //Drop the card if the pannel is empty
+            if(isEmpty)
             {
-                Card c = eventData.pointerDrag.GetComponent<Card>();
+                //Set the card parent to this
+                d.parentToReturnTo = this.transform;
+                Destroy(d.placeholder);
 
-                np.DropCard(c);
+                Card c = eventData.pointerDrag.GetComponent<Card>();
+                c.DropCard(this);
+                isEmpty = false;
             }
         }
     }

@@ -113,6 +113,48 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &89867405
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4423022312080736, guid: 6f67a9c77b430c244ba38be24477572f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423022312080736, guid: 6f67a9c77b430c244ba38be24477572f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423022312080736, guid: 6f67a9c77b430c244ba38be24477572f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423022312080736, guid: 6f67a9c77b430c244ba38be24477572f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423022312080736, guid: 6f67a9c77b430c244ba38be24477572f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423022312080736, guid: 6f67a9c77b430c244ba38be24477572f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423022312080736, guid: 6f67a9c77b430c244ba38be24477572f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423022312080736, guid: 6f67a9c77b430c244ba38be24477572f, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f67a9c77b430c244ba38be24477572f, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4916b76fa3ba5c54e87b21a4aea0d835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myImage: {fileID: 0}
+  isEmpty: 0
 --- !u!224 &331368409 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224977133011426264, guid: 14e118616b03ec046b8f4eb68b6be8de,
@@ -995,7 +1039,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec9f7b122c669a478e0eee90b087f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allCardData:
+  - {fileID: 11400000, guid: daf4de20a00da7d478ea6f00f5d16209, type: 2}
   nbCard: 5
+  humanCardPrefab: {fileID: 1986284473417564, guid: d1b19f060ceaa5f42b3a937f19f82387,
+    type: 2}
+  ressourceCardPrefab: {fileID: 1836573201976466, guid: 020537206d18c5d4195ee89f5895b55a,
+    type: 2}
+  toolCardPrefab: {fileID: 1426917120687174, guid: f2fc99577b4955d428dfe048ab5c7a04,
+    type: 2}
+  buildingCardPrefab: {fileID: 1562744772880262, guid: 7f02de035bdb9064eb255fb27d66046f,
+    type: 2}
+  eventCardPrefab: {fileID: 1684043234106974, guid: 806e1a2d4a789d64ca1e7f1d5c164820,
+    type: 2}
+  HandPannel: {fileID: 329107909}
 --- !u!4 &1059541478
 Transform:
   m_ObjectHideFlags: 0
@@ -1101,6 +1158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4916b76fa3ba5c54e87b21a4aea0d835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myImage: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &1527747688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1157,51 +1216,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1527747685}
   m_CullTransparentMesh: 0
---- !u!1 &1554283726
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1554283729}
-  - component: {fileID: 1554283727}
-  m_Layer: 0
-  m_Name: WorldGrid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1554283727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1554283726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c68b1fd48204f4caeba3728c293806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawGridGizmo: 1
-  gridWoldSize: {x: 50, y: 50}
-  nodeRadius: 0.5
-  nodePrefab: {fileID: 1861310698750618, guid: 5405649660f2d2046b76beaed0884d4d, type: 2}
-  gridPannel: {fileID: 1660121368}
---- !u!4 &1554283729
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1554283726}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1660121368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,12 +1369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833f94e5113efba43948adc937a50ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allCardData:
-  - {fileID: 11400000, guid: 36b163a8d19538842bac310bc067d931, type: 2}
-  cardPrefab: {fileID: 1513267051098922, guid: 14e118616b03ec046b8f4eb68b6be8de, type: 2}
   boardCardPrefab: {fileID: 1928290214598834, guid: c5de744e00d4f024eb096803daa713e6,
     type: 2}
-  HandPannel: {fileID: 329107909}
 --- !u!4 &1826946875
 Transform:
   m_ObjectHideFlags: 0
