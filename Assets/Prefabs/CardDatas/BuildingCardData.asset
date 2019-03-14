@@ -14,3 +14,4 @@ MonoBehaviour:
   cardType: 3
   frame: {fileID: 0}
   artwork: {fileID: 0}
+  name: Building

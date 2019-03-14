@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Building : MonoBehaviour {
+public class Building : CardTypeComponent {
 
-    public void Init(BuildingCardData cardData)
+    public void Init(CardData cardData)
     {
 
     }

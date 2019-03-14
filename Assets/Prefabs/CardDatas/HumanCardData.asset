@@ -14,9 +14,10 @@ MonoBehaviour:
   cardType: 0
   frame: {fileID: 0}
   artwork: {fileID: 21300000, guid: c7eb0384ed827c147af672a2a68b195c, type: 3}
-  minAge: 0
-  maxAge: 0
-  minLife: 0
-  maxLife: 0
-  minAtk: 0
-  maxAtk: 0
+  name: Human
+  minAge: 2
+  maxAge: 3
+  minLife: 2
+  maxLife: 3
+  minAtk: 2
+  maxAtk: 3

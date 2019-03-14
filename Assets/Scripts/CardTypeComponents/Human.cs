@@ -10,9 +10,14 @@ public class Human : CardTypeComponent {
     public int currentAge, maxAge, currentLife, maxLife, Atk;
     public Text age, life, attack;
 
-    public void Init(HumanCardData _cardData)
+    public override void Init(CardData _cardData)
     {
-        cardData = _cardData;
+        HumanCardData tmp;
+
+        if (tmp = (_cardData as HumanCardData))
+        {
+            cardData = tmp;
+        }
 
         currentAge = 0;
         maxAge = Random.Range(cardData.minAge, cardData.maxAge + 1);

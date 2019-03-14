@@ -14,3 +14,4 @@ MonoBehaviour:
   cardType: 4
   frame: {fileID: 0}
   artwork: {fileID: 0}
+  name: Event

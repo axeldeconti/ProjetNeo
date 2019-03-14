@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tool : MonoBehaviour {
+public class Tool : CardTypeComponent {
 
-    public void Init(ToolCardData cardData)
+    public void Init(CardData cardData)
     {
 
     }

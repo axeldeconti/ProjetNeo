@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Event : MonoBehaviour {
+public class Event : CardTypeComponent {
 
-    public void Init(EventCardData cardData)
+    public void Init(CardData cardData)
     {
 
     }

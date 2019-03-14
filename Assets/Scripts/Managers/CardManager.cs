@@ -25,7 +25,7 @@ public class CardManager : MonoBehaviour {
 
     private Dictionary<CardType, List<GameObject>> allCards = new Dictionary<CardType, List<GameObject>>();
 
-    public GameObject boardCardPrefab;
+    public GameObject humanBoardCardPrefab, ressourceBoardCardPrefab, toolBoardCardPrefab, buildingBoardCardPrefab, eventBoardCardPrefab;
 
     private void Start()
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ressource : MonoBehaviour {
+public class Ressource : CardTypeComponent {
 
-    public void Init(RessourceCardData cardData)
+    public void Init(CardData cardData)
     {
 
     }

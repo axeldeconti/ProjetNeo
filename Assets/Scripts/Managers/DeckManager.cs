@@ -47,29 +47,24 @@ public class DeckManager : MonoBehaviour {
         switch (type)
         {
             case CardType.Human:
-                HumanCardData hData = new HumanCardData();
                 cardPrefab = humanCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(hData);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[0]);
                 break;
             case CardType.Ressource:
-                RessourceCardData rData = new RessourceCardData();
                 cardPrefab = ressourceCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(rData);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[1]);
                 break;
             case CardType.Tool:
-                ToolCardData tData = new ToolCardData();
                 cardPrefab = toolCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(tData);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[2]);
                 break;
             case CardType.Building:
-                BuildingCardData bData = new BuildingCardData();
                 cardPrefab = buildingCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(bData);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[3]);
                 break;
             case CardType.Event:
-                EventCardData eData = new EventCardData();
                 cardPrefab = eventCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(eData);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[4]);
                 break;
             default:
                 Debug.Log("No cardType for " + this.name);

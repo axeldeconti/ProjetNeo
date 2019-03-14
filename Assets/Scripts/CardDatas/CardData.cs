@@ -6,6 +6,7 @@ public class CardData : ScriptableObject {
 
     public CardType cardType;
     public Sprite frame, artwork;
+    public new string name;
 
     public virtual void ApplyCardEffect() { }
 }

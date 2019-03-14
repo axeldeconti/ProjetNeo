@@ -14,46 +14,9 @@ public class Card : MonoBehaviour {
     {
         cardData = _cardData;
         artwork.sprite = cardData.artwork;
-    }
+        cardName.text = cardData.name;
 
-    //Initialisation for Human
-    public void Init(HumanCardData _cardData)
-    {
-        cardData = _cardData;
-        artwork.sprite = cardData.artwork;
-        GetComponent<Human>().Init(_cardData);
-    }
-
-    //Initialisation for Ressource
-    public void Init(RessourceCardData _cardData)
-    {
-        cardData = _cardData;
-        artwork.sprite = cardData.artwork;
-        GetComponent<Ressource>().Init(_cardData);
-    }
-
-    //Initialisation for Tool
-    public void Init(ToolCardData _cardData)
-    {
-        cardData = _cardData;
-        artwork.sprite = cardData.artwork;
-        GetComponent<Tool>().Init(_cardData);
-    }
-
-    //Initialisation for Building
-    public void Init(BuildingCardData _cardData)
-    {
-        cardData = _cardData;
-        artwork.sprite = cardData.artwork;
-        GetComponent<Building>().Init(_cardData);
-    }
-
-    //Initialisation for Event
-    public void Init(EventCardData _cardData)
-    {
-        cardData = _cardData;
-        artwork.sprite = cardData.artwork;
-        GetComponent<Event>().Init(_cardData);
+        GetComponent<CardTypeComponent>().Init(cardData);
     }
 
     //Call when starts being dragged
@@ -73,7 +36,81 @@ public class Card : MonoBehaviour {
     //Drop this card on the specified dropZone
     public void DropCard(DropZone dz)
     {
-        Instantiate(CardManager.instance.boardCardPrefab, dz.transform).GetComponent<BoardCard>().Init(cardData);
+        GameObject boardCardPrefab;
+
+        switch (cardData.cardType)
+        {
+            case CardType.Human:
+                boardCardPrefab = CardManager.instance.humanBoardCardPrefab;
+                break;
+            case CardType.Ressource:
+                boardCardPrefab = CardManager.instance.toolBoardCardPrefab;
+                break;
+            case CardType.Tool:
+                boardCardPrefab = CardManager.instance.toolBoardCardPrefab;
+                break;
+            case CardType.Building:
+                boardCardPrefab = CardManager.instance.buildingBoardCardPrefab;
+                break;
+            case CardType.Event:
+                boardCardPrefab = CardManager.instance.eventBoardCardPrefab;
+                break;
+            default:
+                boardCardPrefab = null;
+                Debug.Log("No cardType found");
+                break;
+        }
+
+        Instantiate(boardCardPrefab, dz.transform).GetComponent<BoardCard>().Init(cardData);
         Destroy(gameObject);
+    } 
+
+    #region Inits
+    /*
+    //Initialisation for Human
+    public void Init(HumanCardData _cardData)
+    {
+        cardData = _cardData;
+        artwork.sprite = cardData.artwork;
+        cardName.text = cardData.name;
+        GetComponent<Human>().Init(_cardData);
     }
+
+    //Initialisation for Ressource
+    public void Init(RessourceCardData _cardData)
+    {
+        cardData = _cardData;
+        artwork.sprite = cardData.artwork;
+        cardName.text = cardData.name;
+        GetComponent<Ressource>().Init(_cardData);
+    }
+
+    //Initialisation for Tool
+    public void Init(ToolCardData _cardData)
+    {
+        cardData = _cardData;
+        artwork.sprite = cardData.artwork;
+        cardName.text = cardData.name;
+        GetComponent<Tool>().Init(_cardData);
+    }
+
+    //Initialisation for Building
+    public void Init(BuildingCardData _cardData)
+    {
+        cardData = _cardData;
+        artwork.sprite = cardData.artwork;
+        cardName.text = cardData.name;
+        GetComponent<Building>().Init(_cardData);
+    }
+
+    //Initialisation for Event
+    public void Init(EventCardData _cardData)
+    {
+        cardData = _cardData;
+        artwork.sprite = cardData.artwork;
+        cardName.text = cardData.name;
+        GetComponent<Event>().Init(_cardData);
+    }
+    */
+    #endregion
 }
