@@ -410,9 +410,9 @@ MonoBehaviour:
   currentLife: 0
   maxLife: 0
   Atk: 0
-  age: {fileID: 0}
-  life: {fileID: 0}
-  attack: {fileID: 0}
+  age: {fileID: 114037727102836442}
+  life: {fileID: 114911930435062852}
+  attack: {fileID: 114122327991321542}
 --- !u!114 &114911930435062852
 MonoBehaviour:
   m_ObjectHideFlags: 1

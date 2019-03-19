@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardType: 2
   frame: {fileID: 0}
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 6e36d12c676280f4a8a30043069878e9, type: 3}
   name: Tool

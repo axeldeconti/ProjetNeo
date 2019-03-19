@@ -8,16 +8,19 @@ public class BoardCard : MonoBehaviour {
     public CardData cardData;
     public Image icon;
 
-    //Call to initialize a boardCard
+    /// <summary>
+    /// Call to initialize a boardCard
+    /// </summary>
     public void Init(CardData _cardData)
     {
         cardData = _cardData;
 
-        icon = GetComponent<Image>();
-        icon.sprite = cardData.artwork;
+        if (CardManager.instance.AddCard(this.gameObject))
+        {
+            icon = GetComponent<Image>();
+            icon.sprite = cardData.artwork;
 
-        cardData.ApplyCardEffect();
-
-        CardManager.instance.AddCard(this);
+            cardData.ApplyCardEffect();
+        }
     }
 }

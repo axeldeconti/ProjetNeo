@@ -7,7 +7,7 @@ public class DeckManager : MonoBehaviour {
 
     #region Singleton
 
-    public static DeckManager instance;
+    public static DeckManager instance { get; private set; }
 
     void Awake()
     {
@@ -19,14 +19,29 @@ public class DeckManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+        CreateAllCardDataDictionary();
     }
 
     #endregion
 
-    public CardData[] allCardData;//Change this for a dictionary later
+    private Dictionary<string, CardData> allCardData;
+
+    public AllCardDataStruct[] allData;
     public int nbCard;
     public GameObject humanCardPrefab, ressourceCardPrefab, toolCardPrefab, buildingCardPrefab, eventCardPrefab;
     public Transform HandPannel;
+
+    /// <summary>
+    /// Create the dictionary from the allData array
+    /// </summary>
+    private void CreateAllCardDataDictionary()
+    {
+        allCardData = new Dictionary<string, CardData>();
+
+        foreach (AllCardDataStruct obj in allData)
+            allCardData.Add(obj.name, obj.data);
+    }
 
     private void Start()
     {
@@ -36,7 +51,9 @@ public class DeckManager : MonoBehaviour {
         }
     }
 
-    //Draw one card
+    /// <summary>
+    /// Draw one card
+    /// </summary>
     public void DrawCard()
     {
         CardType type = GetRandomCardType();
@@ -48,23 +65,23 @@ public class DeckManager : MonoBehaviour {
         {
             case CardType.Human:
                 cardPrefab = humanCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[0]);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData["Human"]);
                 break;
             case CardType.Ressource:
                 cardPrefab = ressourceCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[1]);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData["Ressource"]);
                 break;
             case CardType.Tool:
                 cardPrefab = toolCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[2]);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData["Tool"]);
                 break;
             case CardType.Building:
                 cardPrefab = buildingCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[3]);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData["Building"]);
                 break;
             case CardType.Event:
                 cardPrefab = eventCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[4]);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData["Event"]);
                 break;
             default:
                 Debug.Log("No cardType for " + this.name);
@@ -72,7 +89,9 @@ public class DeckManager : MonoBehaviour {
         }
     }
 
-    //Return a random cardType
+    /// <summary>
+    /// Return a random cardType
+    /// </summary>
     public CardType GetRandomCardType()
     {
         System.Array A = System.Enum.GetValues(typeof(CardType));
@@ -85,4 +104,14 @@ public class DeckManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E))
             DrawCard();
     }
+}
+
+/// <summary>
+/// Struct to serve as input for allCardData in Unity
+/// </summary>
+[Serializable]
+public struct AllCardDataStruct
+{
+    public string name;
+    public CardData data;
 }

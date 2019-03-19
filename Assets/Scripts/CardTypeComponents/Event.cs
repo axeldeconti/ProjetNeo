@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Event : CardTypeComponent {
 
-    public void Init(CardData cardData)
+    public override void Init(CardData cardData)
     {
 
+    }
+
+    public override void InitBoardCard(CardTypeComponent _cardTypeComp)
+    {
+        
     }
 }

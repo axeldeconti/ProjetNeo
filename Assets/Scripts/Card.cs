@@ -9,7 +9,9 @@ public class Card : MonoBehaviour {
     public Image artwork, icon;
     public Text cardName;
 
-    //Initialisation base
+    /// <summary>
+    /// Call to initialize a boardCard
+    /// </summary>
     public void Init(CardData _cardData)
     {
         cardData = _cardData;
@@ -19,21 +21,27 @@ public class Card : MonoBehaviour {
         GetComponent<CardTypeComponent>().Init(cardData);
     }
 
-    //Call when starts being dragged
+    /// <summary>
+    /// Call when starts being dragged
+    /// </summary>
     public void ChangeAspectToIcon()
     {
         transform.GetChild(0).gameObject.SetActive(false);
         icon.gameObject.SetActive(true);
     }
 
-    //Call when stops being dragged
+    /// <summary>
+    /// Call when stops being dragged
+    /// </summary>
     public void ChangeAspectToCard()
     {
         icon.gameObject.SetActive(false);
         transform.GetChild(0).gameObject.SetActive(true);
     }
 
-    //Drop this card on the specified dropZone
+    /// <summary>
+    /// Drop this card on the specified dropZone
+    /// </summary>
     public void DropCard(DropZone dz)
     {
         GameObject boardCardPrefab;
@@ -61,7 +69,11 @@ public class Card : MonoBehaviour {
                 break;
         }
 
-        Instantiate(boardCardPrefab, dz.transform).GetComponent<BoardCard>().Init(cardData);
+        GameObject droppedCard;
+        droppedCard = Instantiate(boardCardPrefab, dz.transform);
+        droppedCard.GetComponent<BoardCard>().Init(cardData);
+        droppedCard.GetComponent<CardTypeComponent>().InitBoardCard(this.GetComponent<CardTypeComponent>());
+
         Destroy(gameObject);
     } 
 

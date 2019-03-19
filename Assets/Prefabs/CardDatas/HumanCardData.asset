@@ -13,11 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardType: 0
   frame: {fileID: 0}
-  artwork: {fileID: 21300000, guid: c7eb0384ed827c147af672a2a68b195c, type: 3}
+  artwork: {fileID: 21300000, guid: 318da496c79f9fe4faab160f77aea9a3, type: 3}
   name: Human
   minAge: 2
-  maxAge: 3
-  minLife: 2
+  maxAge: 4
+  minLife: 1
   maxLife: 3
-  minAtk: 2
+  minAtk: 1
   maxAtk: 3
