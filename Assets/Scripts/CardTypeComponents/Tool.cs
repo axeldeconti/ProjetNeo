@@ -13,4 +13,15 @@ public class Tool : CardTypeComponent {
     {
         
     }
+
+    /// <summary>
+    /// Call when dropped on a Human to apply changes
+    /// </summary>
+    public void DropOnHuman(ToolCardData toolData, Human h)
+    {
+        h.tool = this;
+        h.metier = toolData.metier;
+        h.AddAtk(toolData.bonusAtk);
+        h.AddLife(toolData.bonusLife);
+    }
 }

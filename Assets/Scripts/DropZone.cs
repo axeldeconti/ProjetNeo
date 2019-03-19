@@ -8,13 +8,17 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 {
     [HideInInspector] public Image myImage;
     public bool isEmpty = true;
+    public bool isHumans = false;
+    public GameObject cardParent;
 
     private void Start()
     {
         myImage = GetComponent<Image>();
     }
 
-    //Mouse over this dropzone
+    /// <summary>
+    /// Mouse over this dropzone
+    /// </summary>
     public void OnPointerEnter(PointerEventData eventData)
     {
         //Return if nothing is being dragged
@@ -28,7 +32,9 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             d.placeholderParent = transform;
     }
 
-    //Exit mouse over this dropzone
+    /// <summary>
+    /// Exit mouse over this dropzone
+    /// </summary>
     public void OnPointerExit(PointerEventData eventData)
     {
         //Return if nothing is being dragged
@@ -43,6 +49,9 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
     }
 
+    /// <summary>
+    /// Drop a card on this dropzone
+    /// </summary>
     public void OnDrop(PointerEventData eventData)
     {
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
@@ -52,14 +61,30 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             //Drop the card if the pannel is empty
             if(isEmpty)
             {
-                //Set the card parent to this
-                d.parentToReturnTo = this.transform;
-                Destroy(d.placeholder);
-
                 Card c = eventData.pointerDrag.GetComponent<Card>();
-                c.DropCard(this);
-                isEmpty = false;
+                ToolCardData toolData;
+
+                if (isHumans && (toolData = (c.cardData as ToolCardData)))
+                {
+                    DropCard(d, c).GetComponent<Tool>().DropOnHuman(toolData, cardParent.GetComponent<Human>());
+                }
+                else if (!isHumans)
+                {
+                    DropCard(d, c);
+                }
             }
         }
+    }
+
+    private BoardCard DropCard(Draggable d, Card c)
+    {
+        //Set the card parent to this
+        d.parentToReturnTo = this.transform;
+        Destroy(d.placeholder);
+
+        BoardCard bc = c.DropCard(this);
+        Destroy(c.gameObject);
+        isEmpty = false;
+        return bc;
     }
 }

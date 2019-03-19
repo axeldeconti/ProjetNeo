@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour {
     {
         foreach (GameObject card in CardManager.instance.GetAllCards())
         {
+            //Debug.Log(card.GetComponent<BoardCard>().cardData.cardName + " "  + card.GetComponent<BoardCard>().GetInstanceID().ToString() + " end turn");
             card.GetComponent<CardTypeComponent>().EndTurn();
         }
     }

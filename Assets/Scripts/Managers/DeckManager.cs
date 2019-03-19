@@ -20,12 +20,13 @@ public class DeckManager : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        CreateAllCardDataDictionary();
+        Init();
     }
 
     #endregion
 
     private Dictionary<string, CardData> allCardData;
+    private List<string> humanCardsData, ressourceCardsData, toolCardsData, buildingCardsData, eventCardsData;
 
     public AllCardDataStruct[] allData;
     public int nbCard;
@@ -35,12 +36,42 @@ public class DeckManager : MonoBehaviour {
     /// <summary>
     /// Create the dictionary from the allData array
     /// </summary>
-    private void CreateAllCardDataDictionary()
+    private void Init()
     {
+        humanCardsData = new List<string>();
+        ressourceCardsData = new List<string>();
+        toolCardsData = new List<string>();
+        buildingCardsData = new List<string>();
+        eventCardsData = new List<string>();
+
         allCardData = new Dictionary<string, CardData>();
 
         foreach (AllCardDataStruct obj in allData)
+        {
             allCardData.Add(obj.name, obj.data);
+
+            switch (obj.data.cardType)
+            {
+                case CardType.Human:
+                    humanCardsData.Add(obj.name);
+                    break;
+                case CardType.Ressource:
+                    ressourceCardsData.Add(obj.name);
+                    break;
+                case CardType.Tool:
+                    toolCardsData.Add(obj.name);
+                    break;
+                case CardType.Building:
+                    buildingCardsData.Add(obj.name);
+                    break;
+                case CardType.Event:
+                    eventCardsData.Add(obj.name);
+                    break;
+                default:
+                    Debug.Log("Can't add card name");
+                    break;
+            }
+        }
     }
 
     private void Start()
@@ -65,23 +96,23 @@ public class DeckManager : MonoBehaviour {
         {
             case CardType.Human:
                 cardPrefab = humanCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData["Human"]);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(humanCardsData)]);
                 break;
             case CardType.Ressource:
                 cardPrefab = ressourceCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData["Ressource"]);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(ressourceCardsData)]);
                 break;
             case CardType.Tool:
                 cardPrefab = toolCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData["Tool"]);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(toolCardsData)]);
                 break;
             case CardType.Building:
                 cardPrefab = buildingCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData["Building"]);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(buildingCardsData)]);
                 break;
             case CardType.Event:
                 cardPrefab = eventCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData["Event"]);
+                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(eventCardsData)]);
                 break;
             default:
                 Debug.Log("No cardType for " + this.name);
@@ -97,6 +128,14 @@ public class DeckManager : MonoBehaviour {
         System.Array A = System.Enum.GetValues(typeof(CardType));
         CardType type =  (CardType)UnityEngine.Random.Range(0, A.Length);
         return type;
+    }
+
+    /// <summary>
+    /// Return a random name from the list in parameter
+    /// </summary>
+    public string GetRandomCardNameFromList(List<string> list)
+    {
+        return list[UnityEngine.Random.Range(0, list.Count)];
     }
 
     private void Update()

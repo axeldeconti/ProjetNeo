@@ -8,8 +8,9 @@ public class Human : CardTypeComponent {
     private HumanCardData cardData;
 
     [HideInInspector] public int maxAge, maxLife;
+    [HideInInspector] public Tool tool = null;
     public HumanMetier metier;
-    public int currentAge, currentLife, Atk;
+    public int currentAge, currentLife, atk;
     public Text age, life, attack;
 
     public override void Init(CardData _cardData)
@@ -23,13 +24,13 @@ public class Human : CardTypeComponent {
 
         maxAge = Random.Range(cardData.minAge, cardData.maxAge + 1);
         maxLife = Random.Range(cardData.minLife, cardData.maxLife + 1);
-        Atk = Random.Range(cardData.minAtk, cardData.maxAtk + 1);
+        atk = Random.Range(cardData.minAtk, cardData.maxAtk + 1);
         currentAge = 0;
         currentLife = maxLife;
 
         age.text = currentAge.ToString();
         life.text = currentLife.ToString();
-        attack.text = Atk.ToString();
+        attack.text = atk.ToString();
     }
 
     public override void InitBoardCard(CardTypeComponent _cardTypeComp)
@@ -47,13 +48,13 @@ public class Human : CardTypeComponent {
 
         maxAge = humanComp.maxAge;
         maxLife = humanComp.maxLife;
-        Atk = humanComp.Atk;
+        atk = humanComp.atk;
         currentAge = humanComp.currentAge;
         currentLife = humanComp.currentLife;
 
         age.text = currentAge.ToString();
         life.text = currentLife.ToString();
-        attack.text = Atk.ToString();
+        attack.text = atk.ToString();
 
         metier = HumanMetier.Harvester;
     }
@@ -94,7 +95,37 @@ public class Human : CardTypeComponent {
     /// </summary>
     public void Die()
     {
+        if (tool != null)
+            tool.RemoveCard();
+
         RemoveCard();
+
         Destroy(this.gameObject);
+    }
+
+    /// <summary>
+    /// Add life point(s)
+    /// </summary>
+    public void AddLife(int lifeToAdd)
+    {
+        for (int i = 0; i < lifeToAdd; i++)
+        {
+            //Missing : Add life tokens
+            maxLife++;
+            currentLife++;
+            life.text = currentLife.ToString();
+        }
+    }
+
+    /// <summary>
+    /// Add atk point(s)
+    /// </summary>
+    public void AddAtk(int atkToAdd)
+    {
+        for (int i = 0; i < atkToAdd; i++)
+        {
+            atk++;
+            attack.text = atk.ToString();
+        }
     }
 }

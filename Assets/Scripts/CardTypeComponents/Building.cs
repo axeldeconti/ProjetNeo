@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Building : CardTypeComponent {
 
+    public GameObject dropZone;
+
     public override void Init(CardData cardData)
     {
 

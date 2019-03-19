@@ -16,7 +16,7 @@ public class Card : MonoBehaviour {
     {
         cardData = _cardData;
         artwork.sprite = cardData.artwork;
-        cardName.text = cardData.name;
+        cardName.text = cardData.cardName;
 
         GetComponent<CardTypeComponent>().Init(cardData);
     }
@@ -42,7 +42,7 @@ public class Card : MonoBehaviour {
     /// <summary>
     /// Drop this card on the specified dropZone
     /// </summary>
-    public void DropCard(DropZone dz)
+    public BoardCard DropCard(DropZone dz)
     {
         GameObject boardCardPrefab;
 
@@ -69,12 +69,11 @@ public class Card : MonoBehaviour {
                 break;
         }
 
-        GameObject droppedCard;
-        droppedCard = Instantiate(boardCardPrefab, dz.transform);
+        GameObject droppedCard = Instantiate(boardCardPrefab, dz.transform);
         droppedCard.GetComponent<BoardCard>().Init(cardData);
         droppedCard.GetComponent<CardTypeComponent>().InitBoardCard(this.GetComponent<CardTypeComponent>());
 
-        Destroy(gameObject);
+        return droppedCard.GetComponent<BoardCard>();
     } 
 
     #region Inits

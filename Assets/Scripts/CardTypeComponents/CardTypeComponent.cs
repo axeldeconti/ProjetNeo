@@ -29,6 +29,7 @@ public abstract class CardTypeComponent : MonoBehaviour {
     /// </summary>
     public virtual void RemoveCard()
     {
+        //Debug.Log("Remove card : name - " + GetComponent<BoardCard>().cardData.cardName + " | id - " + this.gameObject.GetInstanceID());
         CardManager.instance.RemoveCard(this.gameObject);
     }
 }

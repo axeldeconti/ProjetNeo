@@ -35,6 +35,7 @@ public class CardManager : MonoBehaviour {
     public bool AddCard(GameObject cardToAdd)
     {
         CardType type = cardToAdd.GetComponent<BoardCard>().cardData.cardType;
+        //Debug.Log("Card to add : " + cardToAdd.GetComponent<BoardCard>().cardData.cardName + " " + cardToAdd.GetInstanceID().ToString());
 
         switch (type)
         {
@@ -53,7 +54,6 @@ public class CardManager : MonoBehaviour {
             default:
                 Debug.Log("Can't add card : " + cardToAdd.GetInstanceID());
                 return false;
-                break;
         }
 
         return true;
@@ -117,7 +117,6 @@ public class CardManager : MonoBehaviour {
                 tmp = null;
                 Debug.Log("Can't return this cardType : " + cardType);
                 return null;
-                break;
         }
 
         foreach (GameObject card in tmp.Values)
