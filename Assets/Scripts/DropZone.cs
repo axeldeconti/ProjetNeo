@@ -9,6 +9,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     [HideInInspector] public Image myImage;
     public bool isEmpty = true;
     public bool isHumans = false;
+    public bool isBuildings = false;
     public GameObject cardParent;
 
     private void Start()
@@ -63,12 +64,21 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             {
                 Card c = eventData.pointerDrag.GetComponent<Card>();
                 ToolCardData toolData;
+                RessourceCardData ressourceData;
 
                 if (isHumans && (toolData = (c.cardData as ToolCardData)))
                 {
                     DropCard(d, c).GetComponent<Tool>().DropOnHuman(toolData, cardParent.GetComponent<Human>());
                 }
-                else if (!isHumans)
+                else if (isBuildings && (ressourceData = (c.cardData as RessourceCardData)))
+                {
+                    DropCard(d, c);
+                    if (cardParent.GetComponent<Workbench>() != null)
+                        cardParent.GetComponent<Workbench>().AddRessource(ressourceData);
+                    else cardParent.GetComponent<Building>().AddRessource(ressourceData);
+
+                }
+                else if (!isHumans && !isBuildings)
                 {
                     DropCard(d, c);
                 }

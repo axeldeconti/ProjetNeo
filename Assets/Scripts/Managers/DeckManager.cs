@@ -89,33 +89,56 @@ public class DeckManager : MonoBehaviour {
     {
         CardType type = GetRandomCardType();
 
-        GameObject cardPrefab;
-
         //Change the way data is assigned
         switch (type)
         {
             case CardType.Human:
-                cardPrefab = humanCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(humanCardsData)]);
+                Instantiate(humanCardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(humanCardsData)]);
                 break;
             case CardType.Ressource:
-                cardPrefab = ressourceCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(ressourceCardsData)]);
+                Instantiate(ressourceCardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(ressourceCardsData)]);
                 break;
             case CardType.Tool:
-                cardPrefab = toolCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(toolCardsData)]);
+                Instantiate(toolCardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(toolCardsData)]);
                 break;
             case CardType.Building:
-                cardPrefab = buildingCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(buildingCardsData)]);
+                Instantiate(buildingCardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(buildingCardsData)]);
                 break;
             case CardType.Event:
-                cardPrefab = eventCardPrefab;
-                Instantiate(cardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(eventCardsData)]);
+                Instantiate(eventCardPrefab, HandPannel).GetComponent<Card>().Init(allCardData[GetRandomCardNameFromList(eventCardsData)]);
                 break;
             default:
-                Debug.Log("No cardType for " + this.name);
+                Debug.Log("No cardType for " + type);
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Add a specified card
+    /// </summary>
+    public void AddCard(string cardNameToAdd)
+    {
+        CardData data = allCardData[cardNameToAdd];
+
+        switch (data.cardType)
+        {
+            case CardType.Human:
+                Instantiate(humanCardPrefab, HandPannel).GetComponent<Card>().Init(data);
+                break;
+            case CardType.Ressource:
+                Instantiate(ressourceCardPrefab, HandPannel).GetComponent<Card>().Init(data);
+                break;
+            case CardType.Tool:
+                Instantiate(toolCardPrefab, HandPannel).GetComponent<Card>().Init(data);
+                break;
+            case CardType.Building:
+                Instantiate(buildingCardPrefab, HandPannel).GetComponent<Card>().Init(data);
+                break;
+            case CardType.Event:
+                Instantiate(eventCardPrefab, HandPannel).GetComponent<Card>().Init(data);
+                break;
+            default:
+                Debug.Log("Can't add this card : " + cardNameToAdd);
                 break;
         }
     }
@@ -140,8 +163,20 @@ public class DeckManager : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Tab))
             DrawCard();
+        if (Input.GetKeyDown(KeyCode.W))
+            AddCard("Wood");
+        if (Input.GetKeyDown(KeyCode.S))
+            AddCard("Stone");
+        if (Input.GetKeyDown(KeyCode.A))
+            AddCard("Axe");
+        if (Input.GetKeyDown(KeyCode.L))
+            AddCard("Leather garment");
+        if (Input.GetKeyDown(KeyCode.H))
+            AddCard("Human");
+        if (Input.GetKeyDown(KeyCode.P))
+            AddCard("Workbench");
     }
 }
 

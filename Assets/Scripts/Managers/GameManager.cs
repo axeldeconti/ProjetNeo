@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -43,5 +45,16 @@ public class GameManager : MonoBehaviour {
             //Debug.Log(card.GetComponent<BoardCard>().cardData.cardName + " "  + card.GetComponent<BoardCard>().GetInstanceID().ToString() + " end turn");
             card.GetComponent<CardTypeComponent>().EndTurn();
         }
+    }
+
+    /// <summary>
+    /// Clear the Unity console
+    /// </summary>
+    public void ClearConsole()
+    {
+        var assembly = Assembly.GetAssembly(typeof(SceneView));
+        var type = assembly.GetType("UnityEditor.LogEntries");
+        var method = type.GetMethod("Clear");
+        method.Invoke(new object(), null);
     }
 }

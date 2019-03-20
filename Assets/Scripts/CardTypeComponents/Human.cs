@@ -46,6 +46,8 @@ public class Human : CardTypeComponent {
             humanComp = null;
         }
 
+        cardData = humanComp.cardData;
+
         maxAge = humanComp.maxAge;
         maxLife = humanComp.maxLife;
         atk = humanComp.atk;

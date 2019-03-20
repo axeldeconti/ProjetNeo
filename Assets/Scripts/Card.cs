@@ -52,7 +52,7 @@ public class Card : MonoBehaviour {
                 boardCardPrefab = CardManager.instance.humanBoardCardPrefab;
                 break;
             case CardType.Ressource:
-                boardCardPrefab = CardManager.instance.toolBoardCardPrefab;
+                boardCardPrefab = CardManager.instance.ressourceBoardCardPrefab;
                 break;
             case CardType.Tool:
                 boardCardPrefab = CardManager.instance.toolBoardCardPrefab;

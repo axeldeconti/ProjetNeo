@@ -6,3 +6,13 @@ using UnityEngine;
 public class RessourceCardData : CardData {
 
 }
+
+/// <summary>
+/// Struct to serve as recipe in Unity
+/// </summary>
+[SerializeField]
+public struct RessourceForRecipe
+{
+    public string name;
+    public int qte;
+}
