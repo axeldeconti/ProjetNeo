@@ -1,16 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Workbench : Building {
 
-    public int currentRecipeID = 000000;
+    private Image outcomeImage;
+    private WbOutcome wbOutcome;
 
-    public override void AddRessource(RessourceCardData ressourceToAdd)
+    public int currentRecipeID = 000000;
+    
+    /// <summary>
+    /// Init the workbench
+    /// </summary>
+    public void Init(Building b)
+    {
+        type = b.type;
+        ressourceList = new List<GameObject>();
+        dropZones = b.dropZones;
+        wbo = b.wbo;
+        cardData = b.cardData;
+
+        wbOutcome = wbo.GetComponent<WbOutcome>();
+        wbOutcome.wb = this;
+    }
+
+    public override void AddRessource(GameObject ressourceToAdd)
     {
         base.AddRessource(ressourceToAdd);
 
-        switch (ressourceToAdd.cardName)
+        RessourceCardData data = ressourceToAdd.GetComponent<Ressource>().cardData;
+
+        switch (data.cardName)
         {
             case "Wood":
                 currentRecipeID += 1;
@@ -31,7 +53,7 @@ public class Workbench : Building {
                 currentRecipeID += 100000;
                 break;
             default:
-                Debug.Log("Can't add this card to the workbench : " + ressourceToAdd.cardName);
+                Debug.Log("Can't add this card to the workbench : " + data.cardName);
                 break;
         }
 
@@ -75,16 +97,42 @@ public class Workbench : Building {
         Destroy(ressourceToRemove);
     }
 
+    /// <summary>
+    /// Update the outcome of workbench for the current recipe
+    /// </summary>
     public void UpdateCurrentRecipe()
     {
         if (RecipeManager.instance.allRecipe.ContainsKey(currentRecipeID))
         {
             Debug.Log(RecipeManager.instance.allRecipe[currentRecipeID].cardName);
+            wbOutcome.hasOutcome = true;
+            wbOutcome.image.sprite = RecipeManager.instance.allRecipe[currentRecipeID].artwork;
         }
         else
         {
             Debug.Log("No matching recipe");
+            wbOutcome.hasOutcome = false;
+            wbOutcome.image.sprite = null;
         }
         
+    }
+
+    /// <summary>
+    /// Call when the workbench is clicked on
+    /// </summary>
+    public override void OnPointerDown(PointerEventData eventData)
+    {
+        if (GetComponent<BoardCard>() != null && Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            bool isActive = dropZones.activeSelf;
+
+            if (isActive)
+            {
+                RemoveAllRessources();
+            }
+
+            dropZones.SetActive(!isActive);
+            wbOutcome.gameObject.SetActive(!isActive);
+        }
     }
 }

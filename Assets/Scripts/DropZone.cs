@@ -72,10 +72,10 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                 }
                 else if (isBuildings && (ressourceData = (c.cardData as RessourceCardData)))
                 {
-                    DropCard(d, c);
+                    BoardCard bc = DropCard(d, c);
                     if (cardParent.GetComponent<Workbench>() != null)
-                        cardParent.GetComponent<Workbench>().AddRessource(ressourceData);
-                    else cardParent.GetComponent<Building>().AddRessource(ressourceData);
+                        cardParent.GetComponent<Workbench>().AddRessource(bc.gameObject);
+                    else cardParent.GetComponent<Building>().AddRessource(bc.gameObject);
 
                 }
                 else if (!isHumans && !isBuildings)

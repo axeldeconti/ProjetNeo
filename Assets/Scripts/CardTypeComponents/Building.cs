@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Building : CardTypeComponent {
+public class Building : CardTypeComponent, IPointerDownHandler {
 
-    private List<RessourceCardData> ressourceList = new List<RessourceCardData>();
+    protected List<GameObject> ressourceList = new List<GameObject>();
 
-    public GameObject dropZone;
+    public GameObject dropZones, wbo;
     public BuildingCardData cardData;
     public BuildingType type;
 
@@ -36,13 +37,17 @@ public class Building : CardTypeComponent {
             buildingComp = null;
         }
 
+        wbo.SetActive(false);
+        dropZones.SetActive(false);
+
         cardData = buildingComp.cardData;
         type = buildingComp.type;
 
         switch (type)
         {
             case BuildingType.Workbench:
-                gameObject.AddComponent<Workbench>();
+                gameObject.AddComponent<Workbench>().Init(this);
+                Destroy(this);
                 break;
             case BuildingType.Agricultural_Square:
                 break;
@@ -62,14 +67,14 @@ public class Building : CardTypeComponent {
     /// <summary>
     /// Add a ressource to this building
     /// </summary>
-    public virtual void AddRessource(RessourceCardData ressourceToAdd)
+    public virtual void AddRessource(GameObject ressourceToAdd)
     {
         ressourceList.Add(ressourceToAdd);
 
         GameManager.instance.ClearConsole();
-        foreach (RessourceCardData data in ressourceList)
+        foreach (GameObject item in ressourceList)
         {
-            Debug.Log(data.cardName);
+            Debug.Log(item.GetComponent<Ressource>().cardData.cardName);
         }
     }
 
@@ -78,12 +83,32 @@ public class Building : CardTypeComponent {
     /// </summary>
     public virtual void RemoveRessource(GameObject ressourceToRemove)
     {
-        ressourceList.Remove(ressourceToRemove.GetComponent<Ressource>().cardData);
+        ressourceList.Remove(ressourceToRemove);
 
         GameManager.instance.ClearConsole();
-        foreach (RessourceCardData data in ressourceList)
+        foreach (GameObject item in ressourceList)
         {
-            Debug.Log(data.cardName);
+            Debug.Log(item.GetComponent<Ressource>().cardData.cardName);
         }
+    }
+
+    /// <summary>
+    /// Remove all ressources from this building
+    /// </summary>
+    public virtual void RemoveAllRessources()
+    {
+        Debug.Log(ressourceList.Count);
+        foreach (GameObject item in ressourceList)
+        {
+            RemoveRessource(item);//Bug : la liste ne veux pas retirer le 2nd item
+        }
+    }
+
+    /// <summary>
+    /// Allow to clic on the image
+    /// </summary>
+    public virtual void OnPointerDown(PointerEventData eventData)
+    {
+        
     }
 }
