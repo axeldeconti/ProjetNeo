@@ -101,8 +101,11 @@ public class Building : CardTypeComponent, IPointerDownHandler {
     {
         while (ressourceList.Count > 0)
         {
-            if(ressourceList[0])
+            if (ressourceList[0])
+            {
+                ressourceList[0].GetComponent<Ressource>().RemoveCard();
                 RemoveRessource(ressourceList[0], giveBackRessources);
+            }
             else
             {
                 Debug.LogError("Infinity loop");

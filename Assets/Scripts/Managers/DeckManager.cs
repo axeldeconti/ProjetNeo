@@ -150,6 +150,10 @@ public class DeckManager : MonoBehaviour {
     {
         System.Array A = System.Enum.GetValues(typeof(CardType));
         CardType type =  (CardType)UnityEngine.Random.Range(0, A.Length);
+
+        if (type == CardType.Event)
+            type = GetRandomCardType();
+
         return type;
     }
 

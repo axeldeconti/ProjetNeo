@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.735849, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -405,11 +405,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e60e29f4f6ce0a418ff452828f5958e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAge: 0
   maxAge: 0
-  currentLife: 0
   maxLife: 0
-  Atk: 0
+  tool: {fileID: 0}
+  metier: 0
+  currentAge: 0
+  currentLife: 0
+  atk: 0
   age: {fileID: 114037727102836442}
   life: {fileID: 114911930435062852}
   attack: {fileID: 114122327991321542}
@@ -530,7 +532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -105}
+  m_AnchoredPosition: {x: 810, y: -110}
   m_SizeDelta: {x: 140, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224168994926922870

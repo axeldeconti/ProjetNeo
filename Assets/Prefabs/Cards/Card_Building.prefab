@@ -153,6 +153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aca27d0d1885bc45ae5939c76770940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropZones: {fileID: 0}
+  wbo: {fileID: 0}
+  cardData: {fileID: 0}
+  type: 0
 --- !u!114 &114134885688651988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,7 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.735849, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -426,7 +430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -105}
+  m_AnchoredPosition: {x: 810, y: -110}
   m_SizeDelta: {x: 140, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &225379698417218306
