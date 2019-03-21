@@ -16,7 +16,7 @@ public class WbOutcome : MonoBehaviour, IPointerDownHandler
         if (Input.GetKeyDown(KeyCode.Mouse0) && hasOutcome)
         {
             DeckManager.instance.AddCard(RecipeManager.instance.allRecipe[wb.currentRecipeID].cardName);
-            wb.RemoveAllRessources();
+            wb.RemoveAllRessources(false);
         }
     }
 }

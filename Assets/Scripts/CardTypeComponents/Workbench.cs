@@ -60,9 +60,9 @@ public class Workbench : Building {
         UpdateCurrentRecipe();
     }
 
-    public override void RemoveRessource(GameObject ressourceToRemove)
+    public override void RemoveRessource(GameObject ressourceToRemove, bool giveBackRessource)
     {
-        base.RemoveRessource(ressourceToRemove);
+        base.RemoveRessource(ressourceToRemove, giveBackRessource);
 
         RessourceCardData data = ressourceToRemove.GetComponent<Ressource>().cardData;
 
@@ -93,8 +93,15 @@ public class Workbench : Building {
 
         UpdateCurrentRecipe();
 
-        DeckManager.instance.AddCard(data.cardName);
+        if (giveBackRessource)
+            DeckManager.instance.AddCard(data.cardName);
+
         Destroy(ressourceToRemove);
+    }
+
+    public override void RemoveAllRessources(bool giveBackRessources)
+    {
+        base.RemoveAllRessources(giveBackRessources);
     }
 
     /// <summary>
@@ -128,7 +135,7 @@ public class Workbench : Building {
 
             if (isActive)
             {
-                RemoveAllRessources();
+                RemoveAllRessources(true);
             }
 
             dropZones.SetActive(!isActive);

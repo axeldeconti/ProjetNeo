@@ -17,6 +17,7 @@ public class Card : MonoBehaviour {
         cardData = _cardData;
         artwork.sprite = cardData.artwork;
         cardName.text = cardData.cardName;
+        icon.sprite = cardData.artwork;
 
         GetComponent<CardTypeComponent>().Init(cardData);
     }

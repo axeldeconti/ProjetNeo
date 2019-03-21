@@ -38,14 +38,11 @@ public class Ressource : CardTypeComponent, IPointerDownHandler {
     {
         if (Input.GetKeyDown(KeyCode.Mouse1) && (GetComponent<BoardCard>() != null))
         {
-            Debug.Log("Remove " + name);
-            DropZone dz = transform.parent.GetComponent<DropZone>();
-            Workbench wb = dz.cardParent.GetComponent<Workbench>();
+            Workbench wb = transform.parent.GetComponent<DropZone>().cardParent.GetComponent<Workbench>();
 
             if (wb != null)
             {
-                wb.RemoveRessource(this.gameObject);
-                dz.isEmpty = true;
+                wb.RemoveRessource(this.gameObject, true);
             }
             else
                 Debug.Log("Not a ressource on workbench");

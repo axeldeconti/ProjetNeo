@@ -81,8 +81,10 @@ public class Building : CardTypeComponent, IPointerDownHandler {
     /// <summary>
     /// Remove a ressource from this building
     /// </summary>
-    public virtual void RemoveRessource(GameObject ressourceToRemove)
+    public virtual void RemoveRessource(GameObject ressourceToRemove, bool giveBackRessource)
     {
+        ressourceToRemove.transform.parent.GetComponent<DropZone>().isEmpty = true;
+
         ressourceList.Remove(ressourceToRemove);
 
         GameManager.instance.ClearConsole();
@@ -95,12 +97,17 @@ public class Building : CardTypeComponent, IPointerDownHandler {
     /// <summary>
     /// Remove all ressources from this building
     /// </summary>
-    public virtual void RemoveAllRessources()
+    public virtual void RemoveAllRessources(bool giveBackRessources)
     {
-        Debug.Log(ressourceList.Count);
-        foreach (GameObject item in ressourceList)
+        while (ressourceList.Count > 0)
         {
-            RemoveRessource(item);//Bug : la liste ne veux pas retirer le 2nd item
+            if(ressourceList[0])
+                RemoveRessource(ressourceList[0], giveBackRessources);
+            else
+            {
+                Debug.LogError("Infinity loop");
+                break;
+            }
         }
     }
 
