@@ -52,9 +52,23 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     public void ClearConsole()
     {
+        /*
         var assembly = Assembly.GetAssembly(typeof(SceneView));
         var type = assembly.GetType("UnityEditor.LogEntries");
         var method = type.GetMethod("Clear");
         method.Invoke(new object(), null);
+        */
+    }
+
+    public void ExitGame()
+    {
+        Debug.Log("Exit Game !");
+        Application.Quit();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            ExitGame();
     }
 }

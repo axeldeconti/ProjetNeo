@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1759342900247858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224322616562082842}
@@ -90,6 +90,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myImage: {fileID: 0}
   isEmpty: 1
+  isHumans: 0
+  isBuildings: 0
+  cardParent: {fileID: 0}
 --- !u!114 &114166353007349532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,7 +204,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &224322616562082842
 RectTransform:
