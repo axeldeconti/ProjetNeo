@@ -85,6 +85,8 @@ public class Building : CardTypeComponent, IPointerDownHandler {
     {
         ressourceToRemove.transform.parent.GetComponent<DropZone>().isEmpty = true;
 
+        CardManager.instance.RemoveCard(ressourceToRemove);
+
         ressourceList.Remove(ressourceToRemove);
 
         GameManager.instance.ClearConsole();

@@ -54,6 +54,7 @@ public class Workbench : Building {
                 break;
             default:
                 Debug.Log("Can't add this card to the workbench : " + data.cardName);
+                RemoveRessource(ressourceToAdd, true);
                 break;
         }
 
@@ -97,11 +98,6 @@ public class Workbench : Building {
             DeckManager.instance.AddCard(data.cardName);
 
         Destroy(ressourceToRemove);
-    }
-
-    public override void RemoveAllRessources(bool giveBackRessources)
-    {
-        base.RemoveAllRessources(giveBackRessources);
     }
 
     /// <summary>
