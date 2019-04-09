@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New card", menuName = "RessourceCardData")]
 public class RessourceCardData : CardData {
 
+    public bool canBeDrawn;
 }
 
 /// <summary>

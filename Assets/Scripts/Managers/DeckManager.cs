@@ -89,7 +89,7 @@ public class DeckManager : MonoBehaviour {
     {
         for (int i = 0; i < nbCard; i++)
         {
-            DrawCard();
+            DrawRessourceCard();
         }
 
         cardInHand = HandPannel.childCount;
@@ -125,6 +125,27 @@ public class DeckManager : MonoBehaviour {
                 Debug.Log("No cardType for " + type);
                 break;
         }
+    }
+
+    /// <summary>
+    /// Draw one ressource from available ones
+    /// </summary>
+    public void DrawRessourceCard()
+    {
+        List<GameObject> allRessources =  CardManager.instance.GetAllCardsOfType(CardType.Ressource);
+
+        bool cardFound = false;
+        RessourceCardData data = null;
+
+        while (!cardFound)
+        {
+            data = (allCardData[GetRandomCardNameFromList(ressourceCardsData)] as RessourceCardData);
+
+            if (data.canBeDrawn)
+                cardFound = true;
+        }
+
+        Instantiate(ressourceCardPrefab, HandPannel).GetComponent<Card>().Init(data);
     }
 
     /// <summary>
@@ -164,9 +185,6 @@ public class DeckManager : MonoBehaviour {
     {
         System.Array A = System.Enum.GetValues(typeof(CardType));
         CardType type =  (CardType)UnityEngine.Random.Range(0, A.Length);
-
-        if (type == CardType.Event)
-            type = GetRandomCardType();
 
         return type;
     }
