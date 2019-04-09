@@ -25,10 +25,12 @@ public class GameManager : MonoBehaviour {
     #endregion
 
     /// <summary>
-    /// Call at the end of a turn
+    /// Call to start a new turn
     /// </summary>
     public void StartTurn()
     {
+        DeckManager.instance.StartTurn();
+
         foreach (GameObject card in CardManager.instance.GetAllCards())
         {
             card.GetComponent<CardTypeComponent>().StartTurn();
@@ -40,11 +42,16 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     public void EndTurn()
     {
+        DeckManager.instance.endButton.interactable = false;
+
         foreach (GameObject card in CardManager.instance.GetAllCards())
         {
             //Debug.Log(card.GetComponent<BoardCard>().cardData.cardName + " "  + card.GetComponent<BoardCard>().GetInstanceID().ToString() + " end turn");
             card.GetComponent<CardTypeComponent>().EndTurn();
         }
+
+        //Remove when the event tree is done
+        StartTurn();
     }
 
     /// <summary>
@@ -52,12 +59,12 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     public void ClearConsole()
     {
-        /*
+        
         var assembly = Assembly.GetAssembly(typeof(SceneView));
         var type = assembly.GetType("UnityEditor.LogEntries");
         var method = type.GetMethod("Clear");
         method.Invoke(new object(), null);
-        */
+        
     }
 
     public void ExitGame()

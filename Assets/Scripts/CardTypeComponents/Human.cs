@@ -12,6 +12,7 @@ public class Human : CardTypeComponent {
     public HumanMetier metier;
     public int currentAge, currentLife, atk;
     public Text age, life, attack;
+    public bool isFed;
 
     public override void Init(CardData _cardData)
     {
@@ -61,9 +62,37 @@ public class Human : CardTypeComponent {
         metier = HumanMetier.Harvester;
     }
 
+    public override void StartTurn()
+    {
+        base.StartTurn();
+
+        switch (metier)
+        {
+            case HumanMetier.Woodcutter:
+                DeckManager.instance.AddCard("Wood");
+                break;
+            case HumanMetier.Miner:
+                DeckManager.instance.AddCard("Stone");
+                break;
+            case HumanMetier.Farmer:
+                DeckManager.instance.AddCard("Food");
+                break;
+            case HumanMetier.Hunter:
+                DeckManager.instance.AddCard("Food");
+                break;
+            default:
+                break;
+        }
+
+        isFed = false;
+    }
+
     public override void EndTurn()
     {
         GrowOlder();
+
+        if (!isFed)
+            GetDamaged(1);
     }
 
     /// <summary>
@@ -90,6 +119,8 @@ public class Human : CardTypeComponent {
         {
             Die();
         }
+
+        life.text = currentLife.ToString();
     }
 
     /// <summary>

@@ -1110,6 +1110,7 @@ MonoBehaviour:
     type: 2}
   eventCardPrefab: {fileID: 1684043234106974, guid: 806e1a2d4a789d64ca1e7f1d5c164820,
     type: 2}
+  endButton: {fileID: 144244758}
   HandPannel: {fileID: 329107909}
 --- !u!4 &1059541478
 Transform:

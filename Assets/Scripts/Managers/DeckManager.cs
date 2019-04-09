@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class DeckManager : MonoBehaviour {
 
@@ -27,10 +28,12 @@ public class DeckManager : MonoBehaviour {
 
     private Dictionary<string, CardData> allCardData;
     private List<string> humanCardsData, ressourceCardsData, toolCardsData, buildingCardsData, eventCardsData;
+    private int cardInHand = 0;
 
     public AllCardDataStruct[] allData;
     public int nbCard;
     public GameObject humanCardPrefab, ressourceCardPrefab, toolCardPrefab, buildingCardPrefab, eventCardPrefab;
+    public Button endButton;
     public Transform HandPannel;
 
     /// <summary>
@@ -76,10 +79,21 @@ public class DeckManager : MonoBehaviour {
 
     private void Start()
     {
+        StartTurn();
+    }
+
+    /// <summary>
+    /// Call at the begining of a turn
+    /// </summary>
+    public void StartTurn()
+    {
         for (int i = 0; i < nbCard; i++)
         {
             DrawCard();
         }
+
+        cardInHand = HandPannel.childCount;
+        endButton.interactable = false;
     }
 
     /// <summary>
@@ -163,6 +177,17 @@ public class DeckManager : MonoBehaviour {
     public string GetRandomCardNameFromList(List<string> list)
     {
         return list[UnityEngine.Random.Range(0, list.Count)];
+    }
+
+    /// <summary>
+    /// Update the card in had count to see if there are cards left
+    /// </summary>
+    public void UpdateCardInHandCount()
+    {
+        cardInHand = HandPannel.childCount;
+
+        if (cardInHand == 0)
+            endButton.interactable = true;
     }
 
     private void Update()

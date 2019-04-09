@@ -45,6 +45,8 @@ public class Card : MonoBehaviour {
     /// </summary>
     public BoardCard DropCard(DropZone dz)
     {
+        DeckManager.instance.UpdateCardInHandCount();
+
         GameObject boardCardPrefab;
 
         switch (cardData.cardType)
@@ -76,53 +78,4 @@ public class Card : MonoBehaviour {
 
         return droppedCard.GetComponent<BoardCard>();
     } 
-
-    #region Inits
-    /*
-    //Initialisation for Human
-    public void Init(HumanCardData _cardData)
-    {
-        cardData = _cardData;
-        artwork.sprite = cardData.artwork;
-        cardName.text = cardData.name;
-        GetComponent<Human>().Init(_cardData);
-    }
-
-    //Initialisation for Ressource
-    public void Init(RessourceCardData _cardData)
-    {
-        cardData = _cardData;
-        artwork.sprite = cardData.artwork;
-        cardName.text = cardData.name;
-        GetComponent<Ressource>().Init(_cardData);
-    }
-
-    //Initialisation for Tool
-    public void Init(ToolCardData _cardData)
-    {
-        cardData = _cardData;
-        artwork.sprite = cardData.artwork;
-        cardName.text = cardData.name;
-        GetComponent<Tool>().Init(_cardData);
-    }
-
-    //Initialisation for Building
-    public void Init(BuildingCardData _cardData)
-    {
-        cardData = _cardData;
-        artwork.sprite = cardData.artwork;
-        cardName.text = cardData.name;
-        GetComponent<Building>().Init(_cardData);
-    }
-
-    //Initialisation for Event
-    public void Init(EventCardData _cardData)
-    {
-        cardData = _cardData;
-        artwork.sprite = cardData.artwork;
-        cardName.text = cardData.name;
-        GetComponent<Event>().Init(_cardData);
-    }
-    */
-    #endregion
 }

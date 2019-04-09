@@ -46,6 +46,7 @@ public class Bin : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerEx
 
         if (d != null)
         {
+            DeckManager.instance.UpdateCardInHandCount();
             Destroy(d.gameObject);
             Destroy(transform.GetChild(0).gameObject);
         }
