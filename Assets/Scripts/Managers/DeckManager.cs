@@ -92,6 +92,11 @@ public class DeckManager : MonoBehaviour {
             DrawRessourceCard();
         }
 
+        for (int i = 0; i < GetComponent<HumanDrawManager>().ComputeHumanToDraw(); i++)
+        {
+            AddCard("Human");
+        }
+
         cardInHand = HandPannel.childCount;
         endButton.interactable = false;
     }

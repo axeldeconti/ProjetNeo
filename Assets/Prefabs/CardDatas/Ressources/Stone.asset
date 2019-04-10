@@ -15,3 +15,4 @@ MonoBehaviour:
   frame: {fileID: 0}
   artwork: {fileID: 21300000, guid: 9a61172e17780f44d940d05052126a09, type: 3}
   cardName: Stone
+  canBeDrawn: 1
