@@ -10,6 +10,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     public bool isEmpty = true;
     public bool isHumans = false;
     public bool isBuildings = false;
+    public bool isStockage = false;
     public GameObject cardParent;
 
     private void Start()
@@ -75,7 +76,6 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                     if (cardParent.GetComponent<Workbench>() != null)
                         cardParent.GetComponent<Workbench>().AddRessource(bc.gameObject);
                     else cardParent.GetComponent<Building>().AddRessource(bc.gameObject);
-
                 }
                 else if (!isHumans && !isBuildings)
                 {
