@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 222677408302538586}
   - component: {fileID: 114045956369691724}
   - component: {fileID: 114238193841836246}
-  - component: {fileID: 114257619328954464}
+  - component: {fileID: 114441911225758150}
   m_Layer: 0
   m_Name: DropZone_Canvas
   m_TagString: Untagged
@@ -225,21 +225,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 0}
   icon: {fileID: 0}
---- !u!114 &114257619328954464
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1991984888080484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4916b76fa3ba5c54e87b21a4aea0d835, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myImage: {fileID: 0}
-  isEmpty: 1
-  isHumans: 1
-  cardParent: {fileID: 1467495659145890}
 --- !u!114 &114295908047649668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,6 +258,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 10
+--- !u!114 &114441911225758150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1991984888080484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08ead9a8d78b874ea453034778583a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myImage: {fileID: 0}
+  isEmpty: 1
+  cardParent: {fileID: 1467495659145890}
 --- !u!114 &114605642585009542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -307,13 +306,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAge: 0
   maxLife: 0
+  tool: {fileID: 0}
   metier: 0
   currentAge: 0
   currentLife: 0
-  Atk: 0
+  atk: 0
   age: {fileID: 114819451455679498}
   life: {fileID: 114765116364216438}
   attack: {fileID: 114295908047649668}
+  isFed: 0
 --- !u!114 &114765116364216438
 MonoBehaviour:
   m_ObjectHideFlags: 1

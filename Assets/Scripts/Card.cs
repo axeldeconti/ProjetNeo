@@ -43,7 +43,7 @@ public class Card : MonoBehaviour {
     /// <summary>
     /// Drop this card on the specified dropZone
     /// </summary>
-    public BoardCard DropCard(DropZone dz)
+    public BoardCard DropCard(DropZone_Base dz)
     {
         DeckManager.instance.UpdateCardInHandCount();
 

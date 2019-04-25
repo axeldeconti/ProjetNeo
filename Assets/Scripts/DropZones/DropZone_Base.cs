@@ -1,16 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+public abstract class DropZone_Base : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [HideInInspector] public Image myImage;
     public bool isEmpty = true;
-    public bool isHumans = false;
-    public bool isBuildings = false;
-    public bool isStockage = false;
     public GameObject cardParent;
 
     private void Start()
@@ -51,7 +46,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     }
 
     /// <summary>
-    /// Drop a card on this dropzone
+    /// Call when something is dropped
     /// </summary>
     public void OnDrop(PointerEventData eventData)
     {
@@ -60,32 +55,27 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         if (d != null)
         {
             //Drop the card if the pannel is empty
-            if(isEmpty)
+            if (isEmpty)
             {
                 Card c = eventData.pointerDrag.GetComponent<Card>();
-                ToolCardData toolData;
-                RessourceCardData ressourceData;
 
-                if (isHumans && (toolData = (c.cardData as ToolCardData)))
-                {
-                    DropCard(d, c).GetComponent<Tool>().DropOnHuman(toolData, cardParent.GetComponent<Human>());
-                }
-                else if (isBuildings && (ressourceData = (c.cardData as RessourceCardData)))
-                {
-                    BoardCard bc = DropCard(d, c);
-                    if (cardParent.GetComponent<Workbench>() != null)
-                        cardParent.GetComponent<Workbench>().AddRessource(bc.gameObject);
-                    else cardParent.GetComponent<Building>().AddRessource(bc.gameObject);
-                }
-                else if (!isHumans && !isBuildings)
-                {
-                    DropCard(d, c);
-                }
+                DropCard(d, c);
             }
         }
     }
 
-    private BoardCard DropCard(Draggable d, Card c)
+    /// <summary>
+    /// Drop a card on this dropzone
+    /// </summary>
+    protected virtual void DropCard(Draggable d, Card c)
+    {
+
+    }
+
+    /// <summary>
+    /// Use when a card is dropped to create the board card
+    /// </summary>
+    protected BoardCard CreateBoardcard(Draggable d, Card c)
     {
         //Set the card parent to this
         d.parentToReturnTo = this.transform;

@@ -137,7 +137,7 @@ public class DeckManager : MonoBehaviour {
     /// </summary>
     public void DrawRessourceCard()
     {
-        List<GameObject> allRessources =  CardManager.instance.GetAllCardsOfType(CardType.Ressource);
+        //List<GameObject> allRessources =  CardManager.instance.GetAllCardsOfType(CardType.Ressource);
 
         bool cardFound = false;
         RessourceCardData data = null;

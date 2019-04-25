@@ -85,13 +85,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1719860351576702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4916b76fa3ba5c54e87b21a4aea0d835, type: 3}
+  m_Script: {fileID: 11500000, guid: d8808a266a24a8349a41700afc944311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myImage: {fileID: 0}
   isEmpty: 1
-  isHumans: 0
-  isBuildings: 0
   cardParent: {fileID: 0}
 --- !u!114 &114166353007349532
 MonoBehaviour:

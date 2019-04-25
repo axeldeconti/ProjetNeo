@@ -83,7 +83,7 @@ public class Building : CardTypeComponent, IPointerDownHandler {
     /// </summary>
     public virtual void RemoveRessource(GameObject ressourceToRemove, bool giveBackRessource)
     {
-        ressourceToRemove.transform.parent.GetComponent<DropZone>().isEmpty = true;
+        ressourceToRemove.transform.parent.GetComponent<DropZone_Base>().isEmpty = true;
 
         CardManager.instance.RemoveCard(ressourceToRemove);
 

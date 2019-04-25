@@ -379,13 +379,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1248813571188810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4916b76fa3ba5c54e87b21a4aea0d835, type: 3}
+  m_Script: {fileID: 11500000, guid: 585c046710b62d949936ce08ddbdd41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myImage: {fileID: 0}
   isEmpty: 1
-  isHumans: 0
-  isBuildings: 1
   cardParent: {fileID: 1745951317477354}
 --- !u!114 &114073040329821122
 MonoBehaviour:
@@ -395,13 +393,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1439888949205176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4916b76fa3ba5c54e87b21a4aea0d835, type: 3}
+  m_Script: {fileID: 11500000, guid: 585c046710b62d949936ce08ddbdd41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myImage: {fileID: 0}
   isEmpty: 1
-  isHumans: 0
-  isBuildings: 1
   cardParent: {fileID: 1745951317477354}
 --- !u!114 &114076613680734866
 MonoBehaviour:
@@ -438,13 +434,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1336111607876544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4916b76fa3ba5c54e87b21a4aea0d835, type: 3}
+  m_Script: {fileID: 11500000, guid: 585c046710b62d949936ce08ddbdd41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myImage: {fileID: 0}
   isEmpty: 1
-  isHumans: 0
-  isBuildings: 1
   cardParent: {fileID: 1745951317477354}
 --- !u!114 &114088499179224098
 MonoBehaviour:
@@ -867,13 +861,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1247120528562436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4916b76fa3ba5c54e87b21a4aea0d835, type: 3}
+  m_Script: {fileID: 11500000, guid: 585c046710b62d949936ce08ddbdd41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myImage: {fileID: 0}
   isEmpty: 1
-  isHumans: 0
-  isBuildings: 1
   cardParent: {fileID: 1745951317477354}
 --- !u!222 &222439703634617144
 CanvasRenderer:

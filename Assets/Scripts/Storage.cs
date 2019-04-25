@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Storage : MonoBehaviour
@@ -23,38 +22,31 @@ public class Storage : MonoBehaviour
     #endregion
 
     public int maxStorage = 20;
-    public int sumRSC = 0;
+    public GameObject NbUnitePrefab, storageImage;
+    public StorageDropZone[] dropzones;
+    public Dictionary<string, int> storage = new Dictionary<string, int>();
 
-    public bool isFull;
-    public bool isEmpty;
-
-    private Dictionary<string, int> storage = new Dictionary<string, int>();
-
-    // Use this for initialization
-    void Start ()
-    {
-
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
-
+    /// <summary>
+    /// Checks if one ressource can be added
+    /// </summary>
     public bool CheckStorage()
     {
-        if (sumRSC < maxStorage)
-            isFull = false;
+        bool canAddCard;
 
+        if (SumAllRSC() < maxStorage)
+            canAddCard = true;
         else
-            isFull = true;
+            canAddCard = false;
 
-        return isFull;
+        return canAddCard;
     }
 
-    public int SumAllRSC ()
+    /// <summary>
+    /// Compute and return all ressources in storage
+    /// </summary>
+    private int SumAllRSC()
     {
+        int sumRSC = 0;
         foreach (string item in storage.Keys)
         {
             sumRSC += storage[item];
@@ -62,32 +54,59 @@ public class Storage : MonoBehaviour
         return sumRSC;
     }
 
-    public void AddItemToStorage(string item)
+    /// <summary>
+    /// Add an item to the storage
+    /// </summary>
+    public void AddItemToStorage(Draggable d, Card c)
     {
-        if (CheckStorage())
-        {
-            if (storage.ContainsKey(item))
-            {
-                storage.Add(item, storage[item]++);
-            }
+        string item = c.cardData.cardName;
 
-            else
+        if (storage.ContainsKey(item))
+        {
+            storage[item]++;
+
+            for (int i = 0; i < dropzones.Length; i++)
             {
-                storage.Add(item, 1);
+                if (dropzones[i].hasRessource && dropzones[i].ressourceName == item)
+                {
+                    dropzones[i].UpdateNbDisplay();
+                    break;
+                }
+
+            }
+        }
+        else
+        {
+            storage.Add(item, 1);
+
+            for (int i = 0; i < dropzones.Length; i++)
+            {
+                if (!dropzones[i].hasRessource)
+                {
+                    dropzones[i].AddCard(d, c);
+                    break;
+                }
+
             }
         }
     }
 
-    public void RemoveItemFromStorage(string item)
+    /// <summary>
+    /// Remove an item from the storage
+    /// </summary>
+    public void RemoveItemFromStorage(string item, StorageDropZone dz)
     {
-        isEmpty = false;
         if (storage.ContainsKey(item))
         {
-            storage.Add(item, storage[item]--);
-            if (storage.ContainsValue(0))
+            if (storage[item] == 1)
             {
                 storage.Remove(item);
-                isEmpty = true;
+                dz.ResetDZ();
+            }
+            else
+            {
+                storage[item]--;
+                dz.UpdateNbDisplay();
             }
         }
     }

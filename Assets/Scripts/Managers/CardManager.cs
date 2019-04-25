@@ -64,8 +64,8 @@ public class CardManager : MonoBehaviour {
     /// </summary>
     public void RemoveCard(GameObject cardToRemove)
     {
-        if (cardToRemove.transform.parent.GetComponent<DropZone>())
-            cardToRemove.transform.parent.GetComponent<DropZone>().isEmpty = true;
+        if (cardToRemove.transform.parent.GetComponent<DropZone_Base>())
+            cardToRemove.transform.parent.GetComponent<DropZone_Base>().isEmpty = true;
 
         CardType type = cardToRemove.GetComponent<BoardCard>().cardData.cardType;
 

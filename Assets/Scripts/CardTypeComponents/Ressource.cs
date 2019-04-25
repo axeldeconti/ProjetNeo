@@ -38,7 +38,7 @@ public class Ressource : CardTypeComponent, IPointerDownHandler {
     {
         if (Input.GetKeyDown(KeyCode.Mouse1) && (GetComponent<BoardCard>() != null))
         {
-            Workbench wb = transform.parent.GetComponent<DropZone>().cardParent.GetComponent<Workbench>();
+            Workbench wb = transform.parent.GetComponent<DropZone_Base>().cardParent.GetComponent<Workbench>();
 
             if (wb != null)
             {

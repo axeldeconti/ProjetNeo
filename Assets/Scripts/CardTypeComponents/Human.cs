@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Human : CardTypeComponent {
+public class Human : CardTypeComponent
+{
 
     private HumanCardData cardData;
 
@@ -41,7 +40,8 @@ public class Human : CardTypeComponent {
         if (tmp = (_cardTypeComp as Human))
         {
             humanComp = tmp;
-        } else
+        }
+        else
         {
             Debug.Log("Not HumanComponent in InitBoardCard");
             humanComp = null;
