@@ -23,4 +23,12 @@ public class BoardCard : MonoBehaviour {
             cardData.ApplyCardEffect();
         }
     }
+
+    /// <summary>
+    /// Highlight the card
+    /// </summary>
+    public void SetHighlightBoardCard(bool isHighlighted)
+    {
+        Debug.Log("Highlight card : " + cardData.cardName);
+    }
 }

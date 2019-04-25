@@ -7,6 +7,9 @@ public class HumanDrawManager : MonoBehaviour {
 
     public Section[] sections;
 
+    /// <summary>
+    /// Compute how many humans have to be drawn
+    /// </summary>
     public int ComputeHumanToDraw()
     {
         int nb = CardManager.instance.GetAllCardsOfType(CardType.Human).Count;
