@@ -6,6 +6,7 @@ using UnityEngine;
 public class RessourceCardData : CardData {
 
     public bool canBeDrawn;
+    public bool isFood;
 }
 
 /// <summary>

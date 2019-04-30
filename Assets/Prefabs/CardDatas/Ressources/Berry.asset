@@ -16,3 +16,4 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: 4515b0d08f2e00549b5f03e117c4f5e2, type: 3}
   cardName: Berry
   canBeDrawn: 1
+  isFood: 1
