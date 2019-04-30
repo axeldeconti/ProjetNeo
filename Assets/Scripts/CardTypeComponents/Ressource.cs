@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Ressource : CardTypeComponent, IPointerDownHandler {
+public class Ressource : CardTypeComponent {
 
     public RessourceCardData cardData;
 
@@ -32,20 +32,5 @@ public class Ressource : CardTypeComponent, IPointerDownHandler {
         }
 
         cardData = ressourceComp.cardData;
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && (GetComponent<BoardCard>() != null))
-        {
-            Workbench wb = transform.parent.GetComponent<DropZone_Base>().cardParent.GetComponent<Workbench>();
-
-            if (wb != null)
-            {
-                wb.RemoveRessource(this.gameObject, true);
-            }
-            else
-                Debug.Log("Not a ressource on workbench");
-        }
     }
 }

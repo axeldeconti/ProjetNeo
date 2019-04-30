@@ -2176,7 +2176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb19222f08277cd4ba705bffa73ff491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxStorage: 20
+  maxStorage: 3
   NbUnitePrefab: {fileID: 0}
   storageImage: {fileID: 1763042481258316, guid: 42041057cdec9bd409d188f0e93fc9fe,
     type: 2}
