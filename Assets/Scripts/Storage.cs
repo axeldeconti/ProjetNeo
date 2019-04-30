@@ -70,6 +70,9 @@ public class Storage : MonoBehaviour
                 if (dropzones[i].hasRessource && dropzones[i].ressourceName == item)
                 {
                     dropzones[i].UpdateNbDisplay();
+                    d.parentToReturnTo = this.transform;
+                    Destroy(d.placeholder);
+                    Destroy(c.gameObject);
                     break;
                 }
 
@@ -100,8 +103,13 @@ public class Storage : MonoBehaviour
         {
             if (storage[item] == 1)
             {
-                storage.Remove(item);
                 dz.ResetDZ();
+                storage.Remove(item);
+
+                foreach (string _item in storage.Keys)
+                {
+                    Debug.Log(_item + storage[_item]);
+                }
             }
             else
             {

@@ -25,6 +25,7 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
         {
             if (storage.CheckStorage())
             {
+                Debug.Log("storage.AddItemToStorage(d, c)");
                 storage.AddItemToStorage(d, c);
             }
         }
@@ -38,6 +39,7 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
         if (hasRessource)
         {
             UpdateNbDisplay();
+            Destroy(c.gameObject);
         }
         else
         {
@@ -57,7 +59,7 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
         GameObject image = Instantiate(Storage.instance.storageImage, transform);
         image.GetComponent<Image>().sprite = c.cardData.artwork;
         Destroy(c.gameObject);
-        isEmpty = false;
+        //isEmpty = false;
     }
 
     /// <summary>
@@ -65,7 +67,8 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
     /// </summary>
     public void ResetDZ()
     {
-        Destroy(transform.GetChild(0));
+        Destroy(transform.GetChild(0).gameObject);
+        hasRessource = false;
     }
 
     /// <summary>

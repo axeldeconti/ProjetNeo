@@ -1023,7 +1023,6 @@ GameObject:
   - component: {fileID: 864648653}
   - component: {fileID: 864648657}
   - component: {fileID: 864648656}
-  - component: {fileID: 864648655}
   - component: {fileID: 864648654}
   m_Layer: 5
   m_Name: StorageDropZone (2)
@@ -1066,28 +1065,6 @@ MonoBehaviour:
   cardParent: {fileID: 1965315919}
   hasRessource: 0
   ressourceName: 
---- !u!114 &864648655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 864648652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
 --- !u!114 &864648656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1587,7 +1564,6 @@ GameObject:
   - component: {fileID: 1404345754}
   - component: {fileID: 1404345758}
   - component: {fileID: 1404345757}
-  - component: {fileID: 1404345756}
   - component: {fileID: 1404345755}
   m_Layer: 5
   m_Name: StorageDropZone
@@ -1630,28 +1606,6 @@ MonoBehaviour:
   cardParent: {fileID: 1965315919}
   hasRessource: 0
   ressourceName: 
---- !u!114 &1404345756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1404345753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
 --- !u!114 &1404345757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2240,7 +2194,6 @@ GameObject:
   - component: {fileID: 2102439398}
   - component: {fileID: 2102439402}
   - component: {fileID: 2102439401}
-  - component: {fileID: 2102439400}
   - component: {fileID: 2102439399}
   m_Layer: 5
   m_Name: StorageDropZone (1)
@@ -2283,28 +2236,6 @@ MonoBehaviour:
   cardParent: {fileID: 1965315919}
   hasRessource: 0
   ressourceName: 
---- !u!114 &2102439400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2102439397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
 --- !u!114 &2102439401
 MonoBehaviour:
   m_ObjectHideFlags: 0
