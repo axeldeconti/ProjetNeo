@@ -9,6 +9,12 @@
             if (ressourceData.isFood)
             {
                 FeedingManager.instance.OpenFeedingScreen();
+
+                //Set the card parent to this
+                d.parentToReturnTo = this.transform;
+                Destroy(d.placeholder);
+
+                Destroy(c.gameObject);
             }
         }
     }

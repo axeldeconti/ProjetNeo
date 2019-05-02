@@ -41,6 +41,21 @@ public class FeedingManager : MonoBehaviour
             CardManager.instance.allHumanCards[humanToFeed].GetComponent<Human>().isFed = true;
         }
 
+        humansSelected.Clear();
+
+        CloseFeedingScreen();
+    }
+
+    /// <summary>
+    /// Feed all Humans from the list in parameter
+    /// </summary>
+    private void FeedHumans(List<int> humanList)
+    {
+        foreach (int humanToFeed in humanList)
+        {
+            CardManager.instance.allHumanCards[humanToFeed].GetComponent<Human>().isFed = true;
+        }
+
         CloseFeedingScreen();
     }
 
@@ -78,14 +93,20 @@ public class FeedingManager : MonoBehaviour
     {
         feedingScreen.SetActive(true);
 
+        List<int> humansAdded = new List<int>();
+
         foreach (GameObject human in CardManager.instance.GetAllCardsOfType(CardType.Human))
         {
             if (!human.GetComponent<Human>().isFed)
             {
                 GameObject HumanToFeed = Instantiate(humanToFeedPrefab, feedingScreen.transform.GetChild(1));
                 HumanToFeed.GetComponent<HumanToFeed>().Init(human.GetComponent<Human>());
+                humansAdded.Add(human.GetInstanceID());
             }
         }
+
+        if (humansAdded.Count < 3)
+            FeedHumans(humansAdded);
     }
 
     /// <summary>
@@ -93,6 +114,11 @@ public class FeedingManager : MonoBehaviour
     /// </summary>
     public void CloseFeedingScreen()
     {
+        feedingScreen.SetActive(false);
 
+        foreach (Transform child in feedingScreen.transform.GetChild(1))
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

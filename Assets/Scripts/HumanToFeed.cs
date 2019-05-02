@@ -13,11 +13,11 @@ public class HumanToFeed : MonoBehaviour, IPointerDownHandler
 
     public void Init(Human myHuman)
     {
-        myHumanID = myHuman.GetInstanceID();
+        myHumanID = myHuman.gameObject.GetInstanceID();
 
-        age.text = myHuman.age.ToString();
-        life.text = myHuman.life.ToString();
-        attack.text = myHuman.attack.ToString();
+        age.text = myHuman.currentAge.ToString();
+        life.text = myHuman.currentLife.ToString();
+        attack.text = myHuman.atk.ToString();
     }
 
     public void OnPointerDown(PointerEventData eventData)
