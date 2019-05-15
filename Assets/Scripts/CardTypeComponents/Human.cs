@@ -133,6 +133,8 @@ public class Human : CardTypeComponent
 
         RemoveCard();
 
+        GameManager.instance.CheckForGameOver();
+
         Destroy(this.gameObject);
     }
 

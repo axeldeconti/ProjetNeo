@@ -22,7 +22,7 @@ public class FeedingManager : MonoBehaviour
 
     #endregion
 
-    public GameObject feedingScreen, humanToFeedPrefab;
+    public GameObject humanSelectionScreen, humanToSelectPrefab;
 
     private List<int> humansSelected;
 
@@ -91,7 +91,7 @@ public class FeedingManager : MonoBehaviour
     /// </summary>
     public void OpenFeedingScreen()
     {
-        feedingScreen.SetActive(true);
+        humanSelectionScreen.SetActive(true);
 
         List<int> humansAdded = new List<int>();
 
@@ -99,8 +99,8 @@ public class FeedingManager : MonoBehaviour
         {
             if (!human.GetComponent<Human>().isFed)
             {
-                GameObject HumanToFeed = Instantiate(humanToFeedPrefab, feedingScreen.transform.GetChild(1));
-                HumanToFeed.GetComponent<HumanToFeed>().Init(human.GetComponent<Human>());
+                GameObject HumanToFeed = Instantiate(humanToSelectPrefab, humanSelectionScreen.transform.GetChild(1));
+                HumanToFeed.GetComponent<HumanToFeed>().Init(human.GetComponent<Human>(), true);
                 humansAdded.Add(human.GetInstanceID());
             }
         }
@@ -114,11 +114,13 @@ public class FeedingManager : MonoBehaviour
     /// </summary>
     public void CloseFeedingScreen()
     {
-        feedingScreen.SetActive(false);
+        humanSelectionScreen.SetActive(false);
 
-        foreach (Transform child in feedingScreen.transform.GetChild(1))
+        foreach (Transform child in humanSelectionScreen.transform.GetChild(1))
         {
             Destroy(child.gameObject);
         }
+
+        humansSelected.Clear();
     }
 }

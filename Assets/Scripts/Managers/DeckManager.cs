@@ -224,7 +224,7 @@ public class DeckManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.A))
             AddCard("Axe");
         if (Input.GetKeyDown(KeyCode.L))
-            AddCard("Leather garment");
+            AddCard("Spear");
         if (Input.GetKeyDown(KeyCode.H))
             AddCard("Human");
         if (Input.GetKeyDown(KeyCode.P))

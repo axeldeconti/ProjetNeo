@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New card", menuName = "RessourceCardData")]
+[CreateAssetMenu(fileName = "New card", menuName = "CardData/RessourceCardData")]
 public class RessourceCardData : CardData {
 
     public bool canBeDrawn;

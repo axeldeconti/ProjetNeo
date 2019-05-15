@@ -9,30 +9,38 @@ public class HumanToFeed : MonoBehaviour, IPointerDownHandler
     public bool isSelected = false;
     public Text age, life, attack;
 
+    private bool toFeed;
     private FeedingManager feedingManager = FeedingManager.instance;
+    private FightManager fightManager = FightManager.instance;
 
-    public void Init(Human myHuman)
+    public void Init(Human myHuman, bool _toFeed)
     {
         myHumanID = myHuman.gameObject.GetInstanceID();
 
         age.text = myHuman.currentAge.ToString();
         life.text = myHuman.currentLife.ToString();
         attack.text = myHuman.atk.ToString();
+
+        toFeed = _toFeed;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (!isSelected)
+            if (!isSelected && toFeed)
             {
                 isSelected = true;
                 feedingManager.AddHumanSelected(myHumanID);
             }
-            else
+            else if (toFeed)
             {
                 isSelected = false;
                 feedingManager.RemoveHumanSelected(myHumanID);
+            }
+            else
+            {
+                fightManager.DamageHuman(myHumanID);
             }
         }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New card", menuName = "BuildingCardData")]
+[CreateAssetMenu(fileName = "New card", menuName = "CardData/BuildingCardData")]
 public class BuildingCardData : CardData {
 
     public BuildingType buildingType;

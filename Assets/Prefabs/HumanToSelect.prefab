@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114122977655557898}
   - component: {fileID: 114469121615035794}
   m_Layer: 5
-  m_Name: HumanToFeed
+  m_Name: HumanToSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myHumanID: 0
+  isSelected: 0
   age: {fileID: 114164881275488120}
   life: {fileID: 114104779423875596}
   attack: {fileID: 114774629092170858}

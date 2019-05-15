@@ -55,6 +55,22 @@ public class GameManager : MonoBehaviour {
     }
 
     /// <summary>
+    /// Check if the game is over
+    /// </summary>
+    public void CheckForGameOver()
+    {
+        if(CardManager.instance.allHumanCards.Count <= 0)
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("Game Over !");
+    }
+
+    /// <summary>
     /// Clear the Unity console
     /// </summary>
     public void ClearConsole()

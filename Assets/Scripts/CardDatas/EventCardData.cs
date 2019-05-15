@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New card", menuName = "EventCardData")]
 public class EventCardData : CardData {
 
+    public EventType type;
+
+    public void CallEvent() { }
 }
+
+public enum EventType { Building, Random, Negative, Encounter }
