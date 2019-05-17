@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour {
 
@@ -28,11 +29,39 @@ public class EventManager : MonoBehaviour {
     public RandomEventCardData[] randomData;
     public EncounterEventCardData[] encounterData;
 
+    private int level;
+    private Dictionary<int, List<EventButton>> allEventButtons;
+
     private void Start()
     {
+        level = 0;
+        allEventButtons = new Dictionary<int, List<EventButton>>();
+
         foreach (EventButton firstEventButton in firstEventButtons)
         {
             firstEventButton.Init(0);
+            firstEventButton.GetComponent<Button>().interactable = true;
+        }
+    }
+
+    /// <summary>
+    /// Add the EventButton in parameter to the allEventButtons
+    /// </summary>
+    public void AddEventButton(EventButton button)
+    {
+        if (allEventButtons.ContainsKey(button.lvl))
+        {
+            List<EventButton> actualList = allEventButtons[button.lvl];
+
+            if (!actualList.Contains(button))
+            {
+                allEventButtons[button.lvl].Add(button);
+            }
+        }
+        else
+        {
+            allEventButtons[button.lvl] = new List<EventButton>();
+            allEventButtons[button.lvl].Add(button);
         }
     }
 
@@ -54,6 +83,21 @@ public class EventManager : MonoBehaviour {
             default:
                 Debug.Log("Couldn't return EventCardData for " + type.ToString());
                 return null;
+        }
+    }
+
+    public void GoToNextLevel(EventButton eventButton)
+    {
+        foreach (EventButton button in allEventButtons[eventButton.lvl])
+        {
+            button.GetComponent<Button>().interactable = false;
+        }
+
+        level++;
+
+        foreach (EventButton button in eventButton.nextEvents)
+        {
+            button.GetComponent<Button>().interactable = true;
         }
     }
 }

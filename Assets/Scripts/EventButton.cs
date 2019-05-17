@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EventButton : MonoBehaviour {
 
@@ -16,19 +17,22 @@ public class EventButton : MonoBehaviour {
     {
         lvl = fatherLvl + 1;
         eventdata = EventManager.instance.ChooseRandomEventType(type);
+        EventManager.instance.AddEventButton(this);
+
+        GetComponent<Button>().interactable = false;
 
         if (nextEvents.Length == 0)
             return;
 
         foreach (EventButton nextEvent in nextEvents)
         {
-            if(nextEvent.lvl != 0)
+            if(nextEvent.lvl == 0)
                 nextEvent.Init(lvl);
         }
     }
 
     public void CallEvent()
     {
-
+        eventdata.ApplyCardEffect();
     }
 }
