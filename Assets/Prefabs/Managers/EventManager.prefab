@@ -53,12 +53,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTreeScreen: {fileID: 0}
   eventScreen: {fileID: 0}
+  EventTitle: {fileID: 0}
   EventText: {fileID: 0}
   firstEventButtons:
   - {fileID: 0}
   buildingData: []
   negativeData:
   - {fileID: 11400000, guid: 1590e30269b03994ab0c29aac8e25197, type: 2}
-  randomData: []
+  - {fileID: 11400000, guid: 1a8f9ec6761e9ac4885d2606144d8219, type: 2}
+  - {fileID: 11400000, guid: f99ee206decde0540a76ade18367baf6, type: 2}
+  randomData:
+  - {fileID: 11400000, guid: 1590e30269b03994ab0c29aac8e25197, type: 2}
+  - {fileID: 11400000, guid: 2348d59cdb084194a8f87d909a0b4fa1, type: 2}
+  - {fileID: 11400000, guid: f99ee206decde0540a76ade18367baf6, type: 2}
+  - {fileID: 11400000, guid: 1a8f9ec6761e9ac4885d2606144d8219, type: 2}
+  - {fileID: 11400000, guid: cf89fbbd549ed41449ba234b1966665d, type: 2}
+  - {fileID: 11400000, guid: 05c55db8f06945f48b9a42517a1186e7, type: 2}
   encounterData:
   - {fileID: 11400000, guid: b1db0691a0414d748b6b6f1195406a80, type: 2}

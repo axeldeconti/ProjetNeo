@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour {
     #endregion
 
     public int turn = 1;
+    public EventEffect eventEffect = null;
 
     /// <summary>
     /// Call to start a new turn
@@ -55,6 +56,12 @@ public class GameManager : MonoBehaviour {
         }
 
         EventManager.instance.OpenEventTreeScreen();
+
+        if (eventEffect)
+        {
+            eventEffect.UnapplyEffect();
+            eventEffect = null;
+        }
     }
 
     /// <summary>

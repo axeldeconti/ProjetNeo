@@ -59,6 +59,8 @@ public class Storage : MonoBehaviour
     /// </summary>
     public void AddItemToStorage(Draggable d, Card c)
     {
+        DeckManager.instance.UpdateCardInHandCount();
+
         string item = c.cardData.cardName;
 
         if (storage.ContainsKey(item))

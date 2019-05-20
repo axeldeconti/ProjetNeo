@@ -9,11 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3295d75eb4c0b5a4cbbbffcd4a8382d2, type: 3}
-  m_Name: Winter
+  m_Name: GlacialWinter
   m_EditorClassIdentifier: 
   cardType: 4
   frame: {fileID: 0}
   artwork: {fileID: 21300000, guid: 7c8c281bc4c9971498a7e1a9503f5aa3, type: 3}
-  cardName: Winter
+  cardName: Glacial Winter
   type: 2
   description: Winter is coming
+  effect: {fileID: 11400000, guid: cdd4daeb85341124f8ba025da3a79735, type: 2}

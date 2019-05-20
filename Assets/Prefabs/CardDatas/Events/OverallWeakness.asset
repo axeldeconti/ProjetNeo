@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3295d75eb4c0b5a4cbbbffcd4a8382d2, type: 3}
+  m_Name: OverallWeakness
+  m_EditorClassIdentifier: 
+  cardType: 4
+  frame: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 7c8c281bc4c9971498a7e1a9503f5aa3, type: 3}
+  cardName: Overall weakness
+  type: 2
+  description: I'm so weak
+  effect: {fileID: 11400000, guid: 52f1c5779436bbf49915e14cffbfacfe, type: 2}

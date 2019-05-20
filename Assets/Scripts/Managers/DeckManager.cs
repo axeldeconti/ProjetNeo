@@ -85,6 +85,8 @@ public class DeckManager : MonoBehaviour {
         AddCard("Berry");
         DrawRessourceCard();
         DrawRessourceCard();
+
+        endButton.interactable = false;
     }
 
     /// <summary>

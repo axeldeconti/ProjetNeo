@@ -24,11 +24,11 @@ public class EventManager : MonoBehaviour {
     #endregion
 
     public GameObject eventTreeScreen, eventScreen;
-    public Text EventText;
+    public Text EventTitle, EventText;
     public EventButton[] firstEventButtons;
     public BuildingEventCardData[] buildingData;
     public NegativeEventCardData[] negativeData;
-    public RandomEventCardData[] randomData;
+    public EventCardData[] randomData;
     public EncounterEventCardData[] encounterData;
 
     private int level;
@@ -121,6 +121,7 @@ public class EventManager : MonoBehaviour {
 
     public void OpenEventScreen()
     {
+        EventTitle.text = currentEvent.cardName;
         EventText.text = currentEvent.description;
         eventScreen.SetActive(true);
     }

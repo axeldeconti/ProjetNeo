@@ -23,6 +23,7 @@ public class FeedingManager : MonoBehaviour
     #endregion
 
     public GameObject humanSelectionScreen, humanToSelectPrefab;
+    public int nbOfHumanFedByOneFood = 3;
 
     private List<int> humansSelected;
 
@@ -69,7 +70,7 @@ public class FeedingManager : MonoBehaviour
             humansSelected.Add(humanID);
         }
 
-        if(humansSelected.Count >= 3)
+        if(humansSelected.Count >= nbOfHumanFedByOneFood)
         {
             FeedHumans();
         }
@@ -105,7 +106,7 @@ public class FeedingManager : MonoBehaviour
             }
         }
 
-        if (humansAdded.Count < 3)
+        if (humansAdded.Count <= nbOfHumanFedByOneFood)
             FeedHumans(humansAdded);
     }
 
