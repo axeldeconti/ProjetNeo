@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1966007516240662}
+  m_IsPrefabAsset: 1
+--- !u!1 &1966007516240662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4363875500529788}
+  - component: {fileID: 114958756844516998}
+  m_Layer: 0
+  m_Name: RecipeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4363875500529788
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1966007516240662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114958756844516998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1966007516240662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfd5ee95fa344a48b4f0df3d303f549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipes:
+  - name: Axe
+    recipeID: 11
+    outcome: {fileID: 11400000, guid: a97fe5a08934a0647a27b268a023fc13, type: 2}
+  - name: Pickaxe
+    recipeID: 21
+    outcome: {fileID: 11400000, guid: 62e25df6239e9f64eb3a74af18cf6b3b, type: 2}
+  - name: Shovel
+    recipeID: 22
+    outcome: {fileID: 11400000, guid: d79e3ceccb2c69844b0e642d5eaec5bd, type: 2}
+  - name: Spear
+    recipeID: 13
+    outcome: {fileID: 11400000, guid: 400f4f7e424fa47408948f96d621dbe1, type: 2}
+  - name: Bow
+    recipeID: 20002
+    outcome: {fileID: 11400000, guid: b28e93f46173edc4cb32bec9705c0a27, type: 2}
+  - name: Cudgel
+    recipeID: 1022
+    outcome: {fileID: 11400000, guid: 879552fae6b4e4942bcfba6cbe7b1363, type: 2}
+  - name: Bone knife
+    recipeID: 11000
+    outcome: {fileID: 11400000, guid: 2c0f149372cc26842b95abb98e65538b, type: 2}
+  - name: Cloth garment
+    recipeID: 30000
+    outcome: {fileID: 11400000, guid: db120b620a764f04aa2c06b741137433, type: 2}
+  - name: Leather garment
+    recipeID: 500000
+    outcome: {fileID: 11400000, guid: bb5abf348fccd944e9ead543ec019065, type: 2}
+  - name: Workbench
+    recipeID: 3
+    outcome: {fileID: 11400000, guid: 9856e6202925a8547b571c9883837496, type: 2}
+  - name: Agricultural square
+    recipeID: 20
+    outcome: {fileID: 11400000, guid: c598921228b09744e95111356ed752c9, type: 2}
+  - name: Stone circle
+    recipeID: 40
+    outcome: {fileID: 11400000, guid: 5cc4ebcf8e63ba747b6d457675d5b33e, type: 2}
+  - name: Hut
+    recipeID: 305
+    outcome: {fileID: 11400000, guid: 43bf916836482ea40b5fd9357aec638b, type: 2}
+  - name: Cabin
+    recipeID: 508
+    outcome: {fileID: 11400000, guid: 8135c7e191fb823458301f622675d0c7, type: 2}
+  - name: Bone cabin
+    recipeID: 4007
+    outcome: {fileID: 11400000, guid: 65fe4a5df97d2d741bcfafb89c8efb3b, type: 2}
