@@ -23,6 +23,8 @@ public class EventManager : MonoBehaviour {
 
     #endregion
 
+    public GameObject eventTreeScreen, eventScreen;
+    public Text EventText;
     public EventButton[] firstEventButtons;
     public BuildingEventCardData[] buildingData;
     public NegativeEventCardData[] negativeData;
@@ -31,6 +33,7 @@ public class EventManager : MonoBehaviour {
 
     private int level;
     private Dictionary<int, List<EventButton>> allEventButtons;
+    private EventCardData currentEvent;
 
     private void Start()
     {
@@ -93,11 +96,38 @@ public class EventManager : MonoBehaviour {
             button.GetComponent<Button>().interactable = false;
         }
 
+        currentEvent = eventButton.eventdata;
+
         level++;
 
         foreach (EventButton button in eventButton.nextEvents)
         {
             button.GetComponent<Button>().interactable = true;
         }
+
+        CloseEventTreeScreen();
+        OpenEventScreen();
+    }
+
+    public void OpenEventTreeScreen()
+    {
+        eventTreeScreen.SetActive(true);
+    }
+
+    public void CloseEventTreeScreen()
+    {
+        eventTreeScreen.SetActive(false);
+    }
+
+    public void OpenEventScreen()
+    {
+        EventText.text = currentEvent.description;
+        eventScreen.SetActive(true);
+    }
+
+    public void CloseEventScreen()
+    {
+        eventScreen.SetActive(false);
+        GameManager.instance.StartTurn();
     }
 }

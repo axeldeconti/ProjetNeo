@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour {
 
     #endregion
 
+    public int turn = 1;
+
     /// <summary>
     /// Call to start a new turn
     /// </summary>
@@ -42,6 +44,8 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     public void EndTurn()
     {
+        turn++;
+
         DeckManager.instance.endButton.interactable = false;
 
         foreach (GameObject card in CardManager.instance.GetAllCards())
@@ -50,8 +54,7 @@ public class GameManager : MonoBehaviour {
             card.GetComponent<CardTypeComponent>().EndTurn();
         }
 
-        //Remove when the event tree is done
-        StartTurn();
+        EventManager.instance.OpenEventTreeScreen();
     }
 
     /// <summary>

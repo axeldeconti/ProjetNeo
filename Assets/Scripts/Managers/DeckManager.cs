@@ -79,7 +79,12 @@ public class DeckManager : MonoBehaviour {
 
     private void Start()
     {
-        StartTurn();
+        AddCard("Human");
+        AddCard("Human");
+        AddCard("Human");
+        AddCard("Berry");
+        DrawRessourceCard();
+        DrawRessourceCard();
     }
 
     /// <summary>

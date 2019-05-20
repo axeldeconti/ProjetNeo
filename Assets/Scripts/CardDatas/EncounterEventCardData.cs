@@ -10,7 +10,6 @@ public class EncounterEventCardData : EventCardData {
 
     public override void ApplyCardEffect()
     {
-        //FightManager.instance.ResolveFight(this);
-        Debug.Log(this.name);
+        FightManager.instance.ResolveFight(this);
     }
 }
