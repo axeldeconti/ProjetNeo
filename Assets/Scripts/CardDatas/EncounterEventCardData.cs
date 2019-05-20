@@ -7,9 +7,4 @@ public class EncounterEventCardData : EventCardData {
 
     public int atk;
     public RessourceCardData[] ressourcesToDrop;
-
-    public override void ApplyCardEffect()
-    {
-        FightManager.instance.ResolveFight(this);
-    }
 }

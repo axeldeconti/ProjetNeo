@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Card : MonoBehaviour {
 
     public CardData cardData;
-    public Image artwork, icon;
+    public Image frame, artwork, icon;
     public Text cardName;
 
     /// <summary>
@@ -16,8 +16,12 @@ public class Card : MonoBehaviour {
     {
         cardData = _cardData;
         artwork.sprite = cardData.artwork;
-        cardName.text = cardData.cardName;
+        //cardName.text = cardData.cardName;
+        cardName.text = "";
         icon.sprite = cardData.artwork;
+
+        if (cardData.frame)
+            frame.sprite = cardData.frame;
 
         GetComponent<CardTypeComponent>().Init(cardData);
     }

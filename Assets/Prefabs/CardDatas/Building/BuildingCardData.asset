@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: BuildingCardData
   m_EditorClassIdentifier: 
   cardType: 3
-  frame: {fileID: 0}
+  frame: {fileID: 21300000, guid: 24d33191cd23b1f459ffac1477af8460, type: 3}
   artwork: {fileID: 21300000, guid: 020aa02115fc2c046a17f824fba53f6b, type: 3}
   cardName: Building
   buildingType: 5

@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: 36b163a8d19538842bac310bc067d931, type: 2}
+  frame: {fileID: 114398353409221188}
   artwork: {fileID: 114134768827294296}
   icon: {fileID: 114506943250192734}
   cardName: {fileID: 114169612089529898}
@@ -352,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -415,6 +416,7 @@ MonoBehaviour:
   age: {fileID: 114037727102836442}
   life: {fileID: 114911930435062852}
   attack: {fileID: 114122327991321542}
+  isFed: 0
 --- !u!114 &114911930435062852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -532,7 +534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 810, y: -110}
+  m_AnchoredPosition: {x: 720, y: -110}
   m_SizeDelta: {x: 140, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224168994926922870

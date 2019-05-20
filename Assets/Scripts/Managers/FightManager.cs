@@ -23,7 +23,6 @@ public class FightManager : MonoBehaviour {
     #endregion
 
     public GameObject humanSelectionScreen, humanToSelectPrefab;
-    public EncounterEventCardData testEncouter;
     public int damageToGive = 0;
 
     private List<int> humansAdded = new List<int>();
@@ -154,13 +153,5 @@ public class FightManager : MonoBehaviour {
         humansAdded.Clear();
         humansToSelect.Clear();
         damageToGive = 0;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            ResolveFight(testEncouter);
-        }
     }
 }

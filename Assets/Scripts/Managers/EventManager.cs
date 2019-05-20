@@ -130,5 +130,10 @@ public class EventManager : MonoBehaviour {
     {
         eventScreen.SetActive(false);
         GameManager.instance.StartTurn();
+
+        if (currentEvent.type == EventType.Encounter)
+        {
+            FightManager.instance.ResolveFight(currentEvent as EncounterEventCardData);
+        }
     }
 }

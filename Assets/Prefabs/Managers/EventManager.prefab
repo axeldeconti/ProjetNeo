@@ -71,3 +71,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05c55db8f06945f48b9a42517a1186e7, type: 2}
   encounterData:
   - {fileID: 11400000, guid: b1db0691a0414d748b6b6f1195406a80, type: 2}
+  - {fileID: 11400000, guid: fc9032eff73f0094ea2a19514f44b664, type: 2}
+  - {fileID: 11400000, guid: fce6d246868eab34b811e53fecb5a4c7, type: 2}
+  - {fileID: 11400000, guid: 3bcbfb5bbadc29b4d900e9709a3532b4, type: 2}
+  - {fileID: 11400000, guid: 8074fd18e8643314b91699b9d4c5c2d2, type: 2}
+  - {fileID: 11400000, guid: 885c796ac669a7640ad26cac045c1d75, type: 2}
+  - {fileID: 11400000, guid: dac9ec73d654a0644a29931ffa0b51d8, type: 2}
+  - {fileID: 11400000, guid: 613e562a6bf326c4181bd1d54972b2f4, type: 2}
