@@ -15,6 +15,8 @@
                 Destroy(d.placeholder);
 
                 Destroy(c.gameObject);
+
+                DeckManager.instance.UpdateCardInHandCount();
             }
         }
     }
