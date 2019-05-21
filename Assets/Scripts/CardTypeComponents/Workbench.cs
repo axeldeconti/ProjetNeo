@@ -24,6 +24,8 @@ public class Workbench : Building {
 
         wbOutcome = wbo.GetComponent<WbOutcome>();
         wbOutcome.wb = this;
+
+        Destroy(GetComponent<BuildingDropZone>());
     }
 
     public override void AddRessource(GameObject ressourceToAdd)

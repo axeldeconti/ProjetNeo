@@ -51,5 +51,7 @@ public class BuildingEventManager : MonoBehaviour {
         {
             Destroy(child.gameObject);
         }
+
+        GameManager.instance.StartTurn();
     }
 }

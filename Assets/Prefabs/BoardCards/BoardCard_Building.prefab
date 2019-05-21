@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 114159256345262054}
   - component: {fileID: 114802859120735020}
   - component: {fileID: 114401179769139384}
+  - component: {fileID: 114679257969025852}
   m_Layer: 0
   m_Name: BoardCard_Building
   m_TagString: Untagged
@@ -727,6 +728,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114679257969025852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1745951317477354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a62058d4595a6a4684786e836293649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myImage: {fileID: 0}
+  isEmpty: 1
+  cardParent: {fileID: 0}
 --- !u!114 &114714782036971556
 MonoBehaviour:
   m_ObjectHideFlags: 1

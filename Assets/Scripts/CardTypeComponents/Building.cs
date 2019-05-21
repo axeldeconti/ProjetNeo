@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Building : CardTypeComponent, IPointerDownHandler {
 
     protected List<GameObject> ressourceList = new List<GameObject>();
+    protected List<RessourceCardData> ressourceDataList = new List<RessourceCardData>();
 
     public GameObject dropZones, wbo;
     public BuildingCardData cardData;
@@ -76,6 +78,51 @@ public class Building : CardTypeComponent, IPointerDownHandler {
         {
             Debug.Log(item.GetComponent<Ressource>().cardData.cardName);
         }
+    }
+
+    public bool AddRessource(RessourceCardData ressourceData)
+    {
+        string cardName = ressourceData.cardName;
+        bool isRessource1 = false;
+
+        if (!(cardName == cardData.ressource1 || cardName == cardData.ressource2))
+            return false;
+        else if (cardName == cardData.ressource1)
+            isRessource1 = true;
+
+        int nbOfRessource = 0;
+
+        foreach (RessourceCardData data in ressourceDataList)
+        {
+            if (data.cardName == cardName)
+                nbOfRessource++;
+        }
+
+        if (isRessource1 && nbOfRessource >= cardData.nbRessource1)
+            return false;
+        else if (!isRessource1 && nbOfRessource >= cardData.nbRessource2)
+            return false;
+
+        ressourceDataList.Add(ressourceData);
+
+        CheckIfBuilt();
+
+        return true;
+    }
+
+    public  void CheckIfBuilt()
+    {
+        int nb = cardData.nbRessource1 + cardData.nbRessource2;
+
+        if (nb <= ressourceDataList.Count)
+            BuildBuilding();
+    }
+
+    public void BuildBuilding()
+    {
+        Debug.Log(cardData.cardName + " is built");
+        
+        //GetComponent<Image>().color.r = value
     }
 
     /// <summary>

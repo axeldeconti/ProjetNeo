@@ -238,6 +238,8 @@ public class DeckManager : MonoBehaviour {
             AddCard("Workbench");
         if (Input.GetKeyDown(KeyCode.M))
             AddCard("Meat");
+        if (Input.GetKeyDown(KeyCode.C))
+            AddCard("Clay");
     }
 }
 
