@@ -16,3 +16,7 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: 020aa02115fc2c046a17f824fba53f6b, type: 3}
   cardName: Hut
   buildingType: 3
+  ressource1: Wood
+  ressource2: Clay
+  nbRessource1: 5
+  nbRessource2: 2

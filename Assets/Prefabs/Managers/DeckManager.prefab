@@ -109,6 +109,14 @@ MonoBehaviour:
     data: {fileID: 11400000, guid: 188108e007e3b5a478e077a03fbac730, type: 2}
   - name: Workbench
     data: {fileID: 11400000, guid: 9856e6202925a8547b571c9883837496, type: 2}
+  - name: Cabin
+    data: {fileID: 11400000, guid: 8135c7e191fb823458301f622675d0c7, type: 2}
+  - name: Bone cabin
+    data: {fileID: 11400000, guid: 65fe4a5df97d2d741bcfafb89c8efb3b, type: 2}
+  - name: Hut
+    data: {fileID: 11400000, guid: 43bf916836482ea40b5fd9357aec638b, type: 2}
+  - name: Stone circle
+    data: {fileID: 11400000, guid: 5cc4ebcf8e63ba747b6d457675d5b33e, type: 2}
   nbCard: 6
   humanCardPrefab: {fileID: 1986284473417564, guid: d1b19f060ceaa5f42b3a937f19f82387,
     type: 2}

@@ -22,7 +22,7 @@ public class Storage : MonoBehaviour
     #endregion
 
     public int maxStorage = 20;
-    public GameObject NbUnitePrefab, storageImage;
+    public GameObject storageImage;
     public StorageDropZone[] dropzones;
     public Dictionary<string, int> storage = new Dictionary<string, int>();
 

@@ -121,9 +121,16 @@ public class EventManager : MonoBehaviour {
 
     public void OpenEventScreen()
     {
-        EventTitle.text = currentEvent.cardName;
-        EventText.text = currentEvent.description;
-        eventScreen.SetActive(true);
+        if(currentEvent.type != EventType.Building)
+        {
+            EventTitle.text = currentEvent.cardName;
+            EventText.text = currentEvent.description;
+            eventScreen.SetActive(true);
+        }
+        else
+        {
+            BuildingEventManager.instance.OpenBuildingSelectionScreen();
+        }
     }
 
     public void CloseEventScreen()

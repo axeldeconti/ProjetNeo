@@ -4,7 +4,8 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "New card", menuName = "CardData/Event/BuildingCardData")]
 public class BuildingEventCardData : EventCardData {
-
+     
+    /*
     public BuildingCardData[] buildingCardData;
     public int nbOfBuildings;
 
@@ -19,4 +20,5 @@ public class BuildingEventCardData : EventCardData {
 
         //Allow to build the buildings
     }
+    */
 }

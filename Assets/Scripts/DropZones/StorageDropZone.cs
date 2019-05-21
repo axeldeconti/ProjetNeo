@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class StorageDropZone : DropZone_Base, IPointerDownHandler
 {
-    private GameObject nbUniteOPrefab;
     private Storage storage;
 
     public bool hasRessource = false;
@@ -13,7 +12,6 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
     private void Start()
     {
         storage = Storage.instance;
-        nbUniteOPrefab = storage.NbUnitePrefab;
     }
 
     protected override void DropCard(Draggable d, Card c)

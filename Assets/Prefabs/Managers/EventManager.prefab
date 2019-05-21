@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4014428424861290}
   - component: {fileID: 114051108307624202}
+  - component: {fileID: 114557427705646538}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -57,7 +58,8 @@ MonoBehaviour:
   EventText: {fileID: 0}
   firstEventButtons:
   - {fileID: 0}
-  buildingData: []
+  buildingData:
+  - {fileID: 11400000, guid: d207fc0d01e97f6478194fbbdb6e5b47, type: 2}
   negativeData:
   - {fileID: 11400000, guid: 1590e30269b03994ab0c29aac8e25197, type: 2}
   - {fileID: 11400000, guid: 1a8f9ec6761e9ac4885d2606144d8219, type: 2}
@@ -78,3 +80,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 885c796ac669a7640ad26cac045c1d75, type: 2}
   - {fileID: 11400000, guid: dac9ec73d654a0644a29931ffa0b51d8, type: 2}
   - {fileID: 11400000, guid: 613e562a6bf326c4181bd1d54972b2f4, type: 2}
+--- !u!114 &114557427705646538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1743554810923918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05acda684c93bca4f926220e07d9ddf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingSelectionScreen: {fileID: 0}
+  buildingToSelectPrefab: {fileID: 1405713677465254, guid: 57db0f2c441726949b0e014e9cc72814,
+    type: 2}
+  buildingToBuild:
+  - {fileID: 11400000, guid: 5cc4ebcf8e63ba747b6d457675d5b33e, type: 2}
+  - {fileID: 11400000, guid: 65fe4a5df97d2d741bcfafb89c8efb3b, type: 2}
+  - {fileID: 11400000, guid: 8135c7e191fb823458301f622675d0c7, type: 2}
+  - {fileID: 11400000, guid: 43bf916836482ea40b5fd9357aec638b, type: 2}

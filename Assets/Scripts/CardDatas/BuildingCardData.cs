@@ -6,6 +6,8 @@ using UnityEngine;
 public class BuildingCardData : CardData {
 
     public BuildingType buildingType;
+    public string ressource1, ressource2;
+    public int nbRessource1 = 0, nbRessource2 = 0;
 }
 
 /// <summary>

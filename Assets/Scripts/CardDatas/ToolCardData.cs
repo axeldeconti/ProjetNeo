@@ -7,5 +7,4 @@ public class ToolCardData : CardData {
 
     public HumanMetier metier;
     public int bonusAtk, bonusLife;
-    public RessourceForRecipe[] recipe;
 }
