@@ -27,13 +27,14 @@ public class EventManager : MonoBehaviour {
     public Text EventTitle, EventText;
     public EventButton[] firstEventButtons;
     public BuildingEventCardData[] buildingData;
-    public NegativeEventCardData[] negativeData;
+    public PositiveEventCardData[] positiveData;
     public EventCardData[] randomData;
     public EncounterEventCardData[] encounterData;
 
     private int level;
     private Dictionary<int, List<EventButton>> allEventButtons;
     private EventCardData currentEvent;
+    private GameObject tree1, tree2, tree3, lastOpenTree;
 
     private void Start()
     {
@@ -45,6 +46,11 @@ public class EventManager : MonoBehaviour {
             firstEventButton.Init(0);
             firstEventButton.GetComponent<Button>().interactable = true;
         }
+
+        tree1 = eventTreeScreen.transform.GetChild(0).gameObject;
+        tree2 = eventTreeScreen.transform.GetChild(1).gameObject;
+        tree3 = eventTreeScreen.transform.GetChild(2).gameObject;
+        lastOpenTree = tree1;
     }
 
     /// <summary>
@@ -79,8 +85,8 @@ public class EventManager : MonoBehaviour {
                 return buildingData[Random.Range(0, buildingData.Length)];
             case EventType.Random:
                 return randomData[Random.Range(0, randomData.Length)];
-            case EventType.Negative:
-                return negativeData[Random.Range(0, negativeData.Length)];
+            case EventType.Positive:
+                return positiveData[Random.Range(0, positiveData.Length)];
             case EventType.Encounter:
                 return encounterData[Random.Range(0, encounterData.Length)];
             default:
@@ -112,11 +118,16 @@ public class EventManager : MonoBehaviour {
     public void OpenEventTreeScreen()
     {
         eventTreeScreen.SetActive(true);
+
+        OpenLastTree();
     }
 
     public void CloseEventTreeScreen()
     {
         eventTreeScreen.SetActive(false);
+        tree1.SetActive(false);
+        tree2.SetActive(false);
+        tree3.SetActive(false);
     }
 
     public void OpenEventScreen()
@@ -142,5 +153,41 @@ public class EventManager : MonoBehaviour {
         {
             FightManager.instance.ResolveFight(currentEvent as EncounterEventCardData);
         }
+    }
+
+    public void OpenTree(int i)
+    {
+        tree1.SetActive(false);
+        tree2.SetActive(false);
+        tree3.SetActive(false);
+
+        switch (i)
+        {
+            case 1:
+                tree1.SetActive(true);
+                lastOpenTree = tree1;
+                break;
+            case 2:
+                tree2.SetActive(true);
+                lastOpenTree = tree2;
+                break;
+            case 3:
+                tree3.SetActive(true);
+                lastOpenTree = tree2;
+                break;
+            default:
+                Debug.Log("Tree" + i + " can't be open");
+                break;
+        }
+    }
+
+    public void OpenLastTree()
+    {
+        if (lastOpenTree == tree1)
+            tree1.SetActive(true);
+        else if (lastOpenTree == tree2)
+            tree2.SetActive(true);
+        else if (lastOpenTree == tree3)
+            tree3.SetActive(true);
     }
 }
