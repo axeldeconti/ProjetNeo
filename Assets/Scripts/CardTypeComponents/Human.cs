@@ -25,7 +25,7 @@ public class Human : CardTypeComponent
         maxAge = Random.Range(cardData.minAge, cardData.maxAge + 1);
         maxLife = Random.Range(cardData.minLife, cardData.maxLife + 1);
         atk = Random.Range(cardData.minAtk, cardData.maxAtk + 1);
-        currentAge = 0;
+        currentAge = maxAge;
         currentLife = maxLife;
 
         age.text = currentAge.ToString();
@@ -100,7 +100,7 @@ public class Human : CardTypeComponent
     /// </summary>
     public void GrowOlder()
     {
-        if (++currentAge >= maxAge)
+        if (--currentAge <= 0)
         {
             Die();
         }
