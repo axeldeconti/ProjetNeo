@@ -8,4 +8,4 @@ public class EventCardData : CardData {
     public string description;
 }
 
-public enum EventType { Building, Random, Negative, Encounter }
+public enum EventType { Building, Random, Positive, Encounter }

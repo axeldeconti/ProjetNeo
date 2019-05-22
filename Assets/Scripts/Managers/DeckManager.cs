@@ -218,6 +218,8 @@ public class DeckManager : MonoBehaviour {
 
         if (cardInHand == 0)
             endButton.interactable = true;
+        else
+            endButton.interactable = false;
     }
 
     private void Update()
