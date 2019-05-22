@@ -16,7 +16,8 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: 020aa02115fc2c046a17f824fba53f6b, type: 3}
   cardName: Cabin
   buildingType: 4
+  storageIncrease: 3
   ressource1: Wood
-  ressource2: Clay
-  nbRessource1: 8
+  ressource2: Stone
+  nbRessource1: 7
   nbRessource2: 4

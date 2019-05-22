@@ -25,11 +25,14 @@ public class FeedingManager : MonoBehaviour
     public GameObject humanSelectionScreen, humanToSelectPrefab;
     public int nbOfHumanFedByOneFood = 3;
 
+    private bool canFeedHuman;
     private List<int> humansSelected;
 
     private void Start()
     {
         humansSelected = new List<int>();
+
+        canFeedHuman = false;
     }
 
     /// <summary>
@@ -123,5 +126,24 @@ public class FeedingManager : MonoBehaviour
         }
 
         humansSelected.Clear();
+    }
+
+    public bool GetCanFeedHuman()
+    {
+        canFeedHuman = false;
+
+        if (CardManager.instance.allHumanCards.Count != 0)
+        {
+            foreach(GameObject h in CardManager.instance.allHumanCards.Values)
+            {
+                if (!h.GetComponent<Human>().isFed)
+                {
+                    canFeedHuman = true;
+                    break;
+                }
+            }
+        }
+
+        return canFeedHuman;
     }
 }

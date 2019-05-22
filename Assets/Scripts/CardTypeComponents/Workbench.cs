@@ -4,33 +4,34 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Workbench : Building {
+public class Workbench : MonoBehaviour, IPointerDownHandler {
 
     private Image outcomeImage;
-    private WbOutcome wbOutcome;
+    public WbOutcome wbOutcome;
+    public GameObject dropZones;
+    public List<GameObject> ressourceList;
+    public Sprite outcomeNull;
 
     public int currentRecipeID = 000000;
     
     /// <summary>
     /// Init the workbench
     /// </summary>
-    public void Init(Building b)
+    private void Start()
     {
-        type = b.type;
         ressourceList = new List<GameObject>();
-        dropZones = b.dropZones;
-        wbo = b.wbo;
-        cardData = b.cardData;
-
-        wbOutcome = wbo.GetComponent<WbOutcome>();
         wbOutcome.wb = this;
-
-        Destroy(GetComponent<BuildingDropZone>());
     }
 
-    public override void AddRessource(GameObject ressourceToAdd)
+    public void AddRessource(GameObject ressourceToAdd)
     {
-        base.AddRessource(ressourceToAdd);
+        ressourceList.Add(ressourceToAdd);
+
+        GameManager.instance.ClearConsole();
+        foreach (GameObject item in ressourceList)
+        {
+            Debug.Log(item.GetComponent<Ressource>().cardData.cardName);
+        }
 
         RessourceCardData data = ressourceToAdd.GetComponent<Ressource>().cardData;
 
@@ -63,9 +64,19 @@ public class Workbench : Building {
         UpdateCurrentRecipe();
     }
 
-    public override void RemoveRessource(GameObject ressourceToRemove, bool giveBackRessource)
+    public void RemoveRessource(GameObject ressourceToRemove, bool giveBackRessource)
     {
-        base.RemoveRessource(ressourceToRemove, giveBackRessource);
+        ressourceToRemove.transform.parent.GetComponent<DropZone_Base>().isEmpty = true;
+
+        CardManager.instance.RemoveCard(ressourceToRemove);
+
+        ressourceList.Remove(ressourceToRemove);
+
+        GameManager.instance.ClearConsole();
+        foreach (GameObject item in ressourceList)
+        {
+            Debug.Log(item.GetComponent<Ressource>().cardData.cardName);
+        }
 
         RessourceCardData data = ressourceToRemove.GetComponent<Ressource>().cardData;
 
@@ -117,7 +128,7 @@ public class Workbench : Building {
         {
             Debug.Log("No matching recipe");
             wbOutcome.hasOutcome = false;
-            wbOutcome.image.sprite = null;
+            wbOutcome.image.sprite = outcomeNull;
         }
         
     }
@@ -125,7 +136,7 @@ public class Workbench : Building {
     /// <summary>
     /// Call when the workbench is clicked on
     /// </summary>
-    public override void OnPointerDown(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
         if (GetComponent<BoardCard>() != null && Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -139,5 +150,33 @@ public class Workbench : Building {
             dropZones.SetActive(!isActive);
             wbOutcome.gameObject.SetActive(!isActive);
         }
+    }
+
+    /// <summary>
+    /// Remove all ressources from this building
+    /// </summary>
+    public void RemoveAllRessources(bool giveBackRessources)
+    {
+        while (ressourceList.Count > 0)
+        {
+            if (ressourceList[0])
+            {
+                ressourceList[0].GetComponent<Ressource>().RemoveCard();
+                RemoveRessource(ressourceList[0], giveBackRessources);
+            }
+            else
+            {
+                Debug.LogError("Infinity loop");
+                break;
+            }
+        }
+    }
+
+    public void ToggleWorkbench()
+    {
+        if (gameObject.activeSelf)
+            RemoveAllRessources(true);
+
+        gameObject.SetActive(!gameObject.activeSelf);
     }
 }

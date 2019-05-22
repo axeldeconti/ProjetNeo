@@ -44,26 +44,6 @@ public class Building : CardTypeComponent, IPointerDownHandler {
 
         cardData = buildingComp.cardData;
         type = buildingComp.type;
-
-        switch (type)
-        {
-            case BuildingType.Workbench:
-                gameObject.AddComponent<Workbench>().Init(this);
-                Destroy(this);
-                break;
-            case BuildingType.Agricultural_Square:
-                break;
-            case BuildingType.Stone_circle:
-                break;
-            case BuildingType.Hut:
-                break;
-            case BuildingType.Cabin:
-                break;
-            case BuildingType.Bone_cabin:
-                break;
-            default:
-                break;
-        }
     }
 
     /// <summary>
@@ -121,6 +101,8 @@ public class Building : CardTypeComponent, IPointerDownHandler {
     public void BuildBuilding()
     {
         Debug.Log(cardData.cardName + " is built");
+
+        Storage.instance.maxStorage += cardData.storageIncrease;
         
         //GetComponent<Image>().color.r = value
     }

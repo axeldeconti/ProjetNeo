@@ -16,7 +16,7 @@ public abstract class DropZone_Base : MonoBehaviour, IDropHandler, IPointerEnter
     /// <summary>
     /// Mouse over this dropzone
     /// </summary>
-    public void OnPointerEnter(PointerEventData eventData)
+    public virtual void OnPointerEnter(PointerEventData eventData)
     {
         //Return if nothing is being dragged
         if (eventData.pointerDrag == null)
@@ -32,7 +32,7 @@ public abstract class DropZone_Base : MonoBehaviour, IDropHandler, IPointerEnter
     /// <summary>
     /// Exit mouse over this dropzone
     /// </summary>
-    public void OnPointerExit(PointerEventData eventData)
+    public virtual void OnPointerExit(PointerEventData eventData)
     {
         //Return if nothing is being dragged
         if (eventData.pointerDrag == null)

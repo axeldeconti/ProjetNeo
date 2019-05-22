@@ -21,7 +21,7 @@ public class Storage : MonoBehaviour
 
     #endregion
 
-    public int maxStorage = 20;
+    public int maxStorage = 6;
     public GameObject storageImage;
     public StorageDropZone[] dropzones;
     public Dictionary<string, int> storage = new Dictionary<string, int>();

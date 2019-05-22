@@ -173,7 +173,7 @@ public class EventManager : MonoBehaviour {
                 break;
             case 3:
                 tree3.SetActive(true);
-                lastOpenTree = tree2;
+                lastOpenTree = tree3;
                 break;
             default:
                 Debug.Log("Tree" + i + " can't be open");
