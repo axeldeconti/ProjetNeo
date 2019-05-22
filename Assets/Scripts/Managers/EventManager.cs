@@ -30,6 +30,8 @@ public class EventManager : MonoBehaviour {
     public PositiveEventCardData[] positiveData;
     public EventCardData[] randomData;
     public EncounterEventCardData[] encounterData;
+    public bool canGoToNextLevel;
+    public Button ButtonsCloseTree;
 
     private int level;
     private Dictionary<int, List<EventButton>> allEventButtons;
@@ -39,6 +41,7 @@ public class EventManager : MonoBehaviour {
     private void Start()
     {
         level = 0;
+        canGoToNextLevel = false;
         allEventButtons = new Dictionary<int, List<EventButton>>();
 
         foreach (EventButton firstEventButton in firstEventButtons)
@@ -97,6 +100,9 @@ public class EventManager : MonoBehaviour {
 
     public void GoToNextLevel(EventButton eventButton)
     {
+        if (!canGoToNextLevel)
+            return;
+
         foreach (EventButton button in allEventButtons[eventButton.lvl])
         {
             button.GetComponent<Button>().interactable = false;

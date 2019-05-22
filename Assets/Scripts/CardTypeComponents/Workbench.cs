@@ -11,8 +11,7 @@ public class Workbench : MonoBehaviour, IPointerDownHandler {
     public GameObject dropZones;
     public List<GameObject> ressourceList;
     public Sprite outcomeNull;
-
-    public int currentRecipeID = 000000;
+    public int currentRecipeID = 0;
     
     /// <summary>
     /// Init the workbench
@@ -43,16 +42,16 @@ public class Workbench : MonoBehaviour, IPointerDownHandler {
             case "Stone":
                 currentRecipeID += 10;
                 break;
-            case "Cloth":
+            case "Clay":
                 currentRecipeID += 100;
                 break;
-            case "Fur":
+            case "Bone":
                 currentRecipeID += 1000;
                 break;
-            case "Bone":
+            case "Cloth":
                 currentRecipeID += 10000;
                 break;
-            case "Clay":
+            case "Fur":
                 currentRecipeID += 100000;
                 break;
             default:
@@ -62,6 +61,7 @@ public class Workbench : MonoBehaviour, IPointerDownHandler {
         }
 
         UpdateCurrentRecipe();
+        DeckManager.instance.UpdateCardInHandCount();
     }
 
     public void RemoveRessource(GameObject ressourceToRemove, bool giveBackRessource)
@@ -88,16 +88,16 @@ public class Workbench : MonoBehaviour, IPointerDownHandler {
             case "Stone":
                 currentRecipeID -= 10;
                 break;
-            case "Cloth":
+            case "Clay":
                 currentRecipeID -= 100;
                 break;
-            case "Fur":
+            case "Bone":
                 currentRecipeID -= 1000;
                 break;
-            case "Bone":
+            case "Cloth":
                 currentRecipeID -= 10000;
                 break;
-            case "Clay":
+            case "Fur":
                 currentRecipeID -= 100000;
                 break;
             default:
@@ -123,12 +123,18 @@ public class Workbench : MonoBehaviour, IPointerDownHandler {
             Debug.Log(RecipeManager.instance.allRecipe[currentRecipeID].cardName);
             wbOutcome.hasOutcome = true;
             wbOutcome.image.sprite = RecipeManager.instance.allRecipe[currentRecipeID].artwork;
+
+            DeckManager.instance.canEndTurn = false;
         }
         else
         {
             Debug.Log("No matching recipe");
             wbOutcome.hasOutcome = false;
             wbOutcome.image.sprite = outcomeNull;
+
+            if (currentRecipeID == 0)
+                DeckManager.instance.canEndTurn = true;
+            else DeckManager.instance.canEndTurn = false;
         }
         
     }
@@ -170,6 +176,10 @@ public class Workbench : MonoBehaviour, IPointerDownHandler {
                 break;
             }
         }
+
+        currentRecipeID = 0;
+        UpdateCurrentRecipe();
+        DeckManager.instance.UpdateCardInHandCount();
     }
 
     public void ToggleWorkbench()
@@ -178,5 +188,7 @@ public class Workbench : MonoBehaviour, IPointerDownHandler {
             RemoveAllRessources(true);
 
         gameObject.SetActive(!gameObject.activeSelf);
+
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }

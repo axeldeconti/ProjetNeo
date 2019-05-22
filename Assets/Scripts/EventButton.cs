@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class EventButton : MonoBehaviour {
@@ -33,6 +34,9 @@ public class EventButton : MonoBehaviour {
 
     public void CallEvent()
     {
-        eventdata.ApplyCardEffect();
+        if (EventManager.instance.canGoToNextLevel)
+            eventdata.ApplyCardEffect();
+
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }

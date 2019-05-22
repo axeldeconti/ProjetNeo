@@ -68,7 +68,7 @@ MonoBehaviour:
     recipeID: 20002
     outcome: {fileID: 11400000, guid: b28e93f46173edc4cb32bec9705c0a27, type: 2}
   - name: Cudgel
-    recipeID: 1022
+    recipeID: 1002
     outcome: {fileID: 11400000, guid: 879552fae6b4e4942bcfba6cbe7b1363, type: 2}
   - name: Bone knife
     recipeID: 11000
@@ -77,16 +77,16 @@ MonoBehaviour:
     recipeID: 30000
     outcome: {fileID: 11400000, guid: db120b620a764f04aa2c06b741137433, type: 2}
   - name: Leather garment
-    recipeID: 500000
+    recipeID: 400000
     outcome: {fileID: 11400000, guid: bb5abf348fccd944e9ead543ec019065, type: 2}
   - name: Workbench
-    recipeID: 3
+    recipeID: 5
     outcome: {fileID: 11400000, guid: 9856e6202925a8547b571c9883837496, type: 2}
   - name: Agricultural square
-    recipeID: 20
+    recipeID: 50
     outcome: {fileID: 11400000, guid: c598921228b09744e95111356ed752c9, type: 2}
   - name: Stone circle
-    recipeID: 40
+    recipeID: 60
     outcome: {fileID: 11400000, guid: 5cc4ebcf8e63ba747b6d457675d5b33e, type: 2}
   - name: Hut
     recipeID: 305

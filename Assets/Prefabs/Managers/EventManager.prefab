@@ -58,6 +58,7 @@ MonoBehaviour:
   EventText: {fileID: 0}
   firstEventButtons:
   - {fileID: 0}
+  - {fileID: 0}
   buildingData:
   - {fileID: 11400000, guid: d207fc0d01e97f6478194fbbdb6e5b47, type: 2}
   positiveData:
@@ -80,6 +81,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 885c796ac669a7640ad26cac045c1d75, type: 2}
   - {fileID: 11400000, guid: dac9ec73d654a0644a29931ffa0b51d8, type: 2}
   - {fileID: 11400000, guid: 613e562a6bf326c4181bd1d54972b2f4, type: 2}
+  canGoToNextLevel: 0
 --- !u!114 &114557427705646538
 MonoBehaviour:
   m_ObjectHideFlags: 1

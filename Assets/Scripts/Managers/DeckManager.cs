@@ -35,6 +35,7 @@ public class DeckManager : MonoBehaviour {
     public GameObject humanCardPrefab, ressourceCardPrefab, toolCardPrefab, buildingCardPrefab, eventCardPrefab;
     public Button endButton;
     public Transform HandPannel;
+    public bool canEndTurn;
 
     /// <summary>
     /// Create the dictionary from the allData array
@@ -86,6 +87,7 @@ public class DeckManager : MonoBehaviour {
         DrawRessourceCard();
         DrawRessourceCard();
 
+        canEndTurn = true;
         endButton.interactable = false;
     }
 
@@ -216,7 +218,7 @@ public class DeckManager : MonoBehaviour {
     {
         cardInHand = HandPannel.childCount;
 
-        if (cardInHand == 0)
+        if (cardInHand == 0 && canEndTurn)
             endButton.interactable = true;
         else
             endButton.interactable = false;
@@ -242,6 +244,10 @@ public class DeckManager : MonoBehaviour {
             AddCard("Meat");
         if (Input.GetKeyDown(KeyCode.C))
             AddCard("Clay");
+        if (Input.GetKeyDown(KeyCode.K))
+            AddCard("Cloth");
+        if (Input.GetKeyDown(KeyCode.B))
+            AddCard("Bone");
     }
 }
 

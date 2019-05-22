@@ -145,15 +145,15 @@ MonoBehaviour:
   - section: Section 0
     min: 0
     max: 1
-    spawnProba: 0
+    spawnProba: 50
   - section: Section 1
     min: 2
     max: 5
-    spawnProba: 50
+    spawnProba: 65
   - section: Section 2
     min: 6
     max: 9
-    spawnProba: 40
+    spawnProba: 50
   - section: Section 3
     min: 10
     max: 19

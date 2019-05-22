@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour {
 
     public int turn = 1;
     public EventEffect eventEffect = null;
+    public GameObject pauseMenu;
 
     /// <summary>
     /// Call to start a new turn
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour {
     public void StartTurn()
     {
         DeckManager.instance.StartTurn();
+        EventManager.instance.ButtonsCloseTree.gameObject.SetActive(true);
 
         foreach (GameObject card in CardManager.instance.GetAllCards())
         {
@@ -46,6 +49,8 @@ public class GameManager : MonoBehaviour {
     public void EndTurn()
     {
         turn++;
+        EventManager.instance.canGoToNextLevel = true;
+        EventManager.instance.ButtonsCloseTree.gameObject.SetActive(false);
 
         DeckManager.instance.endButton.interactable = false;
 
@@ -55,6 +60,8 @@ public class GameManager : MonoBehaviour {
             card.GetComponent<CardTypeComponent>().EndTurn();
         }
 
+        CheckForGameOver();
+
         EventManager.instance.OpenEventTreeScreen();
 
         if (eventEffect)
@@ -62,6 +69,16 @@ public class GameManager : MonoBehaviour {
             eventEffect.UnapplyEffect();
             eventEffect = null;
         }
+    }
+
+    public void GoToScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
+    public void TogglePauseMenu()
+    {
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
     }
 
     /// <summary>
@@ -101,7 +118,7 @@ public class GameManager : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            ExitGame();
+        if (Input.GetButtonDown("Cancel"))
+            TogglePauseMenu();
     }
 }
