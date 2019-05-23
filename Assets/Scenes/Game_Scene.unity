@@ -1113,7 +1113,7 @@ Prefab:
         type: 2}
       propertyPath: tutoPanel
       value: 
-      objectReference: {fileID: 1583036514}
+      objectReference: {fileID: 1328758346}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d10e594b7f732604fa1fe27d8beb7146, type: 2}
   m_IsPrefabAsset: 0
@@ -3569,7 +3569,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 357716368}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1910391147}
+        m_MethodName: OnClickHelp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &357716368
@@ -13982,11 +13993,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39d4bf1dd2ec27c40845537e7b3b166d, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1583036514 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1653119720649502, guid: d10e594b7f732604fa1fe27d8beb7146,
-    type: 2}
-  m_PrefabInternal: {fileID: 76029712}
 --- !u!1 &1587334715
 GameObject:
   m_ObjectHideFlags: 0
