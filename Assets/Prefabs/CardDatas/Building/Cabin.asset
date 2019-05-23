@@ -13,9 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardType: 3
   frame: {fileID: 21300000, guid: 24d33191cd23b1f459ffac1477af8460, type: 3}
-  artwork: {fileID: 21300000, guid: 020aa02115fc2c046a17f824fba53f6b, type: 3}
+  artwork: {fileID: 21300000, guid: d4b72ef868b63f04b9a083ea4e23c19c, type: 3}
   cardName: Cabin
   buildingType: 4
+  notBuild: {fileID: 21300000, guid: 559559f347efd3b4697f8a62397dd232, type: 3}
   storageIncrease: 3
   ressource1: Wood
   ressource2: Stone

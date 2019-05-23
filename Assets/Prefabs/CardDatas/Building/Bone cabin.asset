@@ -16,6 +16,7 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: b49debb0eaa68164d83cafe420d375e9, type: 3}
   cardName: Bone cabin
   buildingType: 5
+  notBuild: {fileID: 21300000, guid: 0a2a1a53f58ac1d4a91d5422dc5b1041, type: 3}
   storageIncrease: 4
   ressource1: Wood
   ressource2: Bone
