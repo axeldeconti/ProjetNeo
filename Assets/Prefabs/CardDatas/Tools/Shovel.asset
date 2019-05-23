@@ -16,5 +16,5 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: 6ece933eb594b6c49963cce0d261faee, type: 3}
   cardName: Shovel
   metier: 4
-  bonusAtk: 0
+  bonusAtk: 1
   bonusLife: 0

@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
 
     public int turn = 1;
     public EventEffect eventEffect = null;
-    public GameObject pauseMenu;
+    public GameObject pauseMenu, gameOverScreen, winScreen;
 
     /// <summary>
     /// Call to start a new turn
@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour {
     public void StartTurn()
     {
         DeckManager.instance.StartTurn();
+        EventManager.instance.canGoToNextLevel = false;
         EventManager.instance.ButtonsCloseTree.gameObject.SetActive(true);
 
         foreach (GameObject card in CardManager.instance.GetAllCards())
@@ -95,6 +96,13 @@ public class GameManager : MonoBehaviour {
     private void GameOver()
     {
         Debug.Log("Game Over !");
+        gameOverScreen.SetActive(true);
+    }
+
+    public void WinGame()
+    {
+        Debug.Log("You won !");
+        winScreen.SetActive(true);
     }
 
     /// <summary>
