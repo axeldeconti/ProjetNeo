@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
     public int turn = 1;
     public EventEffect eventEffect = null;
     public GameObject pauseMenu, gameOverScreen, winScreen;
+    public GameObject tutoPanel;
 
     /// <summary>
     /// Call to start a new turn
@@ -122,6 +123,11 @@ public class GameManager : MonoBehaviour {
     {
         Debug.Log("Exit Game !");
         Application.Quit();
+    }
+
+    public void OnClickHelp()
+    {
+        tutoPanel.SetActive(true);
     }
 
     private void Update()
