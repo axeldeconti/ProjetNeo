@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardType: 2
   frame: {fileID: 21300000, guid: 82ba303b7d81d4642aab66b0ae11b831, type: 3}
-  artwork: {fileID: 21300000, guid: 6e36d12c676280f4a8a30043069878e9, type: 3}
+  artwork: {fileID: 21300000, guid: 4711bb8c30be95a4e8eb6e5a8b1bf3c6, type: 3}
   cardName: Leather garment
   metier: 0
   bonusAtk: 0

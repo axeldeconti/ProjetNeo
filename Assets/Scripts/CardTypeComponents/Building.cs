@@ -44,6 +44,7 @@ public class Building : CardTypeComponent, IPointerDownHandler {
 
         cardData = buildingComp.cardData;
         type = buildingComp.type;
+        GetComponent<Image>().sprite = cardData.notBuild;
     }
 
     /// <summary>
@@ -103,8 +104,9 @@ public class Building : CardTypeComponent, IPointerDownHandler {
         Debug.Log(cardData.cardName + " is built");
 
         Storage.instance.maxStorage += cardData.storageIncrease;
-        
-        //GetComponent<Image>().color.r = value
+        Storage.instance.UpdateNbOfItem();
+
+        GetComponent<Image>().sprite = cardData.artwork;
     }
 
     /// <summary>

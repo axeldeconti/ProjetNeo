@@ -10,8 +10,11 @@ public class BuildingDropZone : DropZone_Base {
 
         if (ressourceData = (c.cardData as RessourceCardData))
         {
-            if(GetComponent<Building>().AddRessource(ressourceData))
+            if (GetComponent<Building>().AddRessource(ressourceData))
+            {
                 Destroy(c.gameObject);
+                DeckManager.instance.UpdateCardInHandCount();
+            }
         }
     }
 }

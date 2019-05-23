@@ -8,10 +8,14 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
 
     public bool hasRessource = false;
     public string ressourceName = "";
+    public int nbOfRessouces;
+    public Text nbOfRessourcesText;
 
     private void Start()
     {
         storage = Storage.instance;
+        nbOfRessouces = 0;
+        nbOfRessourcesText.text = "";
     }
 
     protected override void DropCard(Draggable d, Card c)
@@ -36,16 +40,18 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
     {
         if (hasRessource)
         {
-            UpdateNbDisplay();
+            nbOfRessouces++;
             Destroy(c.gameObject);
         }
         else
         {
             CreateStorageBoardCard(d, c);
             ressourceName = c.cardData.cardName;
-            UpdateNbDisplay();
+            nbOfRessouces = 1;
             hasRessource = true;
         }
+
+        UpdateNbDisplay();
     }
 
     private void CreateStorageBoardCard(Draggable d, Card c)
@@ -65,8 +71,10 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
     /// </summary>
     public void ResetDZ()
     {
-        Destroy(transform.GetChild(0).gameObject);
+        Destroy(transform.GetChild(1).gameObject);
         hasRessource = false;
+        nbOfRessouces = 0;
+        nbOfRessourcesText.text = "";
     }
 
     /// <summary>
@@ -74,6 +82,8 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
     /// </summary>
     public void UpdateNbDisplay()
     {
+        nbOfRessourcesText.text = nbOfRessouces.ToString();
+
         GameManager.instance.ClearConsole();
         Debug.Log("There is " + storage.storage[ressourceName] + " of " + ressourceName);
     }

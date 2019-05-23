@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Storage : MonoBehaviour
 {
@@ -25,6 +26,12 @@ public class Storage : MonoBehaviour
     public GameObject storageImage;
     public StorageDropZone[] dropzones;
     public Dictionary<string, int> storage = new Dictionary<string, int>();
+    public Text nbOfItem;
+
+    private void Start()
+    {
+        UpdateNbOfItem();
+    }
 
     /// <summary>
     /// Checks if one ressource can be added
@@ -71,6 +78,7 @@ public class Storage : MonoBehaviour
             {
                 if (dropzones[i].hasRessource && dropzones[i].ressourceName == item)
                 {
+                    dropzones[i].nbOfRessouces++;
                     dropzones[i].UpdateNbDisplay();
                     d.parentToReturnTo = this.transform;
                     Destroy(d.placeholder);
@@ -94,6 +102,8 @@ public class Storage : MonoBehaviour
 
             }
         }
+
+        UpdateNbOfItem();
     }
 
     /// <summary>
@@ -116,8 +126,26 @@ public class Storage : MonoBehaviour
             else
             {
                 storage[item]--;
+                dz.nbOfRessouces--;
                 dz.UpdateNbDisplay();
             }
         }
+
+        UpdateNbOfItem();
+    }
+
+    public void UpdateNbOfItem()
+    {
+        int nb = 0;
+
+        for (int i = 0; i < dropzones.Length; i++)
+        {
+            if (dropzones[i].hasRessource)
+            {
+                nb += dropzones[i].nbOfRessouces;
+            }
+        }
+
+        nbOfItem.text = nb.ToString() + "/" + maxStorage.ToString();
     }
 }
