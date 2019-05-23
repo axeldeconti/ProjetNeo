@@ -42,7 +42,7 @@ public class FeedingManager : MonoBehaviour
     {
         foreach (int humanToFeed in humansSelected)
         {
-            CardManager.instance.allHumanCards[humanToFeed].GetComponent<Human>().isFed = true;
+            CardManager.instance.allHumanCards[humanToFeed].GetComponent<Human>().FeedMe();
         }
 
         humansSelected.Clear();
@@ -57,7 +57,7 @@ public class FeedingManager : MonoBehaviour
     {
         foreach (int humanToFeed in humanList)
         {
-            CardManager.instance.allHumanCards[humanToFeed].GetComponent<Human>().isFed = true;
+            CardManager.instance.allHumanCards[humanToFeed].GetComponent<Human>().FeedMe();
         }
 
         CloseFeedingScreen();

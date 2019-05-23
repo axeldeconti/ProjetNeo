@@ -12,6 +12,7 @@ public class Workbench : MonoBehaviour, IPointerDownHandler {
     public List<GameObject> ressourceList;
     public Sprite outcomeNull;
     public int currentRecipeID = 0;
+    public AudioClip buildSFX;
     
     /// <summary>
     /// Init the workbench

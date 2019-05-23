@@ -12,6 +12,7 @@ public class Human : CardTypeComponent
     public int currentAge, currentLife, atk;
     public Text age, life, attack;
     public bool isFed;
+    public GameObject hungerMarker;
 
     public override void Init(CardData _cardData)
     {
@@ -85,6 +86,7 @@ public class Human : CardTypeComponent
         }
 
         isFed = false;
+        hungerMarker.SetActive(true);
     }
 
     public override void EndTurn()
@@ -136,6 +138,12 @@ public class Human : CardTypeComponent
         GameManager.instance.CheckForGameOver();
 
         Destroy(this.gameObject);
+    }
+
+    public void FeedMe()
+    {
+        isFed = true;
+        hungerMarker.SetActive(false);
     }
 
     /// <summary>

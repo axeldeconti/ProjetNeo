@@ -32,6 +32,8 @@ public class EventManager : MonoBehaviour {
     public EncounterEventCardData[] encounterData;
     public bool canGoToNextLevel;
     public Button ButtonsCloseTree;
+    public Sprite encouterScreen, normalScreen;
+    public GameObject animalImage;
 
     private int level;
     private Dictionary<int, List<EventButton>> allEventButtons;
@@ -138,6 +140,21 @@ public class EventManager : MonoBehaviour {
 
     public void OpenEventScreen()
     {
+        EncounterEventCardData encounter;
+
+        if(encounter = (currentEvent as EncounterEventCardData))
+        {
+            eventScreen.transform.GetChild(0).GetComponent<Image>().sprite = encouterScreen;
+            animalImage.SetActive(true);
+            animalImage.GetComponent<Image>().sprite = currentEvent.artwork;
+            animalImage.transform.GetChild(0).GetComponent<Text>().text = "Attack points : " + encounter.atk.ToString();
+        }
+        else
+        {
+            eventScreen.transform.GetChild(0).GetComponent<Image>().sprite = normalScreen;
+        }
+            
+
         if(currentEvent.type != EventType.Building)
         {
             EventTitle.text = currentEvent.cardName;

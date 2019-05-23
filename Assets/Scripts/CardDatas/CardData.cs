@@ -7,6 +7,7 @@ public class CardData : ScriptableObject {
     public CardType cardType;
     public Sprite frame, artwork;
     public string cardName;
+    public AudioClip soundEffect;
 
     /// <summary>
     /// Call to apply the effect of the card

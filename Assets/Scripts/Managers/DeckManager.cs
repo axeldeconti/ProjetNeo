@@ -36,6 +36,7 @@ public class DeckManager : MonoBehaviour {
     public Button endButton;
     public Transform HandPannel;
     public bool canEndTurn;
+    public AudioClip cardFlipSFX;
 
     /// <summary>
     /// Create the dictionary from the allData array
@@ -139,6 +140,9 @@ public class DeckManager : MonoBehaviour {
                 Debug.Log("No cardType for " + type);
                 break;
         }
+
+        if (!AudioManager.instance.effectSource.isPlaying)
+            AudioManager.instance.PlaySoundEffects(cardFlipSFX);
     }
 
     /// <summary>
@@ -160,6 +164,9 @@ public class DeckManager : MonoBehaviour {
         }
 
         Instantiate(ressourceCardPrefab, HandPannel).GetComponent<Card>().Init(data);
+
+        if (!AudioManager.instance.effectSource.isPlaying)
+            AudioManager.instance.PlaySoundEffects(cardFlipSFX);
     }
 
     /// <summary>
@@ -190,6 +197,9 @@ public class DeckManager : MonoBehaviour {
                 Debug.Log("Can't add this card : " + cardNameToAdd);
                 break;
         }
+
+        if (!AudioManager.instance.effectSource.isPlaying)
+            AudioManager.instance.PlaySoundEffects(cardFlipSFX);
     }
 
     /// <summary>

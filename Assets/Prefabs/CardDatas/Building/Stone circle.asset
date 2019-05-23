@@ -15,8 +15,9 @@ MonoBehaviour:
   frame: {fileID: 21300000, guid: 24d33191cd23b1f459ffac1477af8460, type: 3}
   artwork: {fileID: 21300000, guid: fb70ab9df3085dc4c8f994b8ebbb831c, type: 3}
   cardName: Stone circle
+  soundEffect: {fileID: 8300000, guid: df009e1c48efccb4fb34238491eed36c, type: 3}
   buildingType: 2
-  notBuild: {fileID: 21300000, guid: 6777c1410d5813346926a59d9e8ea90c, type: 3}
+  notBuild: {fileID: 21300000, guid: 188d6337b80e82c428188c7936564f8c, type: 3}
   storageIncrease: 1
   ressource1: Stone
   ressource2: 

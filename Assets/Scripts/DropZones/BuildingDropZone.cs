@@ -14,6 +14,9 @@ public class BuildingDropZone : DropZone_Base {
             {
                 Destroy(c.gameObject);
                 DeckManager.instance.UpdateCardInHandCount();
+
+                if (c.cardData.soundEffect != null)
+                    AudioManager.instance.PlaySoundEffects(c.cardData.soundEffect);
             }
         }
     }

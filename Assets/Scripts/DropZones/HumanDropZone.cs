@@ -10,6 +10,9 @@ public class HumanDropZone : DropZone_Base
         if (toolData = c.cardData as ToolCardData)
         {
             CreateBoardcard(d, c).GetComponent<Tool>().DropOnHuman(toolData, cardParent.GetComponent<Human>());
+
+            if (c.cardData.soundEffect != null)
+                AudioManager.instance.PlaySoundEffects(c.cardData.soundEffect);
         }
     }
 }

@@ -17,6 +17,7 @@ public class WbOutcome : MonoBehaviour, IPointerDownHandler
         {
             DeckManager.instance.AddCard(RecipeManager.instance.allRecipe[wb.currentRecipeID].cardName);
             wb.RemoveAllRessources(false);
+            AudioManager.instance.PlaySoundEffects(wb.buildSFX);
         }
     }
 }

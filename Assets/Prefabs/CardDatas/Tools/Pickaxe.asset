@@ -15,6 +15,7 @@ MonoBehaviour:
   frame: {fileID: 21300000, guid: 82ba303b7d81d4642aab66b0ae11b831, type: 3}
   artwork: {fileID: 21300000, guid: cf0287b2444cc274b99cea9a917170ae, type: 3}
   cardName: Pickaxe
+  soundEffect: {fileID: 8300000, guid: 5c4112a2610fb05408ef06b327e0971f, type: 3}
   metier: 3
   bonusAtk: 0
   bonusLife: 0

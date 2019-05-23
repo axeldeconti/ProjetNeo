@@ -8,6 +8,7 @@ public class HumanToFeed : MonoBehaviour, IPointerDownHandler
     public int myHumanID;
     public bool isSelected = false;
     public Text age, life, attack;
+    public GameObject hungerMarker;
 
     private bool toFeed;
     private FeedingManager feedingManager = FeedingManager.instance;
@@ -32,11 +33,13 @@ public class HumanToFeed : MonoBehaviour, IPointerDownHandler
             {
                 isSelected = true;
                 feedingManager.AddHumanSelected(myHumanID);
+                hungerMarker.SetActive(false);
             }
             else if (toFeed)
             {
                 isSelected = false;
                 feedingManager.RemoveHumanSelected(myHumanID);
+                hungerMarker.SetActive(true);
             }
             else
             {

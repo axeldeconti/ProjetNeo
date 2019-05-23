@@ -82,6 +82,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 613e562a6bf326c4181bd1d54972b2f4, type: 2}
   canGoToNextLevel: 0
   ButtonsCloseTree: {fileID: 0}
+  encouterScreen: {fileID: 21300000, guid: b37398313dfebf54eb7c14f1fff30872, type: 3}
+  normalScreen: {fileID: 21300000, guid: a24ae419ecd94cf4caafd94dd05b5dc2, type: 3}
+  animalImage: {fileID: 0}
 --- !u!114 &114557427705646538
 MonoBehaviour:
   m_ObjectHideFlags: 1
