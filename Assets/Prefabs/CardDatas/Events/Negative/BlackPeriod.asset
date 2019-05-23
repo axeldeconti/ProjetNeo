@@ -16,5 +16,5 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: 7c8c281bc4c9971498a7e1a9503f5aa3, type: 3}
   cardName: Black Period
   type: 2
-  description: Black Friday
+  description: Draw 3 cards instead of 6
   effect: {fileID: 11400000, guid: 6d22dbf2c50ecd340a4efdcef3615696, type: 2}

@@ -16,5 +16,5 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: 7c8c281bc4c9971498a7e1a9503f5aa3, type: 3}
   cardName: Glacial Winter
   type: 2
-  description: Winter is coming
+  description: 1 food can be use to feed only 2 Humans
   effect: {fileID: 11400000, guid: cdd4daeb85341124f8ba025da3a79735, type: 2}

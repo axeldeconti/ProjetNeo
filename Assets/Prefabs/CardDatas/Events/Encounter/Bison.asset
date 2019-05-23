@@ -17,7 +17,7 @@ MonoBehaviour:
   cardName: Bison
   type: 3
   description: 
-  atk: 12
+  atk: 10
   ressourcesToDrop:
   - {fileID: 11400000, guid: 2e55b8631985de24d9c11f21faa4c045, type: 2}
   - {fileID: 11400000, guid: 2e55b8631985de24d9c11f21faa4c045, type: 2}
