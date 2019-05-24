@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1392b2ef44c98443930994333146334, type: 3}
   m_Name: Natural Migration
   m_EditorClassIdentifier: 
-  bison: {fileID: 11400000, guid: b1db0691a0414d748b6b6f1195406a80, type: 2}
+  animal: {fileID: 11400000, guid: dac9ec73d654a0644a29931ffa0b51d8, type: 2}
