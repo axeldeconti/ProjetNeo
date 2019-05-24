@@ -18105,21 +18105,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224073703165883170, guid: f0cb44403456fac4592a30b5c41ef8f3,
-        type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224073703165883170, guid: f0cb44403456fac4592a30b5c41ef8f3,
-        type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224073703165883170, guid: f0cb44403456fac4592a30b5c41ef8f3,
-        type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1132011847964548, guid: f0cb44403456fac4592a30b5c41ef8f3, type: 2}
       propertyPath: m_Name
       value: BuildingSelectionScreen
@@ -18128,36 +18113,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224795158307918056, guid: f0cb44403456fac4592a30b5c41ef8f3,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224795158307918056, guid: f0cb44403456fac4592a30b5c41ef8f3,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224795158307918056, guid: f0cb44403456fac4592a30b5c41ef8f3,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1783233113301014, guid: f0cb44403456fac4592a30b5c41ef8f3, type: 2}
-      propertyPath: m_Name
-      value: BuildingSlots
-      objectReference: {fileID: 0}
-    - target: {fileID: 114111844611548642, guid: f0cb44403456fac4592a30b5c41ef8f3,
-        type: 2}
-      propertyPath: m_Spacing
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114653810015871050, guid: f0cb44403456fac4592a30b5c41ef8f3,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c5be2b773361fdb42bd3c0e40fdd06b6,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0cb44403456fac4592a30b5c41ef8f3, type: 2}
   m_IsPrefabAsset: 0
