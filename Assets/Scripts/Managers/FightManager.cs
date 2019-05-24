@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class FightManager : MonoBehaviour {
+public class FightManager : MonoBehaviour
+{
 
     #region Singleton
 
@@ -24,6 +25,7 @@ public class FightManager : MonoBehaviour {
 
     public GameObject humanSelectionScreen, humanToSelectPrefab;
     public int damageToGive = 0;
+    public Text damageLeftToGive;
 
     private List<int> humansAdded = new List<int>();
     private List<HumanToFeed> humansToSelect = new List<HumanToFeed>();
@@ -75,10 +77,11 @@ public class FightManager : MonoBehaviour {
     {
         Human h = CardManager.instance.allHumanCards[humanID].GetComponent<Human>();
 
-        if(h.currentLife > 1)
+        if (h.currentLife > 1)
         {
             h.GetDamaged(1);
             damageToGive--;
+            damageLeftToGive.text = damageToGive.ToString();
 
             foreach (HumanToFeed hts in humansToSelect)
             {
@@ -94,6 +97,7 @@ public class FightManager : MonoBehaviour {
             humansAdded.Remove(h.GetInstanceID());
             h.Die();
             damageToGive--;
+            damageLeftToGive.text = damageToGive.ToString();
 
             foreach (HumanToFeed hts in humansToSelect)
             {
@@ -103,7 +107,7 @@ public class FightManager : MonoBehaviour {
 
                     foreach (Transform child in humanSelectionScreen.transform.GetChild(1))
                     {
-                        if(child.gameObject.GetInstanceID() == hts.gameObject.GetInstanceID())
+                        if (child.gameObject.GetInstanceID() == hts.gameObject.GetInstanceID())
                         {
                             Destroy(child.gameObject);
                             break;
@@ -125,16 +129,16 @@ public class FightManager : MonoBehaviour {
     public void OpenHumanSelectionScreen()
     {
         humanSelectionScreen.SetActive(true);
+        damageLeftToGive.transform.parent.gameObject.SetActive(true);
+        damageLeftToGive.text = damageToGive.ToString();
 
         foreach (GameObject human in CardManager.instance.GetAllCardsOfType(CardType.Human))
         {
-            if (!human.GetComponent<Human>().isFed)
-            {
-                GameObject HumanToFeed = Instantiate(humanToSelectPrefab, humanSelectionScreen.transform.GetChild(1));
-                HumanToFeed.GetComponent<HumanToFeed>().Init(human.GetComponent<Human>(), false);
-                humansAdded.Add(human.GetInstanceID());
-                humansToSelect.Add(HumanToFeed.GetComponent<HumanToFeed>());
-            }
+            GameObject HumanToFeed = Instantiate(humanToSelectPrefab, humanSelectionScreen.transform.GetChild(1));
+            HumanToFeed.GetComponent<HumanToFeed>().Init(human.GetComponent<Human>(), false);
+            HumanToFeed.GetComponent<HumanToFeed>().hungerMarker.SetActive(false);
+            humansAdded.Add(human.GetInstanceID());
+            humansToSelect.Add(HumanToFeed.GetComponent<HumanToFeed>());
         }
     }
 
@@ -144,6 +148,7 @@ public class FightManager : MonoBehaviour {
     public void CloseHumanSelectionScreen()
     {
         humanSelectionScreen.SetActive(false);
+        damageLeftToGive.transform.parent.gameObject.SetActive(false);
 
         foreach (Transform child in humanSelectionScreen.transform.GetChild(1))
         {

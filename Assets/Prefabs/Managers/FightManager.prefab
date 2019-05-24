@@ -54,5 +54,5 @@ MonoBehaviour:
   humanSelectionScreen: {fileID: 0}
   humanToSelectPrefab: {fileID: 1103949741107744, guid: cda229a78836df345b23c3be3dccb625,
     type: 2}
-  testEncouter: {fileID: 11400000, guid: b1db0691a0414d748b6b6f1195406a80, type: 2}
   damageToGive: 0
+  damageLeftToGive: {fileID: 0}

@@ -10,12 +10,16 @@ public class EventButton : MonoBehaviour {
     public EventButton[] nextEvents;
     public EventCardData eventdata;
     public int lvl = 0;
+    public bool isEndButton;
 
     /// <summary>
     /// Init the EventButton and call the init of its next ones
     /// </summary>
     public void Init(int fatherLvl)
     {
+        if (isEndButton)
+            return;
+
         lvl = fatherLvl + 1;
         eventdata = EventManager.instance.ChooseRandomEventType(type);
         EventManager.instance.AddEventButton(this);

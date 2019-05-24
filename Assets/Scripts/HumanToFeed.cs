@@ -9,6 +9,8 @@ public class HumanToFeed : MonoBehaviour, IPointerDownHandler
     public bool isSelected = false;
     public Text age, life, attack;
     public GameObject hungerMarker;
+    public Image tool;
+    public Sprite invisible;
 
     private bool toFeed;
     private FeedingManager feedingManager = FeedingManager.instance;
@@ -21,6 +23,13 @@ public class HumanToFeed : MonoBehaviour, IPointerDownHandler
         age.text = myHuman.currentAge.ToString();
         life.text = myHuman.currentLife.ToString();
         attack.text = myHuman.atk.ToString();
+
+        if (myHuman.tool != null)
+        {
+            Debug.Log(myHuman.tool.data);
+            tool.sprite = myHuman.tool.data.artwork;
+        }
+        else tool.sprite = invisible;
 
         toFeed = _toFeed;
     }

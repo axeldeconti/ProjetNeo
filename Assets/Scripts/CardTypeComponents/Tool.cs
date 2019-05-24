@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tool : CardTypeComponent {
 
+    public ToolCardData data;
+
     public override void Init(CardData cardData)
     {
 
@@ -23,5 +25,7 @@ public class Tool : CardTypeComponent {
         h.metier = toolData.metier;
         h.AddAtk(toolData.bonusAtk);
         h.AddLife(toolData.bonusLife);
+
+        data = toolData;
     }
 }

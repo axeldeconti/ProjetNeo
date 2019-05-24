@@ -152,6 +152,7 @@ public class EventManager : MonoBehaviour {
         else
         {
             eventScreen.transform.GetChild(0).GetComponent<Image>().sprite = normalScreen;
+            animalImage.SetActive(false);
         }
             
 
