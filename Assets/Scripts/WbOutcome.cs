@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class WbOutcome : MonoBehaviour, IPointerDownHandler
+public class WbOutcome : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
 
     public Workbench wb;
@@ -19,5 +19,17 @@ public class WbOutcome : MonoBehaviour, IPointerDownHandler
             wb.RemoveAllRessources(false);
             AudioManager.instance.PlaySoundEffects(wb.buildSFX);
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (hasOutcome)
+            TooltipPopup.instance.DisplayInfo(RecipeManager.instance.allRecipe[wb.currentRecipeID]);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (hasOutcome)
+            TooltipPopup.instance.HideInfo();
     }
 }

@@ -15,7 +15,9 @@ MonoBehaviour:
   frame: {fileID: 21300000, guid: 82ba303b7d81d4642aab66b0ae11b831, type: 3}
   artwork: {fileID: 21300000, guid: 93cd48d6171e26149a88530ba50bca92, type: 3}
   cardName: Bow
+  nameColor: {r: 0.509434, g: 0.34853375, b: 0.05526879, a: 1}
   soundEffect: {fileID: 8300000, guid: 4d2362a248f1d7f41b8cac1a23cd15fc, type: 3}
+  tooltipDescription: 
   metier: 7
   bonusAtk: 3
   bonusLife: 0

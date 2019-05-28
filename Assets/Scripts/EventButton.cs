@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class EventButton : MonoBehaviour {
+public class EventButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+{
 
     public EventType type;
     public EventButton[] nextEvents;
@@ -31,7 +30,7 @@ public class EventButton : MonoBehaviour {
 
         foreach (EventButton nextEvent in nextEvents)
         {
-            if(nextEvent.lvl == 0)
+            if (nextEvent.lvl == 0)
                 nextEvent.Init(lvl);
         }
     }
@@ -42,5 +41,16 @@ public class EventButton : MonoBehaviour {
             eventdata.ApplyCardEffect();
 
         EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public void OnPointerEnter(PointerEventData _eventData)
+    {
+        if(GetComponent<Button>().interactable)
+            TooltipPopup.instance.DisplayInfo(eventdata);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        TooltipPopup.instance.HideInfo();
     }
 }

@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BoardCard : MonoBehaviour {
+public class BoardCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+{
 
     public CardData cardData;
     public Image icon;
@@ -22,6 +24,20 @@ public class BoardCard : MonoBehaviour {
 
             cardData.ApplyCardEffect();
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Human h = GetComponent<Human>();
+
+        if (h != null)
+            TooltipPopup.instance.DisplayInfo(cardData, h.TooltipText());
+        else TooltipPopup.instance.DisplayInfo(cardData);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        TooltipPopup.instance.HideInfo();
     }
 
     /// <summary>

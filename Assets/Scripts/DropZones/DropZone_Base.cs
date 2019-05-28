@@ -43,6 +43,8 @@ public abstract class DropZone_Base : MonoBehaviour, IDropHandler, IPointerEnter
         //Set the placeholder parent to the card one
         if (d != null && d.placeholderParent == transform)
             d.placeholderParent = d.parentToReturnTo;
+
+        TooltipPopup.instance.HideInfo();
     }
 
     /// <summary>
@@ -60,6 +62,7 @@ public abstract class DropZone_Base : MonoBehaviour, IDropHandler, IPointerEnter
                 Card c = eventData.pointerDrag.GetComponent<Card>();
 
                 DropCard(d, c);
+                TooltipPopup.instance.HideInfo();
             }
         }
     }

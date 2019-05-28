@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Card : MonoBehaviour {
+public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+{
 
     public CardData cardData;
     public Image frame, artwork, icon;
@@ -81,5 +81,19 @@ public class Card : MonoBehaviour {
         droppedCard.GetComponent<CardTypeComponent>().InitBoardCard(this.GetComponent<CardTypeComponent>());
 
         return droppedCard.GetComponent<BoardCard>();
-    } 
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Human h =GetComponent<Human>();
+
+        if (h != null)
+            TooltipPopup.instance.DisplayInfo(cardData, h.TooltipText());
+        else TooltipPopup.instance.DisplayInfo(cardData);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        TooltipPopup.instance.HideInfo();
+    }
 }

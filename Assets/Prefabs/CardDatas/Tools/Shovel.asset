@@ -15,7 +15,9 @@ MonoBehaviour:
   frame: {fileID: 21300000, guid: 82ba303b7d81d4642aab66b0ae11b831, type: 3}
   artwork: {fileID: 21300000, guid: 6ece933eb594b6c49963cce0d261faee, type: 3}
   cardName: Shovel
+  nameColor: {r: 0.509434, g: 0.34853375, b: 0.05526879, a: 1}
   soundEffect: {fileID: 8300000, guid: 1f25fc3a37b76cc43a736b55fbaea967, type: 3}
+  tooltipDescription: 
   metier: 4
   bonusAtk: 1
   bonusLife: 0

@@ -21,6 +21,7 @@ public class WorkbenchDropZone : DropZone_Base, IPointerDownHandler
         if (Input.GetKeyDown(KeyCode.Mouse1) && !isEmpty)
         {
             wb.RemoveRessource(transform.GetChild(0).gameObject, true);
+            TooltipPopup.instance.HideInfo();
         }
     }
 }

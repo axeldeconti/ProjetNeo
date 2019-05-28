@@ -15,7 +15,9 @@ MonoBehaviour:
   frame: {fileID: 21300000, guid: 82ba303b7d81d4642aab66b0ae11b831, type: 3}
   artwork: {fileID: 21300000, guid: f90554a1598f9c74093eedc24dfb1940, type: 3}
   cardName: Cloth garment
+  nameColor: {r: 0.509434, g: 0.34853375, b: 0.05526879, a: 1}
   soundEffect: {fileID: 8300000, guid: c29b56cca115a9149a33debfb6da8c24, type: 3}
+  tooltipDescription: 
   metier: 0
   bonusAtk: 0
   bonusLife: 1

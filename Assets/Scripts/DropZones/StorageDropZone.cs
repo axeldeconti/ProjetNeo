@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class StorageDropZone : DropZone_Base, IPointerDownHandler
 {
     private Storage storage;
+    private CardData data;
 
     public bool hasRessource = false;
     public string ressourceName = "";
@@ -27,7 +28,6 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
         {
             if (storage.CheckStorage())
             {
-                Debug.Log("storage.AddItemToStorage(d, c)");
                 storage.AddItemToStorage(d, c);
             }
         }
@@ -46,7 +46,8 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
         else
         {
             CreateStorageBoardCard(d, c);
-            ressourceName = c.cardData.cardName;
+            data = c.cardData;
+            ressourceName = data.cardName;
             nbOfRessouces = 1;
             hasRessource = true;
         }
@@ -75,6 +76,7 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
         hasRessource = false;
         nbOfRessouces = 0;
         nbOfRessourcesText.text = "";
+        data = null;
     }
 
     /// <summary>
@@ -96,5 +98,21 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
             DeckManager.instance.AddCard(ressourceName);
             DeckManager.instance.UpdateCardInHandCount();
         }
+    }
+
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        base.OnPointerEnter(eventData);
+
+        if (hasRessource)
+            TooltipPopup.instance.DisplayInfo(data);
+    }
+
+    public override void OnPointerExit(PointerEventData eventData)
+    {
+        base.OnPointerExit(eventData);
+
+        if (hasRessource)
+            TooltipPopup.instance.HideInfo();
     }
 }

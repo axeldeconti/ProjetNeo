@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New card", menuName = "CardData/RessourceCardData")]
@@ -7,6 +8,17 @@ public class RessourceCardData : CardData {
 
     public bool canBeDrawn;
     public bool isFood;
+
+    public override string GetTooltipInfoText()
+    {
+        StringBuilder builder = new StringBuilder();
+
+        builder.Append("<size=35>").Append(ColouredName).Append("</size>").AppendLine();
+        builder.Append("Category : Ressource");
+        //builder.Append("Description : ").Append(tooltipDescription).AppendLine();
+
+        return builder.ToString();
+    }
 }
 
 /// <summary>

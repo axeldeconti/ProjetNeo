@@ -15,6 +15,9 @@ MonoBehaviour:
   frame: {fileID: 0}
   artwork: {fileID: 21300000, guid: aaf106e39b2c4494b971d3ce33b17d59, type: 3}
   cardName: Bison
+  nameColor: {r: 0.5660378, g: 0.11480955, b: 0.14102429, a: 1}
+  soundEffect: {fileID: 0}
+  tooltipDescription: 
   type: 3
   description: 
   atk: 10

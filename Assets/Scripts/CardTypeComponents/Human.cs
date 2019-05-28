@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Text;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Human : CardTypeComponent
@@ -32,6 +33,8 @@ public class Human : CardTypeComponent
         age.text = currentAge.ToString();
         life.text = currentLife.ToString();
         attack.text = atk.ToString();
+
+        cardData.human = this;
     }
 
     public override void InitBoardCard(CardTypeComponent _cardTypeComp)
@@ -61,6 +64,8 @@ public class Human : CardTypeComponent
         attack.text = atk.ToString();
 
         metier = HumanMetier.Harvester;
+
+        cardData.human = this;
     }
 
     public override void StartTurn()
@@ -170,5 +175,22 @@ public class Human : CardTypeComponent
             atk++;
             attack.text = atk.ToString();
         }
+    }
+
+    public string TooltipText()
+    {
+        StringBuilder builder = new StringBuilder();
+
+        HumanCardData data = cardData as HumanCardData;
+
+        string lifeColour = ColorUtility.ToHtmlStringRGB(data.lifeColor);
+        string ageColour = ColorUtility.ToHtmlStringRGB(data.ageColor);
+        string attackColour = ColorUtility.ToHtmlStringRGB(data.attackColor);
+
+        builder.Append($"<color=#{lifeColour}>{"Life : "}").Append(currentLife).Append("</color>").AppendLine();
+        builder.Append($"<color=#{ageColour}>{"Age : "}").Append(currentAge).Append("</color>").AppendLine();
+        builder.Append($"<color=#{attackColour}>{"Attack : "}").Append(atk).Append("</color>");
+
+        return builder.ToString();
     }
 }
