@@ -86,6 +86,18 @@ public class TooltipPopup : MonoBehaviour
         LayoutRebuilder.ForceRebuildLayoutImmediate(popupObject);
     }
 
+    public void DisplayInfo(string text)
+    {
+        StringBuilder builder = new StringBuilder();
+
+        builder.Append(text);
+
+        infoText.text = builder.ToString();
+
+        popupCanvasObject.SetActive(true);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(popupObject);
+    }
+
     public void HideInfo()
     {
         popupCanvasObject.SetActive(false);

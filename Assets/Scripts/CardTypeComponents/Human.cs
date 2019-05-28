@@ -183,10 +183,12 @@ public class Human : CardTypeComponent
 
         HumanCardData data = cardData as HumanCardData;
 
+        string isFedText = isFed ? "Yes" : "No";
         string lifeColour = ColorUtility.ToHtmlStringRGB(data.lifeColor);
         string ageColour = ColorUtility.ToHtmlStringRGB(data.ageColor);
         string attackColour = ColorUtility.ToHtmlStringRGB(data.attackColor);
 
+        builder.Append("Is fed : ").Append(isFedText).AppendLine();
         builder.Append($"<color=#{lifeColour}>{"Life : "}").Append(currentLife).Append("</color>").AppendLine();
         builder.Append($"<color=#{ageColour}>{"Age : "}").Append(currentAge).Append("</color>").AppendLine();
         builder.Append($"<color=#{attackColour}>{"Attack : "}").Append(atk).Append("</color>");

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222255271165044366}
   - component: {fileID: 114998089279691628}
   - component: {fileID: 114166353007349532}
-  - component: {fileID: 114603015979767672}
+  - component: {fileID: 114581591275024048}
   m_Layer: 0
   m_Name: DropZone_Canvas
   m_TagString: Untagged
@@ -70,8 +70,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1759342900247858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.513, y: 0.937, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_LocalPosition: {x: -6.12, y: -1.01, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 224322616562082842}
   m_Father: {fileID: 0}
@@ -114,8 +114,8 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &114603015979767672
+    m_Bits: 0
+--- !u!114 &114581591275024048
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,12 +123,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1719860351576702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 922d1010f357e254599cfd101c183f69, type: 3}
+  m_Script: {fileID: 11500000, guid: d8808a266a24a8349a41700afc944311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myImage: {fileID: 0}
   isEmpty: 1
   cardParent: {fileID: 0}
+  acceptedTypes: 00000000
 --- !u!114 &114773486566133270
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -41,12 +41,13 @@ public class EventButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             eventdata.ApplyCardEffect();
 
         EventSystem.current.SetSelectedGameObject(null);
+        TooltipPopup.instance.HideInfo();
     }
 
     public void OnPointerEnter(PointerEventData _eventData)
     {
         if(GetComponent<Button>().interactable)
-            TooltipPopup.instance.DisplayInfo(eventdata);
+            TooltipPopup.instance.DisplayInfo("Type : " + type);
     }
 
     public void OnPointerExit(PointerEventData eventData)

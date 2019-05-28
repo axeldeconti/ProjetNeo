@@ -15,6 +15,9 @@ MonoBehaviour:
   frame: {fileID: 0}
   artwork: {fileID: 21300000, guid: 7c8c281bc4c9971498a7e1a9503f5aa3, type: 3}
   cardName: Love period
-  type: 1
+  nameColor: {r: 0, g: 0, b: 0, a: 0}
+  soundEffect: {fileID: 0}
+  tooltipDescription: 
+  type: 2
   description: More Humans are born
   effect: {fileID: 11400000, guid: 2dd2309f6c7a2d04c85e44e05d5fe4a2, type: 2}

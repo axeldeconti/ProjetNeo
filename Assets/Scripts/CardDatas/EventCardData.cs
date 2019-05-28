@@ -10,11 +10,7 @@ public class EventCardData : CardData {
 
     public override string GetTooltipInfoText()
     {
-        StringBuilder builder = new StringBuilder();
-
-        builder.Append("Type : ").Append(type);
-
-        return builder.ToString();
+        return "";
     }
 }
 

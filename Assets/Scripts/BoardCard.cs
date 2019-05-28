@@ -28,6 +28,9 @@ public class BoardCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (eventData.pointerEnter.GetComponent<HumanDropZone>() != null)
+            return;
+               
         Human h = GetComponent<Human>();
 
         if (h != null)
