@@ -77,6 +77,7 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
         nbOfRessouces = 0;
         nbOfRessourcesText.text = "";
         data = null;
+        TooltipPopup.instance.HideInfo();
     }
 
     /// <summary>

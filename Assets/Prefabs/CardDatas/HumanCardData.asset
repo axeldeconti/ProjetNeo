@@ -15,9 +15,16 @@ MonoBehaviour:
   frame: {fileID: 21300000, guid: 07e2f670fbc36104b8de9fcd662b27ed, type: 3}
   artwork: {fileID: 21300000, guid: 5ec880c2385511149a8ed4a82fba1a94, type: 3}
   cardName: Human
+  nameColor: {r: 0.16464934, g: 0.23944613, b: 0.9433962, a: 1}
+  soundEffect: {fileID: 0}
+  tooltipDescription: 
   minAge: 3
   maxAge: 4
   minLife: 4
   maxLife: 6
   minAtk: 2
   maxAtk: 3
+  human: {fileID: 0}
+  lifeColor: {r: 0.17254902, g: 0.35686275, b: 0.17254902, a: 1}
+  ageColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
+  attackColor: {r: 0.5647059, g: 0.11372549, b: 0.14117648, a: 1}
