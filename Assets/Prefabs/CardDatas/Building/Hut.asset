@@ -15,7 +15,9 @@ MonoBehaviour:
   frame: {fileID: 21300000, guid: 24d33191cd23b1f459ffac1477af8460, type: 3}
   artwork: {fileID: 21300000, guid: 020aa02115fc2c046a17f824fba53f6b, type: 3}
   cardName: Hut
+  nameColor: {r: 0.4433962, g: 0.21789803, b: 0, a: 1}
   soundEffect: {fileID: 8300000, guid: df009e1c48efccb4fb34238491eed36c, type: 3}
+  tooltipDescription: 
   buildingType: 3
   notBuild: {fileID: 21300000, guid: 8e81f14da04c6de4cb689a99c2f24ec3, type: 3}
   storageIncrease: 2

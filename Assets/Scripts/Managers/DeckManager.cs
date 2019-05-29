@@ -198,6 +198,8 @@ public class DeckManager : MonoBehaviour {
                 break;
         }
 
+        UpdateCardInHandCount();
+
         if (!AudioManager.instance.effectSource.isPlaying)
             AudioManager.instance.PlaySoundEffects(cardFlipSFX);
     }

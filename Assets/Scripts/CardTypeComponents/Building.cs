@@ -45,6 +45,9 @@ public class Building : CardTypeComponent, IPointerDownHandler {
         cardData = buildingComp.cardData;
         type = buildingComp.type;
         GetComponent<Image>().sprite = cardData.notBuild;
+
+        if (type == BuildingType.Agricultural_Square)
+            gameObject.AddComponent<AgriculturalSquare>().Init();
     }
 
     /// <summary>

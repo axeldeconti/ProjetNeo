@@ -97,7 +97,6 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
         {
             storage.RemoveItemFromStorage(ressourceName, this);
             DeckManager.instance.AddCard(ressourceName);
-            DeckManager.instance.UpdateCardInHandCount();
         }
     }
 
