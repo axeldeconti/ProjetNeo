@@ -4346,26 +4346,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc472b7311823e34c81335c9781dbe45, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &435865495 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1719860351576702, guid: 6f67a9c77b430c244ba38be24477572f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1624973106}
---- !u!114 &435865497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 435865495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8808a266a24a8349a41700afc944311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myImage: {fileID: 0}
-  isEmpty: 1
-  cardParent: {fileID: 0}
-  acceptedTypes: 00000000
 --- !u!1 &437103816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4536,26 +4516,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 437103816}
   m_CullTransparentMesh: 0
---- !u!1 &443586338 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1719860351576702, guid: 6f67a9c77b430c244ba38be24477572f,
-    type: 2}
-  m_PrefabInternal: {fileID: 50315395}
---- !u!114 &443586340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 443586338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8808a266a24a8349a41700afc944311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myImage: {fileID: 0}
-  isEmpty: 1
-  cardParent: {fileID: 0}
-  acceptedTypes: 00000000
 --- !u!1 &444241256
 GameObject:
   m_ObjectHideFlags: 0
@@ -8087,26 +8047,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 779579100}
   m_CullTransparentMesh: 0
---- !u!1 &798041826 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1719860351576702, guid: 6f67a9c77b430c244ba38be24477572f,
-    type: 2}
-  m_PrefabInternal: {fileID: 894346013}
---- !u!114 &798041828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 798041826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8808a266a24a8349a41700afc944311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myImage: {fileID: 0}
-  isEmpty: 1
-  cardParent: {fileID: 0}
-  acceptedTypes: 00000000
 --- !u!1001 &801743351
 Prefab:
   m_ObjectHideFlags: 0
@@ -12886,26 +12826,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1230611455}
   m_CullTransparentMesh: 0
---- !u!1 &1234155270 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1719860351576702, guid: 6f67a9c77b430c244ba38be24477572f,
-    type: 2}
-  m_PrefabInternal: {fileID: 801743351}
---- !u!114 &1234155272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1234155270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8808a266a24a8349a41700afc944311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myImage: {fileID: 0}
-  isEmpty: 1
-  cardParent: {fileID: 0}
-  acceptedTypes: 00000000
 --- !u!1 &1258502527
 GameObject:
   m_ObjectHideFlags: 0
@@ -14852,26 +14772,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1468309067}
   m_CullTransparentMesh: 0
---- !u!1 &1477094432 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1719860351576702, guid: 6f67a9c77b430c244ba38be24477572f,
-    type: 2}
-  m_PrefabInternal: {fileID: 126024498}
---- !u!114 &1477094434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1477094432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8808a266a24a8349a41700afc944311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myImage: {fileID: 0}
-  isEmpty: 1
-  cardParent: {fileID: 0}
-  acceptedTypes: 00000000
 --- !u!224 &1483604031 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224971513433910550, guid: 39d4bf1dd2ec27c40845537e7b3b166d,
@@ -17473,26 +17373,6 @@ MonoBehaviour:
   eventdata: {fileID: 0}
   lvl: 0
   isEndButton: 0
---- !u!1 &1812476918 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1719860351576702, guid: 6f67a9c77b430c244ba38be24477572f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1888498544}
---- !u!114 &1812476920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1812476918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8808a266a24a8349a41700afc944311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myImage: {fileID: 0}
-  isEmpty: 1
-  cardParent: {fileID: 0}
-  acceptedTypes: 00000000
 --- !u!1 &1827103006
 GameObject:
   m_ObjectHideFlags: 0

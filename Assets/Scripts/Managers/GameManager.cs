@@ -134,5 +134,13 @@ public class GameManager : MonoBehaviour {
     {
         if (Input.GetButtonDown("Cancel"))
             TogglePauseMenu();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            foreach (GameObject human in CardManager.instance.GetAllCardsOfType(CardType.Human))
+            {
+                Debug.Log(human.gameObject.GetInstanceID());
+            }
+        }
     }
 }
