@@ -55,12 +55,8 @@ MonoBehaviour:
   allData:
   - name: Human
     data: {fileID: 11400000, guid: daf4de20a00da7d478ea6f00f5d16209, type: 2}
-  - name: Ressource
-    data: {fileID: 11400000, guid: 4fc112618e8ebbc49b532e97b570e74e, type: 2}
   - name: Axe
     data: {fileID: 11400000, guid: a97fe5a08934a0647a27b268a023fc13, type: 2}
-  - name: Building
-    data: {fileID: 11400000, guid: 4eae04c289cc6494c831d3807546fef4, type: 2}
   - name: Event
     data: {fileID: 11400000, guid: 172115795b434524eb35cf4f5ffb9a61, type: 2}
   - name: Bone knife
@@ -87,24 +83,16 @@ MonoBehaviour:
     data: {fileID: 11400000, guid: 884a0e19f25440e46821930bf3aa3781, type: 2}
   - name: Cloth
     data: {fileID: 11400000, guid: c7b14abb9ef43c142b4d0a16e5ed9f75, type: 2}
-  - name: Corn seed
-    data: {fileID: 11400000, guid: 3bdadc7ef1766e2499e778bd92aac418, type: 2}
   - name: Meat
     data: {fileID: 11400000, guid: 2e55b8631985de24d9c11f21faa4c045, type: 2}
   - name: Fur
     data: {fileID: 11400000, guid: 8cd3c65415b55584a8ab8a890bb47512, type: 2}
   - name: Paint
     data: {fileID: 11400000, guid: bd3ec60cb74277e49a6ab3f2f013c874, type: 2}
-  - name: Rice seed
-    data: {fileID: 11400000, guid: 447211983be4a2d4e8b6d0e5c49ddc13, type: 2}
-  - name: Sorghum seed
-    data: {fileID: 11400000, guid: a5028efb5ab96874cb844248d5f715dc, type: 2}
   - name: Stone
     data: {fileID: 11400000, guid: c3064862dbeb823409869f7793ec03ae, type: 2}
   - name: Water
     data: {fileID: 11400000, guid: 38c9712a7315bb84c90e62bc9ea21f11, type: 2}
-  - name: Wheat seed
-    data: {fileID: 11400000, guid: e525feb37047fbb4295ce3a163f77c51, type: 2}
   - name: Wood
     data: {fileID: 11400000, guid: 188108e007e3b5a478e077a03fbac730, type: 2}
   - name: Workbench
