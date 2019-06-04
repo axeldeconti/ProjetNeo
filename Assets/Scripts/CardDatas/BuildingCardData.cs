@@ -14,17 +14,7 @@ public class BuildingCardData : CardData {
 
     public override string GetTooltipInfoText()
     {
-        StringBuilder builder = new StringBuilder();
-
-        builder.Append("Category : Building").AppendLine();
-        builder.Append("Description : ").Append(tooltipDescription).AppendLine();
-        builder.Append("Bonus storage : ").Append(storageIncrease).AppendLine();
-        builder.Append("Craft : ").Append(nbRessource1).Append(" ").Append(ressource1);
-
-        if (nbRessource2 != 0)
-            builder.Append(" / ").Append(nbRessource2).Append(" ").Append(ressource2);
-
-        return builder.ToString();
+        return "";
     }
 }
 

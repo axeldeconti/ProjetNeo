@@ -32,9 +32,12 @@ public class BoardCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             return;
                
         Human h = GetComponent<Human>();
+        Building b = GetComponent<Building>();
 
         if (h != null)
             TooltipPopup.instance.DisplayInfo(cardData, h.TooltipText());
+        else if(b != null)
+            TooltipPopup.instance.DisplayInfo(cardData, b.TooltipText());
         else TooltipPopup.instance.DisplayInfo(cardData);
     }
 

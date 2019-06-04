@@ -17,7 +17,10 @@ public class EventButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void Init(int fatherLvl)
     {
         if (isEndButton)
+        {
+            GetComponent<Button>().interactable = false;
             return;
+        }
 
         lvl = fatherLvl + 1;
         eventdata = EventManager.instance.ChooseRandomEventType(type);
@@ -46,7 +49,7 @@ public class EventButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData _eventData)
     {
-        if(GetComponent<Button>().interactable)
+        if(GetComponent<Button>().interactable && !isEndButton)
             TooltipPopup.instance.DisplayInfo("Type : " + type);
     }
 

@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Building : CardTypeComponent, IPointerDownHandler {
+public class Building : CardTypeComponent, IPointerDownHandler
+{
 
     protected List<GameObject> ressourceList = new List<GameObject>();
     protected List<RessourceCardData> ressourceDataList = new List<RessourceCardData>();
@@ -74,17 +76,9 @@ public class Building : CardTypeComponent, IPointerDownHandler {
         else if (cardName == cardData.ressource1)
             isRessource1 = true;
 
-        int nbOfRessource = 0;
-
-        foreach (RessourceCardData data in ressourceDataList)
-        {
-            if (data.cardName == cardName)
-                nbOfRessource++;
-        }
-
-        if (isRessource1 && nbOfRessource >= cardData.nbRessource1)
+        if (isRessource1 && GetNbOfRessource(cardName) >= cardData.nbRessource1)
             return false;
-        else if (!isRessource1 && nbOfRessource >= cardData.nbRessource2)
+        else if (!isRessource1 && GetNbOfRessource(cardName) >= cardData.nbRessource2)
             return false;
 
         ressourceDataList.Add(ressourceData);
@@ -94,7 +88,20 @@ public class Building : CardTypeComponent, IPointerDownHandler {
         return true;
     }
 
-    public  void CheckIfBuilt()
+    private int GetNbOfRessource(string ressourceName)
+    {
+        int nbOfRessource = 0;
+
+        foreach (RessourceCardData data in ressourceDataList)
+        {
+            if (data.cardName == ressourceName)
+                nbOfRessource++;
+        }
+
+        return nbOfRessource;
+    }
+
+    public void CheckIfBuilt()
     {
         int nb = cardData.nbRessource1 + cardData.nbRessource2;
 
@@ -155,6 +162,23 @@ public class Building : CardTypeComponent, IPointerDownHandler {
     /// </summary>
     public virtual void OnPointerDown(PointerEventData eventData)
     {
-        
+
+    }
+
+    public string TooltipText()
+    {
+        StringBuilder builder = new StringBuilder();
+
+        BuildingCardData data = cardData as BuildingCardData;
+
+        builder.Append("<size=35>").Append(data.ColouredName).Append("</size>").AppendLine();
+        builder.Append("Category : Building").AppendLine();
+        builder.Append("Bonus storage : ").Append(data.storageIncrease).AppendLine();
+        builder.Append("Craft : ").Append(ressourceDataList[0].cardName).Append(" ").Append(GetNbOfRessource(cardName));
+
+        if (data.nbRessource2 != 0)
+            builder.Append(" / ").Append(data.nbRessource2).Append(" ").Append(data.ressource2);
+
+        return builder.ToString();
     }
 }

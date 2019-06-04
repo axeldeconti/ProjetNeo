@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class WorkbenchDropZone : DropZone_Base
+public class WorkbenchDropZone : DropZone_Base, IPointerDownHandler
 {
     public Workbench wb;
 
