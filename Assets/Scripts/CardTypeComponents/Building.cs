@@ -14,6 +14,7 @@ public class Building : CardTypeComponent, IPointerDownHandler
     public GameObject dropZones, wbo;
     public BuildingCardData cardData;
     public BuildingType type;
+    public bool isBuilt = false;
 
     public override void Init(CardData _cardData)
     {
@@ -25,6 +26,8 @@ public class Building : CardTypeComponent, IPointerDownHandler
         }
 
         type = cardData.buildingType;
+
+        isBuilt = false;
     }
 
     public override void InitBoardCard(CardTypeComponent _cardTypeComp)
@@ -47,6 +50,7 @@ public class Building : CardTypeComponent, IPointerDownHandler
         cardData = buildingComp.cardData;
         type = buildingComp.type;
         GetComponent<Image>().sprite = cardData.notBuild;
+        isBuilt = false;
 
         if (type == BuildingType.Agricultural_Square)
             gameObject.AddComponent<AgriculturalSquare>().Init();
@@ -113,6 +117,8 @@ public class Building : CardTypeComponent, IPointerDownHandler
     {
         Debug.Log(cardData.cardName + " is built");
 
+        isBuilt = true;
+
         Storage.instance.maxStorage += cardData.storageIncrease;
         Storage.instance.UpdateNbOfItem();
 
@@ -171,13 +177,40 @@ public class Building : CardTypeComponent, IPointerDownHandler
 
         BuildingCardData data = cardData as BuildingCardData;
 
-        builder.Append("<size=35>").Append(data.ColouredName).Append("</size>").AppendLine();
-        builder.Append("Category : Building").AppendLine();
-        builder.Append("Bonus storage : ").Append(data.storageIncrease).AppendLine();
-        builder.Append("Craft : ").Append(ressourceDataList[0].cardName).Append(" ").Append(GetNbOfRessource(cardName));
+        string val = isBuilt ? "true" : "false";
 
-        if (data.nbRessource2 != 0)
-            builder.Append(" / ").Append(data.nbRessource2).Append(" ").Append(data.ressource2);
+        builder.Append("Is built : ").Append(val);
+
+        if (!isBuilt)
+        {
+            builder.AppendLine();
+
+            if (ressourceDataList.Count > 0)
+            {
+                builder.Append("Craft : ");
+
+                if (GetNbOfRessource(data.ressource1) > 0)
+                    builder.Append(data.ressource1).Append(" ").Append((data.nbRessource1 - GetNbOfRessource(data.ressource1)));
+                else builder.Append(data.ressource1).Append(" ").Append(data.nbRessource1);
+
+                if (data.nbRessource2 != 0)
+                {
+                    builder.Append(" / ");
+
+                    if (GetNbOfRessource(data.ressource2) > 0)
+                        builder.Append(data.ressource2).Append(" ").Append((data.nbRessource2 - GetNbOfRessource(data.ressource2)));
+                    else builder.Append(data.ressource2).Append(" ").Append(data.nbRessource2);
+                }
+
+            }
+            else
+            {
+                builder.Append("Craft : ").Append(data.ressource1).Append(" ").Append(data.nbRessource1);
+
+                if (data.nbRessource2 != 0)
+                    builder.Append(" / ").Append(data.ressource2).Append(" ").Append(data.nbRessource2);
+            }
+        }
 
         return builder.ToString();
     }

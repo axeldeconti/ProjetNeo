@@ -14,7 +14,13 @@ public class BuildingCardData : CardData {
 
     public override string GetTooltipInfoText()
     {
-        return "";
+        StringBuilder builder = new StringBuilder();
+
+        builder.Append("<size=35>").Append(ColouredName).Append("</size>").AppendLine();
+        builder.Append("Category : Building").AppendLine();
+        builder.Append("Bonus storage : ").Append(storageIncrease);
+
+        return builder.ToString();
     }
 }
 
