@@ -6,7 +6,7 @@ public class BuildingToSelect : MonoBehaviour, IPointerDownHandler
 {
 
     public BuildingCardData data;
-    public Text buildingName, ressource1, ressource2;
+    public Text buildingName, bonus, ressource1, ressource2;
 
     public void Init(BuildingCardData _data)
     {
@@ -16,10 +16,12 @@ public class BuildingToSelect : MonoBehaviour, IPointerDownHandler
 
         buildingName.text = data.cardName;
 
-        ressource1.text = data.ressource1 + " - " + data.nbRessource1;
+        bonus.text = "Storage : + " + data.storageIncrease.ToString();
+
+        ressource1.text = data.ressource1 + " : " + data.nbRessource1;
 
         if (data.nbRessource2 != 0)
-            ressource2.text = data.ressource2 + " - " + data.nbRessource2;
+            ressource2.text = data.ressource2 + " : " + data.nbRessource2;
         else
             ressource2.text = "";
     }
