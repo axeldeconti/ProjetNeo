@@ -8,9 +8,12 @@ using UnityEngine.Audio;
 public class MenusManager : MonoBehaviour
 {
     public string gameScene;
-
+    
     public GameObject mainMenu;
     public GameObject optionsMenu;
+
+    Animator animMainMenu;
+    public GameObject objectAnimator;
 
     public AudioMixer audioMixer;
 
@@ -18,10 +21,13 @@ public class MenusManager : MonoBehaviour
 
     Resolution[] resolutions;
     
+
     // Start
 
     void Start()
     {
+        animMainMenu = objectAnimator.GetComponent<Animator>();
+
         resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions();
@@ -45,8 +51,13 @@ public class MenusManager : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
-    // Functions
+    void Update()
+    {
 
+    }
+
+    // Functions
+    
     public void SetResolution (int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
@@ -72,14 +83,12 @@ public class MenusManager : MonoBehaviour
 
     public void OnClickedOptions ()
     {
-        mainMenu.SetActive(false);
-        optionsMenu.SetActive(true);
+        animMainMenu.SetTrigger("MainMenu");
     }
 
     public void OnClickedBack()
     {
-        optionsMenu.SetActive(false);
-        mainMenu.SetActive(true);
+        animMainMenu.SetTrigger("Options");
     }
 
     public void OnClickedPlay ()
