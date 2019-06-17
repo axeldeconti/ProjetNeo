@@ -65,7 +65,9 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 boardCardPrefab = CardManager.instance.toolBoardCardPrefab;
                 break;
             case CardType.Building:
-                boardCardPrefab = CardManager.instance.buildingBoardCardPrefab;
+                if(cardData.cardName.Equals("Agricultural square"))
+                    boardCardPrefab = CardManager.instance.agriculturalSquarePrefab;
+                else boardCardPrefab = CardManager.instance.buildingBoardCardPrefab;
                 break;
             case CardType.Event:
                 boardCardPrefab = CardManager.instance.eventBoardCardPrefab;
@@ -79,6 +81,9 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         GameObject droppedCard = Instantiate(boardCardPrefab, dz.transform);
         droppedCard.GetComponent<BoardCard>().Init(cardData);
         droppedCard.GetComponent<CardTypeComponent>().InitBoardCard(this.GetComponent<CardTypeComponent>());
+
+        if (cardData.cardName.Equals("Agricultural square"))
+            droppedCard.GetComponent<AgriculturalSquare>().Init();
 
         return droppedCard.GetComponent<BoardCard>();
     }

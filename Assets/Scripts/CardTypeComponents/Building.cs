@@ -11,7 +11,6 @@ public class Building : CardTypeComponent, IPointerDownHandler
     protected List<GameObject> ressourceList = new List<GameObject>();
     protected List<RessourceCardData> ressourceDataList = new List<RessourceCardData>();
 
-    public GameObject dropZones, wbo;
     public BuildingCardData cardData;
     public BuildingType type;
     public bool isBuilt = false;
@@ -44,16 +43,10 @@ public class Building : CardTypeComponent, IPointerDownHandler
             buildingComp = null;
         }
 
-        wbo.SetActive(false);
-        dropZones.SetActive(false);
-
         cardData = buildingComp.cardData;
         type = buildingComp.type;
         GetComponent<Image>().sprite = cardData.notBuild;
         isBuilt = false;
-
-        if (type == BuildingType.Agricultural_Square)
-            gameObject.AddComponent<AgriculturalSquare>().Init();
     }
 
     /// <summary>

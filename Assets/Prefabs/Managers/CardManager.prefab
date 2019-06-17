@@ -61,3 +61,5 @@ MonoBehaviour:
     type: 2}
   eventBoardCardPrefab: {fileID: 1024734071317482, guid: bda481a84a265334b8f3c770c376ac10,
     type: 2}
+  agriculturalSquarePrefab: {fileID: 1502012565778690, guid: aa19ba1bed28bc745862ff002082017a,
+    type: 2}

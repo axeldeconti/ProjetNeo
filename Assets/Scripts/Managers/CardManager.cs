@@ -28,6 +28,7 @@ public class CardManager : MonoBehaviour {
     public Dictionary<int, GameObject> allToolCards = new Dictionary<int, GameObject>();
     public Dictionary<int, GameObject> allBuildingCards = new Dictionary<int, GameObject>();
     public GameObject humanBoardCardPrefab, ressourceBoardCardPrefab, toolBoardCardPrefab, buildingBoardCardPrefab, eventBoardCardPrefab;
+    public GameObject agriculturalSquarePrefab;
 
     /// <summary>
     /// Add a card to the right dictionary

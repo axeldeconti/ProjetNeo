@@ -26,7 +26,6 @@ public class HumanToFeed : MonoBehaviour, IPointerDownHandler
 
         if (myHuman.tool != null)
         {
-            Debug.Log(myHuman.tool.data);
             tool.sprite = myHuman.tool.data.artwork;
         }
         else tool.sprite = invisible;

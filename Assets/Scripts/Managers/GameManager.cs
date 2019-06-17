@@ -29,12 +29,15 @@ public class GameManager : MonoBehaviour {
     public EventEffect eventEffect = null;
     public GameObject pauseMenu, gameOverScreen, winScreen;
     public GameObject tutoPanel;
+    public Sprite invisibleSprite;
+    public Transform AgriSquareScreen;
 
     /// <summary>
     /// Call to start a new turn
     /// </summary>
     public void StartTurn()
     {
+        ClearConsole();
         DeckManager.instance.StartTurn();
         EventManager.instance.canGoToNextLevel = false;
         EventManager.instance.ButtonsCloseTree.gameObject.SetActive(true);
@@ -42,6 +45,21 @@ public class GameManager : MonoBehaviour {
         foreach (GameObject card in CardManager.instance.GetAllCards())
         {
             card.GetComponent<CardTypeComponent>().StartTurn();
+        }
+
+        foreach (GameObject h in CardManager.instance.allHumanCards.Values)
+        {
+            if(h.GetComponent<Human>().metier == HumanMetier.Farmer)
+            {
+                foreach (GameObject building in CardManager.instance.allBuildingCards.Values)
+                {
+                    AgriculturalSquare agri = building.GetComponent<AgriculturalSquare>();
+                    if (agri != null)
+                        agri.StartTurn();
+                }
+
+                break;
+            }
         }
     }
 

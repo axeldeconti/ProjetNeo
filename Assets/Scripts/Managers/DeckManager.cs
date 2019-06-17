@@ -176,6 +176,8 @@ public class DeckManager : MonoBehaviour {
     {
         CardData data = allCardData[cardNameToAdd];
 
+        //Debug.Log("AddCard : " + cardNameToAdd + " of type " + data.cardType);
+
         switch (data.cardType)
         {
             case CardType.Human:
@@ -251,7 +253,7 @@ public class DeckManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.H))
             AddCard("Human");
         if (Input.GetKeyDown(KeyCode.P))
-            AddCard("Workbench");
+            AddCard("AgriculturalSquare");
         if (Input.GetKeyDown(KeyCode.M))
             AddCard("Meat");
         if (Input.GetKeyDown(KeyCode.C))
@@ -260,6 +262,10 @@ public class DeckManager : MonoBehaviour {
             AddCard("Cloth");
         if (Input.GetKeyDown(KeyCode.B))
             AddCard("Bone");
+        if (Input.GetKeyDown(KeyCode.O))
+            AddCard("Sorgho Seed");
+        if (Input.GetKeyDown(KeyCode.I))
+            AddCard("Shovel");
     }
 }
 

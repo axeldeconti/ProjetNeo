@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SeedDropZone : DropZone_Base
+public class SeedDropZone : DropZone_Base, IPointerDownHandler
 {
 
     [HideInInspector] public AgriculturalSquare mySquare;
@@ -12,10 +12,11 @@ public class SeedDropZone : DropZone_Base
     {
         Seed s;
 
-        if (s = c.cardData as Seed)
+        if (s = (c.cardData as Seed))
         {
-            CreateBoardcard(d, c);
+            CreateBoardcard(d, c);  
             mySquare.AddSeed(s, this);
+            hasSeed = true;
         }
     }
 
@@ -40,6 +41,8 @@ public class SeedDropZone : DropZone_Base
         if (Input.GetKeyDown(KeyCode.Mouse1) && hasSeed)
         {
             mySquare.Harvest(this);
+            hasSeed = false;
+            TooltipPopup.instance.HideInfo();
         }
     }
 }

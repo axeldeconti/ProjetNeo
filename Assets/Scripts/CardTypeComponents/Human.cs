@@ -81,10 +81,9 @@ public class Human : CardTypeComponent
                 DeckManager.instance.AddCard("Stone");
                 break;
             case HumanMetier.Farmer:
-                DeckManager.instance.AddCard("Food");
                 break;
             case HumanMetier.Hunter:
-                DeckManager.instance.AddCard("Food");
+                DeckManager.instance.AddCard("Meat");
                 break;
             default:
                 break;

@@ -9,31 +9,25 @@ public class Seed : RessourceCardData {
     public SeedStage[] stages;
     public SeedStage actualStage;
     public RessourceCardData droppedRessource;
-    [HideInInspector] public AgriculturalSquare mySquare;
+    [HideInInspector] public int currentIndex = 0;
+    [HideInInspector] public bool isDone = false;
 
     public void Grow()
     {
-        for (int i = 0; i < stages.Length; i++)
+        actualStage.duration--;
+        if (actualStage.duration <= 0 && !isDone)
         {
-            if(stages[i].duration > 0)
+            if (currentIndex < (stages.Length - 1))
             {
-                if(stages[i].duration-- == 0)
-                {
-
-                }
-                else
-                {
-
-                }
-
-                return;
+                currentIndex++;
+                actualStage = stages[currentIndex];
             }
+
+            if (currentIndex == (stages.Length - 1))
+                isDone = true;
         }
-    }
 
-    public void Harvest()
-    {
-
+        Debug.Log(cardName + " at stage " + currentIndex + " and is done = " + isDone);
     }
 }
 

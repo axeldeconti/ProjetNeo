@@ -82,8 +82,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 613e562a6bf326c4181bd1d54972b2f4, type: 2}
   canGoToNextLevel: 0
   ButtonsCloseTree: {fileID: 0}
-  encouterScreen: {fileID: 21300000, guid: b37398313dfebf54eb7c14f1fff30872, type: 3}
-  normalScreen: {fileID: 21300000, guid: a24ae419ecd94cf4caafd94dd05b5dc2, type: 3}
+  encouterScreen: {fileID: 21300000, guid: a6acb254591d0e648b9f944a57045db8, type: 3}
+  normalScreen: {fileID: 21300000, guid: 49e5c0a3f67ca574480753258b738b1e, type: 3}
   animalImage: {fileID: 0}
 --- !u!114 &114557427705646538
 MonoBehaviour:
@@ -104,3 +104,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 65fe4a5df97d2d741bcfafb89c8efb3b, type: 2}
   - {fileID: 11400000, guid: 8135c7e191fb823458301f622675d0c7, type: 2}
   - {fileID: 11400000, guid: 43bf916836482ea40b5fd9357aec638b, type: 2}
+  - {fileID: 11400000, guid: c598921228b09744e95111356ed752c9, type: 2}
