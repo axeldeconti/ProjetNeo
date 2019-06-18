@@ -122,10 +122,11 @@ MonoBehaviour:
     type: 2}
   eventCardPrefab: {fileID: 1684043234106974, guid: 806e1a2d4a789d64ca1e7f1d5c164820,
     type: 2}
-  endButton: {fileID: 0}
   HandPannel: {fileID: 0}
   canEndTurn: 0
   cardFlipSFX: {fileID: 8300000, guid: 1e0980239e747a44bac323350146b9ca, type: 3}
+  burnAllButton: {fileID: 0}
+  endTurnButton: {fileID: 0}
 --- !u!114 &114907172753142224
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -33,10 +33,10 @@ public class DeckManager : MonoBehaviour {
     public AllCardDataStruct[] allData;
     public int nbCard;
     public GameObject humanCardPrefab, ressourceCardPrefab, toolCardPrefab, buildingCardPrefab, eventCardPrefab;
-    public Button endButton;
     public Transform HandPannel;
     public bool canEndTurn;
     public AudioClip cardFlipSFX;
+    public GameObject burnAllButton, endTurnButton;
 
     /// <summary>
     /// Create the dictionary from the allData array
@@ -89,7 +89,8 @@ public class DeckManager : MonoBehaviour {
         DrawRessourceCard();
 
         canEndTurn = true;
-        endButton.interactable = false;
+        endTurnButton.SetActive(false);
+        burnAllButton.SetActive(true);
     }
 
     /// <summary>
@@ -108,7 +109,8 @@ public class DeckManager : MonoBehaviour {
         }
 
         cardInHand = HandPannel.childCount;
-        endButton.interactable = false;
+        endTurnButton.SetActive(false);
+        burnAllButton.SetActive(true);
     }
 
     /// <summary>
@@ -231,11 +233,29 @@ public class DeckManager : MonoBehaviour {
     public void UpdateCardInHandCount()
     {
         cardInHand = HandPannel.childCount;
+        Debug.Log(cardInHand);
 
         if (cardInHand == 0 && canEndTurn)
-            endButton.interactable = true;
+        {
+            endTurnButton.SetActive(true);
+            burnAllButton.SetActive(false);
+        }
         else
-            endButton.interactable = false;
+        {
+            endTurnButton.SetActive(false);
+            burnAllButton.SetActive(true);
+        }
+    }
+
+    public void ClearHand()
+    {
+        for (int i = HandPannel.childCount - 1; i >= 0; i--)
+        {
+            Destroy(HandPannel.GetChild(i).gameObject);
+        }
+
+        endTurnButton.SetActive(true);
+        burnAllButton.SetActive(false);
     }
 
     private void Update()

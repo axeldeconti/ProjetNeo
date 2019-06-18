@@ -28,9 +28,10 @@ public class GameManager : MonoBehaviour {
     public int turn = 1;
     public EventEffect eventEffect = null;
     public GameObject pauseMenu, gameOverScreen, winScreen;
-    public GameObject tutoPanel;
+    public GameObject tutoPanel, burnAllUI;
     public Sprite invisibleSprite;
     public Transform AgriSquareScreen;
+    public bool hasTuto;
 
     /// <summary>
     /// Call to start a new turn
@@ -38,9 +39,16 @@ public class GameManager : MonoBehaviour {
     public void StartTurn()
     {
         ClearConsole();
-        DeckManager.instance.StartTurn();
         EventManager.instance.canGoToNextLevel = false;
         EventManager.instance.ButtonsCloseTree.gameObject.SetActive(true);
+
+        if (hasTuto)
+        {
+            TutoGameManager.instance.StartTurn();
+            return;
+        }
+
+        DeckManager.instance.StartTurn();
 
         foreach (GameObject card in CardManager.instance.GetAllCards())
         {
@@ -72,7 +80,7 @@ public class GameManager : MonoBehaviour {
         EventManager.instance.canGoToNextLevel = true;
         EventManager.instance.ButtonsCloseTree.gameObject.SetActive(false);
 
-        DeckManager.instance.endButton.interactable = false;
+        DeckManager.instance.endTurnButton.SetActive(false);
 
         foreach (GameObject card in CardManager.instance.GetAllCards())
         {
@@ -122,6 +130,12 @@ public class GameManager : MonoBehaviour {
     {
         Debug.Log("You won !");
         winScreen.SetActive(true);
+    }
+
+    public void BurnAll()
+    {
+        DeckManager.instance.ClearHand();
+        burnAllUI.SetActive(false);
     }
 
     /// <summary>

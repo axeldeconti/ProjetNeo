@@ -57,5 +57,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 0}
   winScreen: {fileID: 0}
   tutoPanel: {fileID: 0}
+  burnAllUI: {fileID: 0}
   invisibleSprite: {fileID: 21300000, guid: 2bf8ad0c7bb98b24d872b7756c0ad678, type: 3}
   AgriSquareScreen: {fileID: 0}
+  hasTuto: 0
