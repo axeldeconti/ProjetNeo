@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class Bin : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public AudioClip burnCardSFX;
+
     /// <summary>
     /// Mouse over the bin
     /// </summary>
@@ -47,6 +49,7 @@ public class Bin : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerEx
         if (d != null)
         {
             DeckManager.instance.UpdateCardInHandCount();
+            gameObject.GetComponent<AudioSource>().PlayOneShot(burnCardSFX, 0.6f);
             Destroy(d.placeholder);
             Destroy(d.gameObject);
         }
