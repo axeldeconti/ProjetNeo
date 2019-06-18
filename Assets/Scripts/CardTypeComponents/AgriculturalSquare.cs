@@ -67,6 +67,7 @@ public class AgriculturalSquare : MonoBehaviour, IPointerDownHandler
 
             boardImages[nb].sprite = GameManager.instance.invisibleSprite;
             dz.transform.GetChild(0).GetComponent<Image>().sprite = GameManager.instance.invisibleSprite;
+            dz.isEmpty = true;
         }
     }
 
