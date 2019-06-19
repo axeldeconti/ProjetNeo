@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour {
+public class AudioManager : MonoBehaviour
+{
 
     #region Singleton
 
@@ -23,7 +24,8 @@ public class AudioManager : MonoBehaviour {
     #endregion
 
     public AudioSource effectSource;
-    public AudioClip click;
+    public AudioClip clickSFX;
+    public AudioClip highlightedSFX;
 
     public void PlaySoundEffects(AudioClip audio)
     {
@@ -32,6 +34,11 @@ public class AudioManager : MonoBehaviour {
 
     public void PlayClickSound()
     {
-        effectSource.PlayOneShot(click);
+        effectSource.PlayOneShot(clickSFX,0.2f);
+    }
+
+    public void PlayHoverSound()
+    {
+        effectSource.PlayOneShot(highlightedSFX,0.07f);
     }
 }
