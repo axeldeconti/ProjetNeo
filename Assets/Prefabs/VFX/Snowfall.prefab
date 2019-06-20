@@ -9,35 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1172450737310410}
+  m_RootGameObject: {fileID: 1698375525004462}
   m_IsPrefabAsset: 1
---- !u!1 &1136128417951416
+--- !u!1 &1109836425132416
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4322714166515158}
-  - component: {fileID: 198674135472861290}
-  - component: {fileID: 199013011336681316}
-  m_Layer: 0
-  m_Name: Snow_flake
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1150583632989968
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4626868996636052}
-  - component: {fileID: 198770768784250944}
-  - component: {fileID: 199837201860824552}
+  - component: {fileID: 4727365637318920}
+  - component: {fileID: 198925466426644604}
+  - component: {fileID: 199902494214216808}
   m_Layer: 0
   m_Name: Snow_flake_2
   m_TagString: Untagged
@@ -45,14 +28,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1172450737310410
+--- !u!1 &1416249670003968
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4439226039391496}
+  - component: {fileID: 4133160698579428}
+  - component: {fileID: 198464074270437362}
+  - component: {fileID: 199911841131950896}
+  m_Layer: 0
+  m_Name: Snow_flake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1698375525004462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4135580185036702}
   m_Layer: 0
   m_Name: Snowfall
   m_TagString: Untagged
@@ -60,53 +60,53 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4322714166515158
+--- !u!4 &4133160698579428
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1136128417951416}
+  m_GameObject: {fileID: 1416249670003968}
   m_LocalRotation: {x: 0.00000007102682, y: -0.70710677, z: 0.7071068, w: -0.000000063474516}
-  m_LocalPosition: {x: -11.633201, y: 5.304945, z: 5.4040885}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4439226039391496}
+  m_Father: {fileID: 4135580185036702}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -270, y: 180, z: -0.000015258789}
---- !u!4 &4439226039391496
+--- !u!4 &4135580185036702
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1172450737310410}
+  m_GameObject: {fileID: 1698375525004462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.4932, y: 17.115055, z: -5.2240887}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4322714166515158}
-  - {fileID: 4626868996636052}
+  - {fileID: 4133160698579428}
+  - {fileID: 4727365637318920}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4626868996636052
+--- !u!4 &4727365637318920
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1150583632989968}
+  m_GameObject: {fileID: 1109836425132416}
   m_LocalRotation: {x: 0.00000007102682, y: -0.70710677, z: 0.7071068, w: -0.000000063474516}
-  m_LocalPosition: {x: -11.633201, y: 5.304945, z: 5.4040885}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4439226039391496}
+  m_Father: {fileID: 4135580185036702}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -270, y: 180, z: -0.000015258789}
---- !u!198 &198674135472861290
+--- !u!198 &198464074270437362
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1136128417951416}
+  m_GameObject: {fileID: 1416249670003968}
   serializedVersion: 5
   lengthInSec: 5
   simulationSpeed: 1
@@ -4634,12 +4634,12 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!198 &198770768784250944
+--- !u!198 &198925466426644604
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1150583632989968}
+  m_GameObject: {fileID: 1109836425132416}
   serializedVersion: 5
   lengthInSec: 5
   simulationSpeed: 1
@@ -9167,13 +9167,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &199013011336681316
+--- !u!199 &199902494214216808
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1136128417951416}
+  m_GameObject: {fileID: 1109836425132416}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -9224,13 +9224,13 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!199 &199837201860824552
+--- !u!199 &199911841131950896
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1150583632989968}
+  m_GameObject: {fileID: 1416249670003968}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
