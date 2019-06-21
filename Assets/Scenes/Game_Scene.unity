@@ -3804,6 +3804,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: f3d10d0dcb4b36e4aaf075d83c8008b4,
         type: 3}
+    - target: {fileID: 224795158307918056, guid: f0cb44403456fac4592a30b5c41ef8f3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0cb44403456fac4592a30b5c41ef8f3, type: 2}
   m_IsPrefabAsset: 0
@@ -5038,7 +5043,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e319483ad3fb8ae4dad578dc6fb4e27a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f10cc8fe6bc62e418e31db2de3d5f48, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16587,7 +16592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1647330756
 RectTransform:
   m_ObjectHideFlags: 0
