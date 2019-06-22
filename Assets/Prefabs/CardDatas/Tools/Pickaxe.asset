@@ -19,5 +19,5 @@ MonoBehaviour:
   soundEffect: {fileID: 8300000, guid: 5c4112a2610fb05408ef06b327e0971f, type: 3}
   tooltipDescription: 
   metier: 3
-  bonusAtk: 0
+  bonusAtk: 1
   bonusLife: 0

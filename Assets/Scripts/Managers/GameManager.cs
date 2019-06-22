@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
     public int turn = 1;
     public EventEffect eventEffect = null;
     public GameObject pauseMenu, gameOverScreen, winScreen;
-    public GameObject tutoPanel, burnAllUI;
+    public GameObject helpPanel, burnAllUI;
     public Sprite invisibleSprite;
     public Transform AgriSquareScreen;
     public bool hasTuto;
@@ -159,7 +159,12 @@ public class GameManager : MonoBehaviour {
 
     public void OnClickHelp()
     {
-        tutoPanel.SetActive(true);
+        helpPanel.SetActive(true);
+    }
+
+    public void OnQuitHelp()
+    {
+        helpPanel.SetActive(false);
     }
 
     private void Update()

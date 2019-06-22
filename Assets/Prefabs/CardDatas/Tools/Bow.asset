@@ -18,6 +18,6 @@ MonoBehaviour:
   nameColor: {r: 0.509434, g: 0.34853375, b: 0.05526879, a: 1}
   soundEffect: {fileID: 8300000, guid: 4d2362a248f1d7f41b8cac1a23cd15fc, type: 3}
   tooltipDescription: 
-  metier: 7
+  metier: 5
   bonusAtk: 3
   bonusLife: 0
