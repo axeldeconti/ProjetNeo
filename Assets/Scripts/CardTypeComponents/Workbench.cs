@@ -56,8 +56,14 @@ public class Workbench : MonoBehaviour, IPointerDownHandler {
                 currentRecipeID += 100000;
                 break;
             default:
-                Debug.Log("Can't add this card to the workbench : " + data.cardName);
-                RemoveRessource(ressourceToAdd, true);
+                if (data.isFood)
+                {
+                    currentRecipeID += 1000000;
+                } else
+                {
+                    Debug.Log("Can't add this card to the workbench : " + data.cardName);
+                    RemoveRessource(ressourceToAdd, true);
+                }
                 break;
         }
 
@@ -102,7 +108,14 @@ public class Workbench : MonoBehaviour, IPointerDownHandler {
                 currentRecipeID -= 100000;
                 break;
             default:
-                Debug.Log("Can't add this card to the workbench : " + data.cardName);
+                if (data.isFood)
+                {
+                    currentRecipeID -= 1000000;
+                }
+                else
+                {
+                    Debug.Log("Can't add this card to the workbench : " + data.cardName);
+                }
                 break;
         }
 

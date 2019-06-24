@@ -97,3 +97,6 @@ MonoBehaviour:
   - name: Bone cabin
     recipeID: 4007
     outcome: {fileID: 11400000, guid: 65fe4a5df97d2d741bcfafb89c8efb3b, type: 2}
+  - name: Human
+    recipeID: 4000000
+    outcome: {fileID: 11400000, guid: daf4de20a00da7d478ea6f00f5d16209, type: 2}
