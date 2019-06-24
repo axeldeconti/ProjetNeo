@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
 
     public CardData cardData;
@@ -103,5 +103,16 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         TooltipPopup.instance.HideInfo();
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (Storage.instance.CheckStorage())
+            {
+                Storage.instance.AddItemToStorage(GetComponent<Draggable>(), this);
+            }
+        }
     }
 }

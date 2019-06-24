@@ -233,7 +233,6 @@ public class DeckManager : MonoBehaviour {
     public void UpdateCardInHandCount()
     {
         cardInHand = HandPannel.childCount;
-        Debug.Log(cardInHand);
 
         if (cardInHand == 0 && canEndTurn)
         {
