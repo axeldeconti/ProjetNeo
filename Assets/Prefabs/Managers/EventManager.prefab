@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingSelectionScreen: {fileID: 0}
-  buildingToSelectPrefab: {fileID: 1405713677465254, guid: 57db0f2c441726949b0e014e9cc72814,
+  buildingToSelectPrefab: {fileID: 1373912810165340, guid: 57db0f2c441726949b0e014e9cc72814,
     type: 2}
   buildingToBuild:
   - {fileID: 11400000, guid: 5cc4ebcf8e63ba747b6d457675d5b33e, type: 2}

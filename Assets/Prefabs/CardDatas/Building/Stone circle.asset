@@ -20,6 +20,8 @@ MonoBehaviour:
   tooltipDescription: 
   buildingType: 2
   notBuild: {fileID: 21300000, guid: 188d6337b80e82c428188c7936564f8c, type: 3}
+  buildingToSelectSprite: {fileID: 21300000, guid: c76fbafa4be478a4d99370a090a82aeb,
+    type: 3}
   storageIncrease: 1
   ressource1: Stone
   ressource2: 

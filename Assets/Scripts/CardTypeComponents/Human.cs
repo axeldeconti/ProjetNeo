@@ -14,6 +14,7 @@ public class Human : CardTypeComponent
     public Text age, life, attack;
     public bool isFed;
     public GameObject hungerMarker;
+    public ParticleSystem humanFedPS;
 
     public override void Init(CardData _cardData)
     {
@@ -148,6 +149,7 @@ public class Human : CardTypeComponent
     {
         isFed = true;
         hungerMarker.SetActive(false);
+        humanFedPS.Play();
     }
 
     /// <summary>

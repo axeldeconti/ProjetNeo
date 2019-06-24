@@ -59,7 +59,7 @@ MonoBehaviour:
     recipeID: 21
     outcome: {fileID: 11400000, guid: 62e25df6239e9f64eb3a74af18cf6b3b, type: 2}
   - name: Shovel
-    recipeID: 22
+    recipeID: 2
     outcome: {fileID: 11400000, guid: d79e3ceccb2c69844b0e642d5eaec5bd, type: 2}
   - name: Spear
     recipeID: 13

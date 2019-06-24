@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4599992549654066}
   m_Layer: 0
-  m_Name: Human_feeded
+  m_Name: Human_fed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

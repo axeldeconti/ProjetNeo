@@ -7,7 +7,7 @@ using UnityEngine;
 public class BuildingCardData : CardData {
 
     public BuildingType buildingType;
-    public Sprite notBuild;
+    public Sprite notBuild, buildingToSelectSprite;
     public int storageIncrease;
     public string ressource1, ressource2;
     public int nbRessource1 = 0, nbRessource2 = 0;
