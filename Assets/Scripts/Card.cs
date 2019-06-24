@@ -109,10 +109,20 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if (Storage.instance.CheckStorage())
+            if (!cardData.cardType.Equals(CardType.Human) && !cardData.cardType.Equals(CardType.Building))
             {
-                Storage.instance.AddItemToStorage(GetComponent<Draggable>(), this);
-                TooltipPopup.instance.HideInfo();
+                if (Storage.instance.CheckStorage())
+                {
+                    Storage.instance.AddItemToStorage(GetComponent<Draggable>(), this);
+
+                    if (DeckManager.instance.HandPannel.childCount <= 1)
+                    {
+                        DeckManager.instance.endTurnButton.SetActive(true);
+                        DeckManager.instance.burnAllButton.SetActive(false);
+                    }
+
+                    TooltipPopup.instance.HideInfo();
+                }
             }
         }
     }
