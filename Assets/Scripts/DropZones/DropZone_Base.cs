@@ -7,6 +7,7 @@ public abstract class DropZone_Base : MonoBehaviour, IDropHandler, IPointerEnter
     [HideInInspector] public Image myImage;
     public bool isEmpty = true;
     public GameObject cardParent;
+    public string emptyTooltipText;
 
     private void Start()
     {
@@ -20,7 +21,12 @@ public abstract class DropZone_Base : MonoBehaviour, IDropHandler, IPointerEnter
     {
         //Return if nothing is being dragged
         if (eventData.pointerDrag == null)
+        {
+            if(isEmpty && emptyTooltipText != "")
+                TooltipPopup.instance.DisplayInfo(emptyTooltipText);
+
             return;
+        }
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
 
@@ -34,6 +40,8 @@ public abstract class DropZone_Base : MonoBehaviour, IDropHandler, IPointerEnter
     /// </summary>
     public virtual void OnPointerExit(PointerEventData eventData)
     {
+        TooltipPopup.instance.HideInfo();
+
         //Return if nothing is being dragged
         if (eventData.pointerDrag == null)
             return;
@@ -43,8 +51,6 @@ public abstract class DropZone_Base : MonoBehaviour, IDropHandler, IPointerEnter
         //Set the placeholder parent to the card one
         if (d != null && d.placeholderParent == transform)
             d.placeholderParent = d.parentToReturnTo;
-
-        TooltipPopup.instance.HideInfo();
     }
 
     /// <summary>
