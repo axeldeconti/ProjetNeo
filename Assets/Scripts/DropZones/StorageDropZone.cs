@@ -87,7 +87,7 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
     {
         nbOfRessourcesText.text = nbOfRessouces.ToString();
 
-        GameManager.instance.ClearConsole();
+        //GameManager.instance.ClearConsole();
         Debug.Log("There is " + storage.storage[ressourceName] + " of " + ressourceName);
     }
 

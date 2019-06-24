@@ -104,6 +104,12 @@ public class Storage : MonoBehaviour
         }
 
         UpdateNbOfItem();
+
+        if (DeckManager.instance.HandPannel.childCount <= 1)
+        {
+            DeckManager.instance.endTurnButton.SetActive(true);
+            DeckManager.instance.burnAllButton.SetActive(false);
+        }
     }
 
     /// <summary>

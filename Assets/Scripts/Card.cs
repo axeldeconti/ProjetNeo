@@ -112,6 +112,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
             if (Storage.instance.CheckStorage())
             {
                 Storage.instance.AddItemToStorage(GetComponent<Draggable>(), this);
+                TooltipPopup.instance.HideInfo();
             }
         }
     }
