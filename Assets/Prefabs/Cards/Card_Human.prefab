@@ -193,6 +193,9 @@ GameObject:
   - component: {fileID: 114344457682091436}
   - component: {fileID: 114082851212515034}
   - component: {fileID: 114576711570055888}
+  - component: {fileID: 111226805725189932}
+  - component: {fileID: 114343210275381166}
+  - component: {fileID: 114582938417314462}
   m_Layer: 5
   m_Name: Card_Human
   m_TagString: Untagged
@@ -200,6 +203,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!111 &111226805725189932
+Animation:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986284473417564}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3a0b3c8f13a1eb64cb38c9be34e9b64c, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3a0b3c8f13a1eb64cb38c9be34e9b64c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114037727102836442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1309a7de7df0cf04cab20a349ef373a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: 36b163a8d19538842bac310bc067d931, type: 2}
+  cardData: {fileID: 0}
   frame: {fileID: 114398353409221188}
   artwork: {fileID: 114134768827294296}
   icon: {fileID: 114506943250192734}
@@ -388,6 +406,17 @@ MonoBehaviour:
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
+--- !u!114 &114343210275381166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986284473417564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de64504999ff8df42a28c58bcc5d6619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114344457682091436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -478,6 +507,54 @@ MonoBehaviour:
   life: {fileID: 114911930435062852}
   attack: {fileID: 114122327991321542}
   isFed: 0
+  hungerMarker: {fileID: 0}
+--- !u!114 &114582938417314462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986284473417564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114343210275381166}
+          m_MethodName: playAnimHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114343210275381166}
+          m_MethodName: stopAnimHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114823054014930790
 MonoBehaviour:
   m_ObjectHideFlags: 1

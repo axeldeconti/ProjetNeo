@@ -108,6 +108,9 @@ GameObject:
   - component: {fileID: 114210802912753088}
   - component: {fileID: 114134885688651988}
   - component: {fileID: 114092949440071026}
+  - component: {fileID: 111349544725884774}
+  - component: {fileID: 114558420885338650}
+  - component: {fileID: 114301608028262870}
   m_Layer: 5
   m_Name: Card_Building
   m_TagString: Untagged
@@ -115,6 +118,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!111 &111349544725884774
+Animation:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1562744772880262}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3a0b3c8f13a1eb64cb38c9be34e9b64c, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3a0b3c8f13a1eb64cb38c9be34e9b64c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114034385580246962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,10 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aca27d0d1885bc45ae5939c76770940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropZones: {fileID: 0}
-  wbo: {fileID: 0}
   cardData: {fileID: 0}
   type: 0
+  isBuilt: 0
 --- !u!114 &114134885688651988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1309a7de7df0cf04cab20a349ef373a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: 36b163a8d19538842bac310bc067d931, type: 2}
+  cardData: {fileID: 0}
   frame: {fileID: 114978507982163752}
   artwork: {fileID: 114034385580246962}
   icon: {fileID: 114727556379652872}
@@ -206,6 +223,53 @@ MonoBehaviour:
   parentToReturnTo: {fileID: 0}
   placeholderParent: {fileID: 0}
   placeholder: {fileID: 0}
+--- !u!114 &114301608028262870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1562744772880262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114558420885338650}
+          m_MethodName: playAnimHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114558420885338650}
+          m_MethodName: StopAllCoroutines
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114557812263214846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,6 +303,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Name
+--- !u!114 &114558420885338650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1562744772880262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de64504999ff8df42a28c58bcc5d6619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114727556379652872
 MonoBehaviour:
   m_ObjectHideFlags: 1
