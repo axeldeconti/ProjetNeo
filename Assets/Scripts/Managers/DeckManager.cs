@@ -272,7 +272,7 @@ public class DeckManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.H))
             AddCard("Human");
         if (Input.GetKeyDown(KeyCode.P))
-            AddCard("AgriculturalSquare");
+            AddCard("Agricultural square");
         if (Input.GetKeyDown(KeyCode.M))
             AddCard("Meat");
         if (Input.GetKeyDown(KeyCode.C))

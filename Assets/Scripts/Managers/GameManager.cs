@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,7 +29,7 @@ public class GameManager : MonoBehaviour {
     public GameObject helpPanel, burnAllUI;
     public Sprite invisibleSprite;
     public Transform AgriSquareScreen;
-    public bool hasTuto;
+    public AudioClip winSFX, looseSFX; 
 
     /// <summary>
     /// Call to start a new turn
@@ -41,12 +39,6 @@ public class GameManager : MonoBehaviour {
         ClearConsole();
         EventManager.instance.canGoToNextLevel = false;
         EventManager.instance.ButtonsCloseTree.gameObject.SetActive(true);
-
-        if (hasTuto)
-        {
-            TutoGameManager.instance.StartTurn();
-            return;
-        }
 
         DeckManager.instance.StartTurn();
 
@@ -124,12 +116,14 @@ public class GameManager : MonoBehaviour {
     {
         Debug.Log("Game Over !");
         gameOverScreen.SetActive(true);
+        AudioManager.instance.PlaySoundEffects(looseSFX);
     }
 
     public void WinGame()
     {
         Debug.Log("You won !");
         winScreen.SetActive(true);
+        AudioManager.instance.PlaySoundEffects(winSFX);
     }
 
     public void BurnAll()
