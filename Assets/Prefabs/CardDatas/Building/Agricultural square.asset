@@ -19,7 +19,7 @@ MonoBehaviour:
   soundEffect: {fileID: 8300000, guid: df009e1c48efccb4fb34238491eed36c, type: 3}
   tooltipDescription: 
   buildingType: 1
-  notBuild: {fileID: 21300000, guid: 8e81f14da04c6de4cb689a99c2f24ec3, type: 3}
+  notBuild: {fileID: 21300000, guid: fe6b6757ec12c4f4eb2088273a00abc8, type: 3}
   buildingToSelectSprite: {fileID: 21300000, guid: 97e700002b3642e449efcf775aa2241c,
     type: 3}
   storageIncrease: 0
