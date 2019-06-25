@@ -15,8 +15,7 @@ public class HumanCardData : CardData {
         StringBuilder builder = new StringBuilder();
 
         builder.Append("<size=35>").Append(ColouredName).Append("</size>").AppendLine();
-        builder.Append("Category : Human").AppendLine();
-        builder.Append("Metier : ").Append(human.metier);
+        builder.Append(human.metier);
 
         return builder.ToString();
     }

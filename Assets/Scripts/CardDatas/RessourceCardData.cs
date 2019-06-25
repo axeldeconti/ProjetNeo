@@ -14,7 +14,7 @@ public class RessourceCardData : CardData {
         StringBuilder builder = new StringBuilder();
 
         builder.Append("<size=35>").Append(ColouredName).Append("</size>").AppendLine();
-        builder.Append("Category : Ressource");
+        builder.Append("Ressource");
         //builder.Append("Description : ").Append(tooltipDescription).AppendLine();
 
         return builder.ToString();

@@ -14,10 +14,10 @@ public class ToolCardData : CardData {
         StringBuilder builder = new StringBuilder();
 
         builder.Append("<size=35>").Append(ColouredName).Append("</size>").AppendLine();
-        builder.Append("Category : Tool").AppendLine();
-        builder.Append("Metier : ").Append(metier).AppendLine();
-        builder.Append("Bonus Attack : ").Append(bonusAtk).AppendLine();
-        builder.Append("Bonus Life : ").Append(bonusLife);
+        builder.Append("Tool").AppendLine();
+        builder.Append(metier).AppendLine();
+        builder.Append("Attack : ").Append(bonusAtk).AppendLine();
+        builder.Append("Life : ").Append(bonusLife);
         //builder.Append("Description : ").Append(tooltipDescription).AppendLine();
 
         return builder.ToString();

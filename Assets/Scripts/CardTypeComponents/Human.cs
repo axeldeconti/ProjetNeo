@@ -189,7 +189,6 @@ public class Human : CardTypeComponent
         string ageColour = ColorUtility.ToHtmlStringRGB(data.ageColor);
         string attackColour = ColorUtility.ToHtmlStringRGB(data.attackColor);
 
-        builder.Append("Is fed : ").Append(isFedText).AppendLine();
         builder.Append($"<color=#{lifeColour}>{"Life : "}").Append(currentLife).Append("</color>").AppendLine();
         builder.Append($"<color=#{ageColour}>{"Age : "}").Append(currentAge).Append("</color>").AppendLine();
         builder.Append($"<color=#{attackColour}>{"Attack : "}").Append(atk).Append("</color>");
