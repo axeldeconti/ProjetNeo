@@ -151,6 +151,11 @@ public class GameManager : MonoBehaviour {
         Application.Quit();
     }
 
+    public void OnClickRestart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void OnClickHelp()
     {
         helpPanel.SetActive(true);
