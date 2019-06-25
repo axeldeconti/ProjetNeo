@@ -11,7 +11,7 @@ public class LovePeriod : EventEffect {
     {
         base.ApplyEffect();
 
-        int rnd = Random.Range(min, max + 1);
+        int rnd = Random.Range(min, max);
 
         for (int i = 0; i <= rnd; i++)
         {
