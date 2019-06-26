@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadScreen: {fileID: 1614627949810638}
+  waitTime: 1
 --- !u!114 &114889383446826652
 MonoBehaviour:
   m_ObjectHideFlags: 1

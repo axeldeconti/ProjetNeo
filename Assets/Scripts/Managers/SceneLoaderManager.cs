@@ -23,6 +23,7 @@ public class SceneLoaderManager : MonoBehaviour {
     #endregion
 
     public GameObject loadScreen;
+    public float waitTime;
 
     private void Start()
     {
@@ -37,6 +38,8 @@ public class SceneLoaderManager : MonoBehaviour {
 
     private IEnumerator LoadNewScene(int sceneIndex)
     {
+        yield return new WaitForSeconds(waitTime);
+
         AsyncOperation async = SceneManager.LoadSceneAsync(sceneIndex);
 
         while (!async.isDone)

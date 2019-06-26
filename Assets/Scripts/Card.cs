@@ -32,7 +32,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public void ChangeAspectToIcon()
     {
         transform.GetChild(0).gameObject.SetActive(false);
-        icon.gameObject.SetActive(true);
+        icon.transform.parent.gameObject.SetActive(true);
     }
 
     /// <summary>
@@ -40,7 +40,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     /// </summary>
     public void ChangeAspectToCard()
     {
-        icon.gameObject.SetActive(false);
+        icon.transform.parent.gameObject.SetActive(false);
         transform.GetChild(0).gameObject.SetActive(true);
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2041,6 +2041,11 @@ Prefab:
       propertyPath: emptyTooltipText
       value: Drop a Human here
       objectReference: {fileID: 0}
+    - target: {fileID: 223408685520413682, guid: 6f67a9c77b430c244ba38be24477572f,
+        type: 2}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f67a9c77b430c244ba38be24477572f, type: 2}
   m_IsPrefabAsset: 0
@@ -3215,7 +3220,7 @@ Prefab:
     - target: {fileID: 224073703165883170, guid: f0cb44403456fac4592a30b5c41ef8f3,
         type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 224073703165883170, guid: f0cb44403456fac4592a30b5c41ef8f3,
         type: 2}
@@ -4719,12 +4724,12 @@ RectTransform:
   - {fileID: 1594225586}
   - {fileID: 1959244550}
   - {fileID: 1198962734}
-  - {fileID: 499337567}
-  - {fileID: 526889195}
   - {fileID: 494875679}
   - {fileID: 409748204}
   - {fileID: 453655467}
   - {fileID: 2011987351}
+  - {fileID: 526889195}
+  - {fileID: 499337567}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4759,7 +4764,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 483184241}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4794,7 +4799,7 @@ RectTransform:
   - {fileID: 423230013}
   - {fileID: 79888021}
   m_Father: {fileID: 483184241}
-  m_RootOrder: 13
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4926,7 +4931,7 @@ RectTransform:
   - {fileID: 595576611}
   - {fileID: 1349010088}
   m_Father: {fileID: 483184241}
-  m_RootOrder: 14
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8846,7 +8851,7 @@ Prefab:
     - target: {fileID: 224973272611120830, guid: f451b557f367a4c4584e8287dea4c66d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 224973272611120830, guid: f451b557f367a4c4584e8287dea4c66d,
         type: 2}
@@ -17622,6 +17627,11 @@ Prefab:
       propertyPath: emptyTooltipText
       value: Drop a Human here
       objectReference: {fileID: 0}
+    - target: {fileID: 223408685520413682, guid: 6f67a9c77b430c244ba38be24477572f,
+        type: 2}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 6f67a9c77b430c244ba38be24477572f, type: 2}
@@ -18237,7 +18247,7 @@ Prefab:
     - target: {fileID: 224073703165883170, guid: f0cb44403456fac4592a30b5c41ef8f3,
         type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 224073703165883170, guid: f0cb44403456fac4592a30b5c41ef8f3,
         type: 2}
