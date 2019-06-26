@@ -16,7 +16,7 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: 4515b0d08f2e00549b5f03e117c4f5e2, type: 3}
   cardName: Cow
   nameColor: {r: 0.5660378, g: 0.11480955, b: 0.14102429, a: 1}
-  soundEffect: {fileID: 0}
+  soundEffect: {fileID: 8300000, guid: 15d4acadbec9eb74a9a77fd98cf6e9f7, type: 3}
   tooltipDescription: 
   type: 3
   description: 

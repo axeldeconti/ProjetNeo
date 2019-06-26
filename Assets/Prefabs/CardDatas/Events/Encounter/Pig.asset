@@ -16,7 +16,7 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: 093dab2143819a149b2405baeda73a07, type: 3}
   cardName: Pig
   nameColor: {r: 0.5660378, g: 0.11480955, b: 0.14102429, a: 1}
-  soundEffect: {fileID: 0}
+  soundEffect: {fileID: 8300000, guid: 8c196261711a4184387dbafc698388e4, type: 3}
   tooltipDescription: 
   type: 3
   description: 

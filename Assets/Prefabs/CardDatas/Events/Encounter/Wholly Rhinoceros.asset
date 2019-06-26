@@ -16,7 +16,7 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: d1559bd21708e9a4ab642ae8fd4f80e9, type: 3}
   cardName: Whoolly Rhinoceros
   nameColor: {r: 0.5660378, g: 0.11480955, b: 0.14102429, a: 1}
-  soundEffect: {fileID: 0}
+  soundEffect: {fileID: 8300000, guid: 5625cbb3f99e4744481a4ef743075474, type: 3}
   tooltipDescription: 
   type: 3
   description: 

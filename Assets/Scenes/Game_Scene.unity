@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13882,10 +13882,10 @@ RectTransform:
   m_Father: {fileID: 529398917}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.614, y: 0.7988921}
-  m_AnchorMax: {x: 0.614, y: 0.7988921}
+  m_AnchorMin: {x: 0.60952085, y: 0.91225845}
+  m_AnchorMax: {x: 0.60952085, y: 0.91225845}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 121, y: 121}
+  m_SizeDelta: {x: 124.5, y: 118.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1353517916
 MonoBehaviour:
@@ -13916,7 +13916,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 55e22ca84f7f54a4ab89d1571401c88a,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 753d7ea526a8350449c87e5b6570a906, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 5a7e608b7b466334eb37094c4c5a40ef, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: 753d7ea526a8350449c87e5b6570a906, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
