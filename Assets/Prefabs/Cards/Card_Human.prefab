@@ -483,6 +483,7 @@ MonoBehaviour:
   isFed: 0
   hungerMarker: {fileID: 0}
   humanFedPS: {fileID: 0}
+  damageIfNotFed: 2
 --- !u!114 &114582938417314462
 MonoBehaviour:
   m_ObjectHideFlags: 1

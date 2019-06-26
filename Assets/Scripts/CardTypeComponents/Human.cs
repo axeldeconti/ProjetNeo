@@ -15,6 +15,7 @@ public class Human : CardTypeComponent
     public bool isFed;
     public GameObject hungerMarker;
     public ParticleSystem humanFedPS;
+    public int damageIfNotFed;
 
     public override void Init(CardData _cardData)
     {
@@ -59,6 +60,7 @@ public class Human : CardTypeComponent
         atk = humanComp.atk;
         currentAge = humanComp.currentAge;
         currentLife = humanComp.currentLife;
+        damageIfNotFed = humanComp.damageIfNotFed;
 
         age.text = currentAge.ToString();
         life.text = currentLife.ToString();
@@ -99,7 +101,7 @@ public class Human : CardTypeComponent
         GrowOlder();
 
         if (!isFed)
-            GetDamaged(1);
+            GetDamaged(damageIfNotFed);
     }
 
     /// <summary>
@@ -120,6 +122,7 @@ public class Human : CardTypeComponent
     /// </summary>
     public void GetDamaged(int damages)
     {
+        Debug.Log("get damage " + damages);
         currentLife -= damages;
 
         if (currentLife <= 0)
