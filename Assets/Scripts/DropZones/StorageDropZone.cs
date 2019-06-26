@@ -96,7 +96,8 @@ public class StorageDropZone : DropZone_Base, IPointerDownHandler
         if (Input.GetKeyDown(KeyCode.Mouse1) && hasRessource)
         {
             storage.RemoveItemFromStorage(ressourceName, this);
-            DeckManager.instance.AddCard(ressourceName);
+            Card card = DeckManager.instance.AddCard(ressourceName);
+            card.transform.SetSiblingIndex(0);
         }
     }
 

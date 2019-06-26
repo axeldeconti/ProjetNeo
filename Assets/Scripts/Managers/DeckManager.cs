@@ -174,38 +174,43 @@ public class DeckManager : MonoBehaviour {
     /// <summary>
     /// Add a specified card
     /// </summary>
-    public void AddCard(string cardNameToAdd)
+    public Card AddCard(string cardNameToAdd)
     {
         CardData data = allCardData[cardNameToAdd];
+        Card cardAdded = null;
 
         //Debug.Log("AddCard : " + cardNameToAdd + " of type " + data.cardType);
 
         switch (data.cardType)
         {
             case CardType.Human:
-                Instantiate(humanCardPrefab, HandPannel).GetComponent<Card>().Init(data);
+                cardAdded = Instantiate(humanCardPrefab, HandPannel).GetComponent<Card>();
                 break;
             case CardType.Ressource:
-                Instantiate(ressourceCardPrefab, HandPannel).GetComponent<Card>().Init(data);
+                cardAdded = Instantiate(ressourceCardPrefab, HandPannel).GetComponent<Card>();
                 break;
             case CardType.Tool:
-                Instantiate(toolCardPrefab, HandPannel).GetComponent<Card>().Init(data);
+                cardAdded = Instantiate(toolCardPrefab, HandPannel).GetComponent<Card>();
                 break;
             case CardType.Building:
-                Instantiate(buildingCardPrefab, HandPannel).GetComponent<Card>().Init(data);
+                cardAdded = Instantiate(buildingCardPrefab, HandPannel).GetComponent<Card>();
                 break;
             case CardType.Event:
-                Instantiate(eventCardPrefab, HandPannel).GetComponent<Card>().Init(data);
+                cardAdded = Instantiate(eventCardPrefab, HandPannel).GetComponent<Card>();
                 break;
             default:
                 Debug.Log("Can't add this card : " + cardNameToAdd);
                 break;
         }
 
+        cardAdded.Init(data);
+
         UpdateCardInHandCount();
 
         if (!AudioManager.instance.effectSource.isPlaying)
             AudioManager.instance.PlaySoundEffects(cardFlipSFX);
+
+        return cardAdded;
     }
 
     /// <summary>
