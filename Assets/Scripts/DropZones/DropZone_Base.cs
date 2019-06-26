@@ -50,7 +50,7 @@ public abstract class DropZone_Base : MonoBehaviour, IDropHandler, IPointerEnter
 
         //Set the placeholder parent to the card one
         if (d != null && d.placeholderParent == transform)
-            d.placeholderParent = d.parentToReturnTo;
+            d.placeholderParent = d.emptyParent;
     }
 
     /// <summary>

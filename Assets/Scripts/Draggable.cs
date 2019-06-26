@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
-    [HideInInspector] public Transform parentToReturnTo = null, placeholderParent = null;
+    [HideInInspector] public Transform parentToReturnTo = null, placeholderParent = null, emptyParent = null;
     [HideInInspector] public GameObject placeholder = null;
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -30,6 +30,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         parentToReturnTo = transform.parent;
         placeholderParent = parentToReturnTo;
         transform.SetParent(transform.parent.parent);
+        emptyParent = transform.parent;
 
         //Block raycast to "see" through the card
         GetComponent<CanvasGroup>().blocksRaycasts = false;

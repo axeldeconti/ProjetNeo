@@ -107,6 +107,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        //Store the card with right click
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             if (!cardData.cardType.Equals(CardType.Human) && !cardData.cardType.Equals(CardType.Building))
