@@ -872,7 +872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &79577007
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3215,7 +3215,7 @@ Prefab:
     - target: {fileID: 224073703165883170, guid: f0cb44403456fac4592a30b5c41ef8f3,
         type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 224073703165883170, guid: f0cb44403456fac4592a30b5c41ef8f3,
         type: 2}
@@ -3664,7 +3664,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 372149847}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1910391147}
+        m_MethodName: OnClickHelp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &372149847
@@ -4710,10 +4721,10 @@ RectTransform:
   - {fileID: 1198962734}
   - {fileID: 499337567}
   - {fileID: 526889195}
+  - {fileID: 494875679}
   - {fileID: 409748204}
   - {fileID: 453655467}
   - {fileID: 2011987351}
-  - {fileID: 494875679}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4748,7 +4759,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 483184241}
-  m_RootOrder: 18
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8835,7 +8846,7 @@ Prefab:
     - target: {fileID: 224973272611120830, guid: f451b557f367a4c4584e8287dea4c66d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 224973272611120830, guid: f451b557f367a4c4584e8287dea4c66d,
         type: 2}
@@ -18226,7 +18237,7 @@ Prefab:
     - target: {fileID: 224073703165883170, guid: f0cb44403456fac4592a30b5c41ef8f3,
         type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 224073703165883170, guid: f0cb44403456fac4592a30b5c41ef8f3,
         type: 2}
