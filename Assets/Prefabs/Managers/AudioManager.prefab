@@ -50,7 +50,8 @@ AudioSource:
   m_GameObject: {fileID: 1255965628064656}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0d6db4fa221882149a23bdf5641256bf,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -145,7 +146,8 @@ AudioSource:
   m_GameObject: {fileID: 1255965628064656}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0d6db4fa221882149a23bdf5641256bf,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: e5bed3afce3ff5349a355ca98ff733c0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -244,4 +246,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectSource: {fileID: 82561239451772366}
-  click: {fileID: 8300000, guid: c7bca99de3fa3d14a90c3af8430b8f16, type: 3}
+  clickSFX: {fileID: 8300000, guid: c7bca99de3fa3d14a90c3af8430b8f16, type: 3}
+  highlightedSFX: {fileID: 8300000, guid: dec7964ca174caa4cacc8942bb672700, type: 3}

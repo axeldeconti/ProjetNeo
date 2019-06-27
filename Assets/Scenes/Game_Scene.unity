@@ -3111,16 +3111,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114081038837006488, guid: a858bbae942e61a4f8a3021ab2e154c0,
-        type: 2}
-      propertyPath: clickSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: c7bca99de3fa3d14a90c3af8430b8f16, type: 3}
-    - target: {fileID: 114081038837006488, guid: a858bbae942e61a4f8a3021ab2e154c0,
-        type: 2}
-      propertyPath: highlightedSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: dec7964ca174caa4cacc8942bb672700, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a858bbae942e61a4f8a3021ab2e154c0, type: 2}
   m_IsPrefabAsset: 0
