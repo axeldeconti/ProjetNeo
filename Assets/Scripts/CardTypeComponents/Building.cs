@@ -14,6 +14,8 @@ public class Building : CardTypeComponent, IPointerDownHandler
     public BuildingCardData cardData;
     public BuildingType type;
     public bool isBuilt = false;
+    public ParticleSystem buildParticles;
+    public AudioClip addRessourceSFX;
 
     public override void Init(CardData _cardData)
     {
@@ -80,6 +82,8 @@ public class Building : CardTypeComponent, IPointerDownHandler
 
         ressourceDataList.Add(ressourceData);
 
+        AudioManager.instance.PlaySoundEffects(addRessourceSFX);
+
         CheckIfBuilt();
 
         return true;
@@ -116,6 +120,8 @@ public class Building : CardTypeComponent, IPointerDownHandler
         Storage.instance.UpdateNbOfItem();
 
         GetComponent<Image>().sprite = cardData.artwork;
+
+        buildParticles.Play();
     }
 
     /// <summary>
