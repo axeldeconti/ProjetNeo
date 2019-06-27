@@ -13,6 +13,7 @@ public class Workbench : MonoBehaviour, IPointerDownHandler {
     public Sprite outcomeNull;
     public int currentRecipeID = 0;
     public AudioClip buildSFX;
+    public Button burnAllButton, endButton;
     
     /// <summary>
     /// Init the workbench
@@ -202,6 +203,8 @@ public class Workbench : MonoBehaviour, IPointerDownHandler {
             RemoveAllRessources(true);
 
         gameObject.SetActive(!gameObject.activeSelf);
+        burnAllButton.interactable = !burnAllButton.interactable;
+        endButton.interactable = !endButton.interactable;
 
         EventSystem.current.SetSelectedGameObject(null);
     }

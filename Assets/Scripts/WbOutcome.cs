@@ -15,7 +15,8 @@ public class WbOutcome : MonoBehaviour, IPointerDownHandler, IPointerEnterHandle
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && hasOutcome)
         {
-            DeckManager.instance.AddCard(RecipeManager.instance.allRecipe[wb.currentRecipeID].cardName);
+            Card c = DeckManager.instance.AddCard(RecipeManager.instance.allRecipe[wb.currentRecipeID].cardName);
+            c.transform.SetAsFirstSibling();
             wb.RemoveAllRessources(false);
             AudioManager.instance.PlaySoundEffects(wb.buildSFX);
             TooltipPopup.instance.HideInfo();

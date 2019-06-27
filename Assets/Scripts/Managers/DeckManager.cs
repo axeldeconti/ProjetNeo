@@ -258,8 +258,11 @@ public class DeckManager : MonoBehaviour {
             Destroy(HandPannel.GetChild(i).gameObject);
         }
 
-        endTurnButton.SetActive(true);
-        burnAllButton.SetActive(false);
+        if (canEndTurn)
+        {
+            endTurnButton.SetActive(true);
+            burnAllButton.SetActive(false);
+        }
     }
 
     private void Update()

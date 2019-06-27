@@ -34,6 +34,7 @@ public class EventManager : MonoBehaviour {
     public Button ButtonsCloseTree;
     public Sprite encouterScreen, normalScreen;
     public GameObject animalImage;
+    public Transform posCircle;
 
     private int level;
     private Dictionary<int, List<EventButton>> allEventButtons;
@@ -56,6 +57,8 @@ public class EventManager : MonoBehaviour {
         tree2 = eventTreeScreen.transform.GetChild(1).gameObject;
         tree3 = eventTreeScreen.transform.GetChild(2).gameObject;
         lastOpenTree = tree1;
+
+        posCircle.localPosition = new Vector3(5000, 5000, 0);
     }
 
     /// <summary>
@@ -111,6 +114,9 @@ public class EventManager : MonoBehaviour {
         }
 
         currentEvent = eventButton.eventdata;
+
+        posCircle.parent = eventButton.transform;
+        posCircle.localPosition = Vector3.zero;
 
         level++;
 

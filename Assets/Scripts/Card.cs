@@ -116,7 +116,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
                 {
                     Storage.instance.AddItemToStorage(GetComponent<Draggable>(), this);
 
-                    if (DeckManager.instance.HandPannel.childCount <= 1)
+                    if (DeckManager.instance.HandPannel.childCount <= 1 && DeckManager.instance.canEndTurn)
                     {
                         DeckManager.instance.endTurnButton.SetActive(true);
                         DeckManager.instance.burnAllButton.SetActive(false);
