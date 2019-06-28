@@ -54,3 +54,5 @@ MonoBehaviour:
   humanSelectionScreen: {fileID: 0}
   humanToSelectPrefab: {fileID: 1103949741107744, guid: cda229a78836df345b23c3be3dccb625,
     type: 2}
+  nbOfHumanFedByOneFood: 3
+  background: {fileID: 21300000, guid: 58560ec7148a1654a827a08429415246, type: 3}

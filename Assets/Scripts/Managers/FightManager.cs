@@ -26,6 +26,7 @@ public class FightManager : MonoBehaviour
     public GameObject humanSelectionScreen, humanToSelectPrefab;
     public int damageToGive = 0;
     public Text damageLeftToGive;
+    public Sprite background;
 
     private List<int> humansAdded = new List<int>();
     private List<HumanToFeed> humansToSelect = new List<HumanToFeed>();
@@ -131,6 +132,7 @@ public class FightManager : MonoBehaviour
         humanSelectionScreen.SetActive(true);
         damageLeftToGive.transform.parent.gameObject.SetActive(true);
         damageLeftToGive.text = damageToGive.ToString();
+        humanSelectionScreen.transform.GetChild(0).GetComponent<Image>().sprite = background;
 
         foreach (GameObject human in CardManager.instance.GetAllCardsOfType(CardType.Human))
         {

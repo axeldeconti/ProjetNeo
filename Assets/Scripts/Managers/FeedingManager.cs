@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FeedingManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class FeedingManager : MonoBehaviour
 
     public GameObject humanSelectionScreen, humanToSelectPrefab;
     public int nbOfHumanFedByOneFood = 3;
+    public Sprite background;
 
     private bool canFeedHuman;
     private List<int> humansSelected;
@@ -96,6 +98,7 @@ public class FeedingManager : MonoBehaviour
     public void OpenFeedingScreen()
     {
         humanSelectionScreen.SetActive(true);
+        humanSelectionScreen.transform.GetChild(0).GetComponent<Image>().sprite = background;
 
         List<int> humansAdded = new List<int>();
 

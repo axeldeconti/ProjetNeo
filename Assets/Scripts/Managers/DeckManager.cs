@@ -267,6 +267,8 @@ public class DeckManager : MonoBehaviour {
 
     private void Update()
     {
+#if UNITY_EDITOR
+
         if (Input.GetKeyDown(KeyCode.Tab))
             DrawCard();
         if (Input.GetKeyDown(KeyCode.W))
@@ -293,6 +295,8 @@ public class DeckManager : MonoBehaviour {
             AddCard("Sorgho Seed");
         if (Input.GetKeyDown(KeyCode.I))
             AddCard("Shovel");
+
+#endif
     }
 }
 
